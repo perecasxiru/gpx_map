@@ -3561,7 +3561,7 @@ var json_peaks = [
         "lat": 42.1120830253,
         "lon": 2.71172885085,
         "url": "https://www.feec.cat/activitats/100-cims/cim/sant-patllari/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Sant Pere Màrtir",
