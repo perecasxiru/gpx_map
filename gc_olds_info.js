@@ -359,7 +359,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "Banyoles",
-    "Found_by_me": "",
+    "Found_by_me": "20/10/2024",
     "Placed_By": "vicam",
     "Elevation": 0,
     "Container": "Regular",
