@@ -4677,7 +4677,7 @@ var json_peaks = [
         "lat": 42.424555,
         "lon": 1.600995,
         "url": "https://www.feec.cat/activitats/100-cims/cim/turo-punco/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Volcà del Croscat",
