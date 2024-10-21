@@ -195,5 +195,6 @@ let tracks = [
         'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
         'tracks/moia-cingles-de-montbru-moia.gpx',
         'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx',
-        'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx' 
+        'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx', 
+        'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx', 
 ];
