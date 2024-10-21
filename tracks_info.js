@@ -32,6 +32,7 @@ let tracks = [
         'tracks/siurana-i-toll-de-la-palla.gpx',
         'tracks/castellnou-de-bages-turo-de-la-torre-perello-el-putxot-caste.gpx',
         'tracks/esglesia-de-sant-marti-castell-de-centelles-turo-de-lantiga-.gpx',
+        'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx',
         'tracks/parking-estacion-de-esqui-cambre-daze.gpx',
         'tracks/deltebre-illa-de-buda-la-tancada-deltebre.gpx',
         'tracks/vallter-pic-de-bastiments-pic-de-freser-pic-de-linfern-estan.gpx',
@@ -185,6 +186,7 @@ let tracks = [
         'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
         'tracks/7-gorgs-destiula.gpx',
         'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
+        'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx',
         'tracks/saint-jacques-des-allemands-lago-blu-rifugio-mezzalama-refug.gpx',
         'tracks/coll-destenalles-els-cortins-roques-de-la-coca-montcau-coll-.gpx',
         'tracks/montornes-del-valles-castell-de-montornes-montornes-del-vall.gpx',
@@ -194,7 +196,5 @@ let tracks = [
         'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
         'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
         'tracks/moia-cingles-de-montbru-moia.gpx',
-        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx',
-        'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx', 
-        'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx', 
+        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx'
 ];
