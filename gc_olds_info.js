@@ -469,7 +469,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "NFFF",
     "Waypoint_Name": "Fageda d'en Jordà",
-    "Found_by_me": "",
+    "Found_by_me": "21/10/2024",
     "Placed_By": "Maria,Adria,Marta,Carmen,Artur y Joan",
     "Elevation": 0,
     "Container": "Regular",
