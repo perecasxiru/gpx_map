@@ -1,5 +1,6 @@
 let tracks = [
         'tracks/els-esquitx-refuge-des-buoillouses-la-bolloseta-estany-del-r.gpx',
+        'tracks/crespia-roca-caputxa-sant-bartomeu-sant-miquel-de-la-roca-fo.gpx',
         'tracks/cavallsdelventtotal.gpx',
         'tracks/alzina-del-sallari-la-pola-font-del-lladre-foradada-cova-del.gpx',
         'tracks/can-capita-cova-de-laram-salt-daigua-hortsavinya-mare-de-deu.gpx',
