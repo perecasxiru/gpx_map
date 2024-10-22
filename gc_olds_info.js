@@ -1041,7 +1041,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "Sant Miquel de la Roca",
-    "Found_by_me": "",
+    "Found_by_me": "22/10/2024",
     "Placed_By": "karles",
     "Elevation": 0,
     "Container": "Regular",
