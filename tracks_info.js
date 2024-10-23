@@ -25,6 +25,7 @@ let tracks = [
         'tracks/la-vall-de-marfa.gpx',
         'tracks/ruta-de-les-colonies.gpx',
         'tracks/santuari-de-corbera-cogullo-destela.gpx',
+        'tracks/coll-de-faja-coll-sabassa-ermita-de-sant-grau-dentreperes-er.gpx',
         'tracks/moia-mirador-de-la-creu-moia.gpx',
         'tracks/cal-traginer-serrat-de-la-madrona-bauma-de-les-7-portes-cal-.gpx',
         'tracks/vallcebre-el-turo-cami-aeri-de-lartic-lartic-cingles-de-vall.gpx',
