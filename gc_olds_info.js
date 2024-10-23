@@ -1239,7 +1239,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "Land Rover Best 4x4xFAR",
-    "Found_by_me": "",
+    "Found_by_me": "23/10/2024",
     "Placed_By": "Jogibogi",
     "Elevation": 0,
     "Container": "Regular",
