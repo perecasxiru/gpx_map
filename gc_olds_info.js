@@ -732,7 +732,7 @@ var json_gc_olds = [
     "Cache_type": "Traditional Cache",
     "User flag": "",
     "lg": "FFFF",
-    "Waypoint_Name": "Castillo de MontornËs del VallËs",
+    "Waypoint_Name": "Castillo de Montornès del Vallès",
     "Found_by_me": "4/6/2022",
     "Placed_By": "garri",
     "Elevation": 0,
