@@ -447,7 +447,7 @@ var json_peaks = [
         "lat": 41.9520875639,
         "lon": 2.21046092543,
         "url": "https://www.feec.cat/activitats/100-cims/cim/creu-de-gurb/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Creu de Santos",
