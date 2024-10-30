@@ -158,7 +158,18 @@
 				}else{
 					icon_var = template2CimIcon(optionalTemplate);
 				}
-				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(`<div style="text-align: center"><b>${tuple.nom}</b><br>${tuple.alt}m</div>`);
+				const wikiURL = "https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=" + tuple.nom +"&fitMapToTrails=1&page=1"
+				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
+						`<div style="text-align: center">
+							<b>${tuple.nom}</b><br>
+							${tuple.alt}m</div><br>
+							<center>
+								<a href="${wikiURL}" target="_blank">
+									<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+								</a>
+							</center>
+
+						`);
 				if (addToMap) {
 					marker.addTo(map);
 				}
