@@ -70,6 +70,7 @@ let tracks = [
         'tracks/sant-julia-de-cabrera-collsacabra-sant-julia-de-cabrera.gpx',
         'tracks/pedraforca.gpx',
         'tracks/adou-del-bastareny-sant-roma-doreis-pont-de-lafrau-dels-cort.gpx',
+        'tracks/gurb-creu-de-gurb-font-del-puig-bosc-encantat-sant-andreu-de.gpx',
         'tracks/santa-maria-de-besora-castell-de-besora-bufadors-de-bevi-san.gpx',
         'tracks/costa-brava-14a-cales-castell-crit-estreta-corbs-barraca-den.gpx',
         'tracks/cal-traginer-sant-pau-de-casserres-panta-de-casserres-cal-tr.gpx',
@@ -198,6 +199,5 @@ let tracks = [
         'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
         'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
         'tracks/moia-cingles-de-montbru-moia.gpx',
-        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx',
-        'tracks/gurb-creu-de-gurb-font-del-puig-bosc-encantat-sant-andreu-de.gpx' 
+        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx'
 ];
