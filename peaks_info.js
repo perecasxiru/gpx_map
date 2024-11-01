@@ -393,7 +393,7 @@ var json_peaks = [
         "lat": 41.740870427,
         "lon": 1.78096524985,
         "url": "https://www.feec.cat/activitats/100-cims/cim/collbaix/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Comabona",
