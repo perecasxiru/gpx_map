@@ -199,5 +199,6 @@ let tracks = [
         'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
         'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
         'tracks/moia-cingles-de-montbru-moia.gpx',
-        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx'
+        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx',
+        'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx' 
 ];
