@@ -13,7 +13,7 @@
   <bounds minlat="42.099209" minlon="1.866002" maxlat="42.111849" maxlon="1.903081"/>
 </metadata>
 <trk>
-  <name>201208-Via Verde del Llobregat</name>
+  <name>Via Verda del Llobregat</name>
   <trkseg>
     <trkpt lat="42.073021" lon="1.870138"><ele>489</ele><time>2020-12-08T07:40:21Z</time></trkpt>
     <trkpt lat="42.076619" lon="1.872814"><ele>498</ele><time>2020-12-08T07:47:24Z</time></trkpt>
