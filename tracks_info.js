@@ -56,6 +56,7 @@ let tracks = [
         'tracks/pratdip-cavall-bernat-montredon-pratdip.gpx',
         'tracks/pla-de-can-tura-santa-maria-de-finestres-castell-de-finestre.gpx',
         'tracks/monestir-de-montserrat-creu-de-sant-miquel-sant-joan-santa-m.gpx',
+        'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx',
         'tracks/cal-pallot-bauma-guillotera-cal-pallot.gpx',
         'tracks/cal-traginer-serrat-de-la-madrona-cal-traginer.gpx',
         'tracks/collserola.gpx',
@@ -199,6 +200,5 @@ let tracks = [
         'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
         'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
         'tracks/moia-cingles-de-montbru-moia.gpx',
-        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx',
-        'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx' 
+        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx'
 ];
