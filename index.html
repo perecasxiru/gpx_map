@@ -16,6 +16,8 @@
 	<!-- leaflet-ui -->
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 	<script src="https://unpkg.com/leaflet-ui@0.6.0/dist/leaflet-ui.js"></script>
+	<script src="https://unpkg.com/togeojson@0.16.0"></script>
+	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 	<script src="peaks_info.js"></script>
 	<script src="tracks_info.js"></script>
 	<script src="gc_olds_info.js"></script>
@@ -241,8 +243,6 @@
 			return [L.layerGroup(arrayGC), lst.length]
 		}
 
-
-
 		map.on('plugins_loaded', function(e) {
 
 			const colorIntensity = 0.7;
@@ -293,6 +293,38 @@
 			  position: 'topright'
 			}).addTo(map);
 
+			var filestyle = {
+				color: 'blue',
+				opacity: 1.0,
+				fillOpacity: 0.5,
+				weight: 4,
+				clickable: false,
+			};
+
+			// L.Control.FileLayerLoad.LABEL = '<img class="iconstyle" src="http://gsak.net/stats/maps/cacheicons/folder.svg" alt="file icon"/>';
+			var mapLayerControl = L.control.layers({}, {}, {
+				position: 'topleft'
+			})
+			var control = L.Control.fileLayerLoad({
+				layerOptions: {
+                style: filestyle,
+                pointToLayer: function (data, latlng) {
+                    return null
+                }
+            }
+			}, {
+				position: 'topright'
+			}).addTo(map);
+
+			control.loader.on('data:loaded', function (e) {
+            	var layer = e.layer;
+            	console.log(layer);
+            	// Add to map layer switcher
+        		mapLayerControl.addOverlay(layer, e.filename);
+        	});
+
+			mapLayerControl.addTo(map);
+
 			var click_elements = document.getElementsByClassName('leaflet-top leaflet-right')[0].getElementsByClassName("leaflet-control-layers-selector");
 			for (let i = 1;i < click_elements.length;i++) {
      			let click = click_elements[i];
@@ -306,9 +338,6 @@
 			// var layerControl = L.control.layers(peaks, peaks).addTo(map)
 			map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
 		});
-
-
-
 	</script>
 </body>
 
