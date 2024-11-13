@@ -42,6 +42,7 @@ let tracks = [
         'tracks/serra-del-picancel-serrat-del-migdia-cingles-de-la-por-sant-.gpx',
         'tracks/sant-grau-de-lardenya-menir-llach-cadiretes-paradolmen-garci.gpx',
         'tracks/mirador-del-silenci-pla-boixer-puig-de-la-creu-rocallarga-ba.gpx',
+        'tracks/portadexara.gpx',
         'tracks/lampolla-lametlla-de-mar.gpx',
         'tracks/estany-del-mig-estany-de-mes-amunt-i-estany-primer-des-de-or.gpx',
         'tracks/presa-de-cavallers-refugi-ventosa-i-calvell-punta-alta-comal.gpx',
