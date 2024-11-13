@@ -49,6 +49,7 @@ let tracks = [
         'tracks/collada-del-roset-castell-del-roset-cap-oest-de-la-gotzera-t.gpx',
         'tracks/les-preses-volca-raco-ermites-rocalladre-cova-xenacs-les-pre.gpx',
         'tracks/lametlla-de-merola-cal-riera-lametlla-de-merola.gpx',
+        'tracks/passejadaperalcudia.gpx',
         'tracks/pedret-cova-den-massana-cingles-de-la-por-sant-miquel-de-les.gpx',
         'tracks/llac-de-grauges-sant-vicenc-dobiols-salt-del-moli-de-bellus-.gpx',
         'tracks/lescala-bunquers-lescala.gpx',
