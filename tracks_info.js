@@ -167,6 +167,7 @@ let tracks = [
         'tracks/de-la-guardia-al-soler-pel-canal-daigua.gpx',
         'tracks/refugi-de-malniu-puigpedros-estany-de-malniu-refugi-de-malni.gpx',
         'tracks/pla-de-busa-el-cogul-preso-de-busa-font-de-busa-sant-cristof.gpx',
+        'tracks/cementiri-de-sarraco-puig-den-farineta-cementiri-de-sarraco.gpx',
         'tracks/montserrat-agulles-i-frares.gpx',
         'tracks/pla-de-la-barraca-cami-aeri-de-lartic-lartic-pla-de-la-barra.gpx',
         'tracks/soler-de-ferrerons-bosc-de-blades.gpx',
