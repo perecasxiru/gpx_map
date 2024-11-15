@@ -33,6 +33,7 @@ let tracks = [
         'tracks/la-puda-puig-cendros-sant-salvador-de-les-espases-la-puda.gpx',
         'tracks/lestany-puig-rodo-dolmen-de-puig-rodo-puig-espeltos-lestany.gpx',
         'tracks/siurana-i-toll-de-la-palla.gpx',
+        'tracks/la-figuera-cova-des-migdia-puig-de-balitx-la-figuera.gpx',
         'tracks/castellnou-de-bages-turo-de-la-torre-perello-el-putxot-caste.gpx',
         'tracks/esglesia-de-sant-marti-castell-de-centelles-turo-de-lantiga-.gpx',
         'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx',
