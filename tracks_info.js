@@ -161,6 +161,7 @@ let tracks = [
         'tracks/moia-grony-de-la-torre-moia.gpx',
         'tracks/albio-tossal-de-suro-albio.gpx',
         'tracks/lestartit-cala-calella-cala-pedrosa-lestartit.gpx',
+        'tracks/cuber-puig-de-sa-rateta-puig-de-na-franquesa-puig-de-lofre-c.gpx',
         'tracks/port-vendres-phare-du-cap-bear-cap-bear-port-vendres.gpx',
         'tracks/vallcebre-santa-magdalena-les-cambrotes-tossal-llisol-sant-r.gpx',
         'tracks/avia-morral-de-sobrestrada-el-grau-sant-andreu-de-la-serreta.gpx',
