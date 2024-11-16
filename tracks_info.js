@@ -9,6 +9,7 @@ let tracks = [
         'tracks/estany-de-querol.gpx',
         'tracks/aigues-termals-i-pont-gisclard-des-de-saint-pierre-dels-forc.gpx',
         'tracks/iglesia-de-santa-maria-de-los-angeles-iglesia-de-monte-sion-.gpx',
+        'tracks/parking-son-amer-refugi-son-amer-moli-de-lluc-santuari-de-ll.gpx',
         'tracks/congres-parc-del-carmel-parc-guell-congres.gpx',
         'tracks/granera-santa-cecilia-el-pedro-roca-de-laliga-codol-del-cast.gpx',
         'tracks/serra-dels-tossals.gpx',
