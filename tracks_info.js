@@ -17,6 +17,7 @@ let tracks = [
         'tracks/gallifa-la-mola-sant-sadurni-de-gallifa-gallifa.gpx',
         'tracks/coll-de-peguera-creu-de-ferro-rasos-densija-coll-de-peguera.gpx',
         'tracks/finestres-san-vicente-san-marcos-finestres.gpx',
+        'tracks/escola-puigsoler-puigsoler-petit-puigsoler-escola-puigsoler.gpx',
         'tracks/meteora-day-2.gpx',
         'tracks/rupit-salt-de-sallent-sant-joan-de-les-fabregues-rupit.gpx',
         'tracks/castellcir-castell-de-la-popa-la-sauva-negra-castellcir.gpx',
