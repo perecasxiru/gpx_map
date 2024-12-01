@@ -3003,7 +3003,7 @@ var json_peaks = [
         "lat": 41.6678850742,
         "lon": 1.89285524584,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puigsoler/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Pujoalbo",
