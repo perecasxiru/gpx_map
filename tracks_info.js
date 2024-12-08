@@ -159,6 +159,7 @@ let tracks = [
         'tracks/la-pobla-de-lillet-castell-de-lillet-mines-del-catllaras-san.gpx',
         'tracks/olympos-oros-prionia-refuge-a-skala-skolio.gpx',
         'tracks/7-egg-trail-hoch-ybrig-brunni.gpx',
+        'tracks/la-pollosa-creu-de-castellar-puig-castellar-cau-de-la-guilla.gpx',
         'tracks/alpens-puig-cornador-santa-margarida-de-vinyoles-sant-marti-.gpx',
         'tracks/moia-grony-de-la-torre-moia.gpx',
         'tracks/albio-tossal-de-suro-albio.gpx',
