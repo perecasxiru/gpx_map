@@ -130,6 +130,7 @@ let tracks = [
         'tracks/cap-de-creus.gpx',
         'tracks/carretera-seva-turo-del-pou-den-sala-font-pomereta-matagalls.gpx',
         'tracks/besalu-ermita-de-loreto-esglesia-de-sant-vicenc-de-sallent-s.gpx',
+        'tracks/monistrol-de-calders-gorgs-blaus-estacio-de-la-coma-salt-de-.gpx',
         'tracks/baga-roca-tirabal-turbians-font-de-la-vinya-vella-baga.gpx',
         'tracks/estivella-pedro-dels-quatre-batlles-puig-de-les-morreres-la-.gpx',
         'tracks/argentona-castell-de-burriac-argentona.gpx',
