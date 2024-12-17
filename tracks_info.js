@@ -159,6 +159,7 @@ let tracks = [
         'tracks/can-bosch-pou-de-glac-dolmen-de-ca-larenes-pi-cargolat-santu.gpx',
         'tracks/la-pobla-de-lillet-castell-de-lillet-mines-del-catllaras-san.gpx',
         'tracks/olympos-oros-prionia-refuge-a-skala-skolio.gpx',
+        'tracks/monistrol-de-calders-gorg-de-saladic-mirador-del-pla-de-trul.gpx',
         'tracks/7-egg-trail-hoch-ybrig-brunni.gpx',
         'tracks/la-pollosa-creu-de-castellar-puig-castellar-cau-de-la-guilla.gpx',
         'tracks/alpens-puig-cornador-santa-margarida-de-vinyoles-sant-marti-.gpx',
