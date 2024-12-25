@@ -200,6 +200,7 @@ let tracks = [
         'tracks/ermita-de-la-victoria-mirador-de-les-tres-creus-penya-roja-p.gpx',
         'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
         'tracks/7-gorgs-destiula.gpx',
+        'tracks/castellar-del-valles-puig-de-la-creu-font-del-gurri-can-padr.gpx',
         'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
         'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx',
         'tracks/saint-jacques-des-allemands-lago-blu-rifugio-mezzalama-refug.gpx',
