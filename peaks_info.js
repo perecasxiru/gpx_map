@@ -2607,7 +2607,7 @@ var json_peaks = [
         "lat": 41.6292076749,
         "lon": 2.10122891326,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puig-de-la-creu/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Puig de la Força",
