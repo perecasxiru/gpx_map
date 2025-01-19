@@ -82,6 +82,7 @@ let tracks = [
         'tracks/cal-traginer-sant-pau-de-casserres-panta-de-casserres-cal-tr.gpx',
         'tracks/pirin-vihren.gpx',
         'tracks/hoyo-del-portillo-refugio-poqueira-mulhacen-hoyo-del-portill.gpx',
+        'tracks/castellcir-castell-de-la-popa-castellcir (1).gpx',
         'tracks/santa-cecilia-canal-font-del-llum-portell-migdia-sant-jeroni.gpx',
         'tracks/moia-moli-de-la-crespiera-creu-vermella-ferrerons-moia.gpx',
         'tracks/pont-de-pedret-sant-quirze-de-pedret-montsent-pont-de-pedret.gpx',
