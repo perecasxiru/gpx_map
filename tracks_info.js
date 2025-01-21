@@ -200,6 +200,7 @@ let tracks = [
         'tracks/duilhac-castell-de-perapertusa-rofiac-de-las-corbieras-duilh.gpx',
         'tracks/ermita-de-la-victoria-mirador-de-les-tres-creus-penya-roja-p.gpx',
         'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
+        'tracks/moli-de-la-madella-mirador-de-sant-miquel-del-fai-y-salt-dai.gpx',
         'tracks/7-gorgs-destiula.gpx',
         'tracks/castellar-del-valles-puig-de-la-creu-font-del-gurri-can-padr.gpx',
         'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
