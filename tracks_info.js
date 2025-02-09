@@ -128,6 +128,7 @@ let tracks = [
         'tracks/cadaques.gpx',
         'tracks/can-coll-geocaching-can-coll.gpx',
         'tracks/lestany-serrat-de-lhorabona-dolmen-del-puig-rodo.gpx',
+        'tracks/avia-esglesia-de-sant-marti-parc-del-tossal-font-de-la-rovir.gpx',
         'tracks/cap-de-creus.gpx',
         'tracks/carretera-seva-turo-del-pou-den-sala-font-pomereta-matagalls.gpx',
         'tracks/besalu-ermita-de-loreto-esglesia-de-sant-vicenc-de-sallent-s.gpx',
