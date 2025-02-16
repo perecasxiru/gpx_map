@@ -1,5 +1,5 @@
 let tracks = [
-        'tracks/Avià - Barri de la Creu - Avià.gpx',
+        'tracks/avia-barri-de-la-creu-avia.gpx',
         'tracks/els-esquitx-refuge-des-buoillouses-la-bolloseta-estany-del-r.gpx',
         'tracks/crespia-roca-caputxa-sant-bartomeu-sant-miquel-de-la-roca-fo.gpx',
         'tracks/cavallsdelventtotal.gpx',
