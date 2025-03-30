@@ -21,6 +21,7 @@
 	<script src="peaks_info.js"></script>
 	<script src="tracks_info.js"></script>
 	<script src="gc_olds_info.js"></script>
+	<script src="sostres_info.js"></script>
 
 	<style>
 		.leaflet-tooltip {
@@ -103,6 +104,10 @@
 		const optionalTemplate = getCimTemplate("rgb(225,141,146)");
 		const optionalTemplatefound = getCimTemplate("rgb(137,213,162)");
 
+		// Sostres
+		const sostreTemplate = getCimTemplate("rgb(201,125,167)");
+		const sostreTemplatefound = getCimTemplate("rgb(97,147,33)");
+
 		// GCs
 		const gcTradTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/tr1.png"">`;
 		const gcMulTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/mu1.png"">`;
@@ -115,6 +120,8 @@
 		const gcMysTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/un1_f.png"">`;
 		const gcVirtTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/vi1_f.png"">`;
 		const gcWebTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/we1_f.png"">`;
+
+
 
 		function template2CimIcon(template){
 			return L.divIcon({
@@ -153,6 +160,42 @@
 					icon_var = template2CimIcon(optionalTemplatefound);
 				}else{
 					icon_var = template2CimIcon(optionalTemplate);
+				}
+				const wikiURL = "https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=" + tuple.nom +"&fitMapToTrails=1&page=1"
+				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
+						`<div style="text-align: center">
+							<b>${tuple.nom}</b><br>
+							${tuple.alt}m</div><br>
+							<center>
+								<a href="${wikiURL}" target="_blank">
+									<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+								</a>
+							</center>
+
+						`);
+				if (addToMap) {
+					marker.addTo(map);
+				}
+				arrayPeaks.push(marker);
+            }
+
+			return [L.layerGroup(arrayPeaks), lst.length];
+        }
+
+		function createMarkersSostres(lst, assolits, addToMap=false) {
+            const arrayPeaks = [];
+
+			lst = lst.filter(function (entry) {
+    			return (entry.completat === assolits);
+			});
+
+            for (let i = 0; i < lst.length; i++) {
+                const tuple = lst[i];
+				let icon_var
+				if (assolits) {
+					icon_var = template2CimIcon(sostreTemplatefound);
+				}else{
+					icon_var = template2CimIcon(sostreTemplate);
 				}
 				const wikiURL = "https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=" + tuple.nom +"&fitMapToTrails=1&page=1"
 				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
@@ -262,6 +305,9 @@
 			var [peaks_opcionals_assolits, len3] = createMarkersCims(json_peaks, essencials=false, assolits=true, addToMap=false);
 			var [peaks_opcionals_restants, len4] = createMarkersCims(json_peaks, essencials=false, assolits=false, addToMap=false);
 
+			var [sostres_assolits, len7] = createMarkersSostres(json_sostres, assolits=true, addToMap=false);
+			var [sostres_restants, len8] = createMarkersSostres(json_sostres, assolits=false, addToMap=false);
+
 			var [gc_olds_found, len5] = createMarkersGcs(json_gc_olds, found=true, addToMap=false);
 			var [gc_olds_miss, len6] = createMarkersGcs(json_gc_olds, found=false, addToMap=false);
 
@@ -288,6 +334,8 @@
 				[`100Cims Essencials No Assolits (${len2})`]: peaks_essencials_restants,
 				[`100Cims No Essencials Assolits (${len3})`]: peaks_opcionals_assolits,
 				[`100Cims No Essencials No Assolits (${len4})`]: peaks_opcionals_restants,
+				[`Sostres Assolits (${len7})`]: sostres_assolits,
+				[`Sostres No Assolits (${len8})`]: sostres_restants,
 				[`GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
 				[`GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
 			}, {
@@ -333,7 +381,7 @@
 			}
 			click_elements[1].click();
 			click_elements[3].click();
-			click_elements[5].click();
+			click_elements[7].click();
 
 			routes.addTo(map);
 			// var layerControl = L.control.layers(peaks, peaks).addTo(map)
