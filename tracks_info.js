@@ -182,6 +182,7 @@ let tracks = [
         'tracks/pla-de-la-barraca-cami-aeri-de-lartic-lartic-pla-de-la-barra.gpx',
         'tracks/soler-de-ferrerons-bosc-de-blades.gpx',
         'tracks/viladomiu-vell-font-freda-viladomiu-vell.gpx',
+        'tracks/suria-puig-alter-puig-gater-santa-maria-de-viladelleva-suria.gpx',
         'tracks/tavertet-turo-del-castell-puig-de-la-forca-tavertet.gpx',
         'tracks/molins-de-rei-sant-pere-romani-puig-dolorda-santa-creu-dolor.gpx',
         'tracks/coll-de-bracons-fageda-de-la-grevolosa-ermita-de-sant-nazari.gpx',
