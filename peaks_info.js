@@ -2922,7 +2922,7 @@ var json_peaks = [
         "lat": 41.81393,
         "lon": 1.785542,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puig-alter/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Puigcabrer",
