@@ -21,7 +21,7 @@ var json_sostres = [
         "lat": 42.6294790552,
         "lon": 0.698560841901,
         "completat": false,
-        "comarca": "Vall d'Aran"
+        "comarca": "Val d'Aran"
     },
     {
         "nom": "Pic de Peguera",

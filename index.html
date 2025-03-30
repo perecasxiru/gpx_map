@@ -201,7 +201,9 @@
 				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
 						`<div style="text-align: center">
 							<b>${tuple.nom}</b><br>
-							${tuple.alt}m</div><br>
+							${tuple.alt}m<br>
+							<i>${tuple.comarca}</i></div>
+							<br>
 							<center>
 								<a href="${wikiURL}" target="_blank">
 									<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
