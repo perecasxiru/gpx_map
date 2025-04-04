@@ -338,21 +338,31 @@
 				flyToBounds: false,        // On start, do not fly to bound all routes
 			});
 
+			const total_100cims_assolits = len1 + len3;
+			const total_100cims = len1 + len2 + len3 + len4;
+			const total_sostres_assolits = len7;
+			const total_sostres = len7 + len8;
+			const total_gcs_assolits = len5;
+			const total_gcs = len5 + len6;
+
 			L.control.layers({}, {
-				"100Cims-HEADER": L.layerGroup(), // Placeholder
-				[`<span>${essencialTemplatefound}</span> 100Cims Essencials Assolits (${len1})`] : peaks_essencials_assolits,
-				[`<span>${essencialTemplate}</span> 100Cims Essencials No Assolits (${len2})`]: peaks_essencials_restants,
-				[`<span>${optionalTemplatefound}</span> 100Cims No Essencials Assolits (${len3})`]: peaks_opcionals_assolits,
-				[`<span>${optionalTemplate}</span> 100Cims No Essencials No Assolits (${len4})`]: peaks_opcionals_restants,
-				"Sostres-HEADER": L.layerGroup(), // Placeholder
-				[`<span>${sostreTemplatefound}</span> Sostres Assolits (${len7})`]: sostres_assolits,
-				[`<span>${sostreTemplate}</span> Sostres No Assolits (${len8})`]: sostres_restants,
-				"GCs-HEADER": L.layerGroup(), // Placeholder
+				[`100Cims-HEADER (${total_100cims_assolits} / ${total_100cims})`]: L.layerGroup(), // Placeholder
+				[`<span>${essencialTemplatefound}</span> Essencials Assolits (${len1})`] : peaks_essencials_assolits,
+				[`<span>${essencialTemplate}</span> Essencials No Assolits (${len2})`]: peaks_essencials_restants,
+				[`<span>${optionalTemplatefound}</span> No Essencials Assolits (${len3})`]: peaks_opcionals_assolits,
+				[`<span>${optionalTemplate}</span> No Essencials No Assolits (${len4})`]: peaks_opcionals_restants,
+
+				[`Sostres-HEADER (${total_sostres_assolits} / ${total_sostres})`]: L.layerGroup(), // Placeholder
+				[`<span>${sostreTemplatefound}</span> Assolits (${len7})`]: sostres_assolits,
+				[`<span>${sostreTemplate}</span> No Assolits (${len8})`]: sostres_restants,
+
+				[`GCs-HEADER (${total_gcs_assolits} / ${total_gcs})`]: L.layerGroup(), // Placeholder
 				[`<img src="https://gsak.net/stats/maps/cacheicons/tr1_f.png" height="16"> GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
 				[`<img src="https://gsak.net/stats/maps/cacheicons/tr1.png" height="16"> GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
 			}, {
-			  position: 'topright'
+				position: 'topright'
 			}).addTo(map);
+
 
 			var filestyle = {
 				color: 'blue',
@@ -400,16 +410,35 @@
 			map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
 
 			document.querySelectorAll('.leaflet-control-layers-overlays label').forEach(label => {
-				if (label.textContent.includes('-HEADER')) {
-					label.innerHTML = `<b>${label.textContent.replace('-HEADER', '')}</b>`;
-					label.style.pointerEvents = 'none';
-					label.style.cursor = 'default';
-					label.style.fontSize = '15px';
-					label.style.marginTop = '8px';
-					label.style.borderBottom = '1px solid #ccc';
-					label.style.paddingBottom = '2px';
-				}
-			});
+        if (label.textContent.includes('-HEADER')) {
+            const headerText = label.textContent;
+            const match = headerText.match(/^(.*)-HEADER\s*\((\d+\s*\/\s*\d+)\)$/);
+
+            if (match) {
+                const title = match[1];
+                const count = match[2];
+
+                label.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
+                        <b>${title}</b>
+                        <span style="font-weight: normal; font-size: 11px; line-height: 1;">${count}</span>
+                    </div>
+                `;
+            } else {
+                label.innerHTML = `<b>${headerText.replace('-HEADER', '')}</b>`;
+            }
+
+            label.style.pointerEvents = 'none';
+            label.style.cursor = 'default';
+            label.style.fontSize = '15px';
+            label.style.marginTop = '8px';
+            label.style.borderBottom = '1px solid #ccc';
+            label.style.paddingBottom = '2px';
+
+            const input = label.querySelector('input');
+            if (input) input.style.display = 'none';
+        }
+    });
 		});
 	</script>
 </body>
