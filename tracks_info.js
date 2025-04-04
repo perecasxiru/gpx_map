@@ -201,6 +201,7 @@ let tracks = [
         'tracks/collsuspina-sant-cugat-de-gavadons-muntanya-de-pol-collsuspi.gpx',
         'tracks/cami-de-la-serra-sant-marti-xic-castell-de-voltrega-mirador-.gpx',
         'tracks/duilhac-castell-de-perapertusa-rofiac-de-las-corbieras-duilh.gpx',
+        'tracks/avia-llac-de-grauges-avia.gpx',
         'tracks/ermita-de-la-victoria-mirador-de-les-tres-creus-penya-roja-p.gpx',
         'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
         'tracks/moli-de-la-madella-mirador-de-sant-miquel-del-fai-y-salt-dai.gpx',
