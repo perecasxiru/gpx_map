@@ -167,7 +167,7 @@
 		  const zdp = `(${format(lon)}%2C${format(lat)}%2C${radius})`;
 
 		  // Construct the URL
-		  return `https://www.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&act=1&sort=trailrank&zdp=${zdp}&page=1`;
+		  return `https://www.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&act=1&loop=1&sort=trailrank&zdp=${zdp}&page=1`;
 		}
 
 		function createMarkersCims(lst, essencials, assolits, addToMap = false) {
