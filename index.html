@@ -97,6 +97,7 @@
 		let map = L.map('map', opts.map);
 
 		let routes;
+		// let routes2;
 
 		function getCimTemplate(template_var){
 			return `<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500" class="marker">
@@ -128,8 +129,6 @@
 		const gcVirtTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/vi1_f.png"">`;
 		const gcWebTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/we1_f.png"">`;
 
-
-
 		function template2CimIcon(template){
 			return L.divIcon({
 				className: "marker",
@@ -150,14 +149,14 @@
 			});
 		}
 
-		function generateWikilocURL(lat, lon, offset = 0.04) {
-		  const elevation = 100;
+		function generateWikilocURL(lat, lon, offset_view_box = 0.04) {
+		  const radius = 100;
 
 		  // Calculate bounding box
-		  const swLat = lat - offset;
-		  const swLon = lon - offset;
-		  const neLat = lat + offset;
-		  const neLon = lon + offset;
+		  const swLat = lat - offset_view_box;
+		  const swLon = lon - offset_view_box;
+		  const neLat = lat + offset_view_box;
+		  const neLon = lon + offset_view_box;
 
 		  // Format numbers with enough precision
 		  const format = num => num.toFixed(15);
@@ -165,158 +164,121 @@
 		  // Encode components
 		  const sw = `${format(swLat)}%2C${format(swLon)}`;
 		  const ne = `${format(neLat)}%2C${format(neLon)}`;
-		  const zdp = `(${format(lon)}%2C${format(lat)}%2C${elevation})`;
+		  const zdp = `(${format(lon)}%2C${format(lat)}%2C${radius})`;
 
 		  // Construct the URL
 		  return `https://www.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&act=1&sort=trailrank&zdp=${zdp}&page=1`;
 		}
 
-		function createMarkersCims(lst, essencials, assolits, addToMap=false) {
-            const arrayPeaks = [];
-			lst = lst.filter(function (entry) {
-    			return ((entry.essencial === essencials) && (entry.completat === assolits));
-			});
+		function createMarkersCims(lst, essencials, assolits, addToMap = false) {
+			const arrayPeaks = [];
 
-            for (let i = 0; i < lst.length; i++) {
-                const tuple = lst[i];
-				let icon_var
-				if (essencials && assolits) {
-					icon_var = template2CimIcon(essencialTemplatefound);
-				}else if (essencials && !assolits){
-					icon_var = template2CimIcon(essencialTemplate);
-				}else if (!essencials && assolits){
-					icon_var = template2CimIcon(optionalTemplatefound);
-				}else{
-					icon_var = template2CimIcon(optionalTemplate);
-				}
-				// const wikiURL = "https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=" + tuple.nom +"&fitMapToTrails=1&page=1"
-				const wikiURL = generateWikilocURL(tuple.lat, tuple.lon);
-				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
-						`<div style="text-align: center">
-							<b>${tuple.nom}</b><br>
-							${tuple.alt}m</div><br>
-							<center>
-								<a href="${wikiURL}" target="_blank">
-									<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
-								</a>
-							</center>
+			const iconTemplate = (essencials && assolits) ? essencialTemplatefound :
+								 (essencials && !assolits) ? essencialTemplate :
+								 (!essencials && assolits) ? optionalTemplatefound :
+								 optionalTemplate;
 
-						`);
-				if (addToMap) {
-					marker.addTo(map);
-				}
+			const icon_var = template2CimIcon(iconTemplate);
+
+			const filtered = lst.filter(entry => entry.essencial === essencials && entry.completat === assolits);
+
+			filtered.forEach(entry => {
+				const wikiURL = generateWikilocURL(entry.lat, entry.lon);
+
+				const popup = `
+					<div style="text-align: center">
+						<b>${entry.nom}</b><br>
+						${entry.alt}m
+					</div><br>
+					<center>
+						<a href="${wikiURL}" target="_blank">
+							<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+						</a>
+					</center>
+				`;
+
+				const marker = L.marker([entry.lat, entry.lon], { icon: icon_var }).bindPopup(popup);
+				if (addToMap) marker.addTo(map);
 				arrayPeaks.push(marker);
-            }
-
-			return [L.layerGroup(arrayPeaks), lst.length];
-        }
-
-		function createMarkersSostres(lst, assolits, addToMap=false) {
-            const arrayPeaks = [];
-
-			lst = lst.filter(function (entry) {
-    			return (entry.completat === assolits);
 			});
 
-            for (let i = 0; i < lst.length; i++) {
-                const tuple = lst[i];
-				let icon_var
-				if (assolits) {
-					icon_var = template2CimIcon(sostreTemplatefound);
-				}else{
-					icon_var = template2CimIcon(sostreTemplate);
-				}
-				const wikiURL = "https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=" + tuple.nom +"&fitMapToTrails=1&page=1"
-				const marker = L.marker([tuple.lat, tuple.lon], {icon: icon_var}).bindPopup(
-						`<div style="text-align: center">
-							<b>${tuple.nom}</b><br>
-							${tuple.alt}m<br>
-							<i>${tuple.comarca}</i></div>
-							<br>
-							<center>
-								<a href="${wikiURL}" target="_blank">
-									<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
-								</a>
-							</center>
-
-						`);
-				if (addToMap) {
-					marker.addTo(map);
-				}
-				arrayPeaks.push(marker);
-            }
-
-			return [L.layerGroup(arrayPeaks), lst.length];
-        }
-
-		function createMarkersGcs(lst, found, addToMap=false) {
-			const arrayGC = [];
-			lst = lst.filter(function (entry) {
-    			return (entry.Found_by_me.includes('/') === found);
-			});
-
-			for (let i = 0; i < lst.length; i++) {
-				const tuple = lst[i];
-				let icon_var;
-				if (tuple.Cache_type.includes('Traditional')){
-					if (tuple.Found_by_me.includes('/')){
-						icon_var = template2GcIcon(gcTradTemplateFound);
-					}else{
-						icon_var = template2GcIcon(gcTradTemplate);
-					}
-
-				}else if (tuple.Cache_type.includes('Multicache')){
-					if (tuple.Found_by_me.includes('/')){
-						icon_var = template2GcIcon(gcMulTemplateFound);
-					}else{
-						icon_var = template2GcIcon(gcMulTemplate);
-					}
-
-				}else if (tuple.Cache_type.includes('Unknown')){
-					if (tuple.Found_by_me.includes('/')){
-						icon_var = template2GcIcon(gcMysTemplateFound);
-					}else{
-						icon_var = template2GcIcon(gcMysTemplate);
-					}
-
-				}else if (tuple.Cache_type.includes('Virtual')){
-					if (tuple.Found_by_me.includes('/')){
-						icon_var = template2GcIcon(gcVirtTemplateFound);
-					}else{
-						icon_var = template2GcIcon(gcVirtTemplate);
-					}
-
-				}else if (tuple.Cache_type.includes('Webcam')){
-					if (tuple.Found_by_me.includes('/')){
-						icon_var = template2GcIcon(gcWebTemplateFound);
-					}else{
-						icon_var = template2GcIcon(gcWebTemplate);
-					}
-				}
-
-				let iffound = ""
-				if (tuple.Found_by_me.includes('/')){
-					iffound = "<br><br><i>Found on "+ tuple.Found_by_me;+"</i>"
-				}
-				const marker = L.marker([tuple.Latitude, tuple.Longitude], {icon: icon_var}).bindPopup(`
-						<div style="text-align: center">
-							<b><a href="https://coord.info/${tuple.Code}" style="" target="_blank">${tuple.Code}</a>
-							<br>${tuple.Waypoint_Name}</b>
-							<br>by: ${tuple.Placed_By}
-							<br>
-							<br>Placed: ${tuple.Placed}
-							<br>Difficulty: ${tuple.Diff}, Terrain: ${tuple.Tern}
-							<br>Size: ${tuple.Container}
-							${iffound}
-						</div>
-				`);
-				if (addToMap) {
-					marker.addTo(map);
-				}
-				arrayGC.push(marker);
-			}
-			return [L.layerGroup(arrayGC), lst.length]
+			return [L.layerGroup(arrayPeaks), arrayPeaks.length];
 		}
+
+		function createMarkersSostres(lst, assolits, addToMap = false) {
+			const icon_var = template2CimIcon(assolits ? sostreTemplatefound : sostreTemplate);
+			const arrayPeaks = [];
+
+			const filtered = lst.filter(entry => entry.completat === assolits);
+
+			filtered.forEach(entry => {
+				const wikiURL = `https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=${entry.nom}&fitMapToTrails=1&page=1`;
+
+				const popup = `
+					<div style="text-align: center">
+						<b>${entry.nom}</b><br>
+						${entry.alt}m<br>
+						<i>${entry.comarca}</i>
+					</div>
+					<br>
+					<center>
+						<a href="${wikiURL}" target="_blank">
+							<img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+						</a>
+					</center>
+				`;
+
+				const marker = L.marker([entry.lat, entry.lon], { icon: icon_var }).bindPopup(popup);
+				if (addToMap) marker.addTo(map);
+				arrayPeaks.push(marker);
+			});
+
+			return [L.layerGroup(arrayPeaks), arrayPeaks.length];
+		}
+
+		function createMarkersGcs(lst, found, addToMap = false) {
+			const iconTemplates = {
+				Traditional: [gcTradTemplate, gcTradTemplateFound],
+				Multicache: [gcMulTemplate, gcMulTemplateFound],
+				Unknown: [gcMysTemplate, gcMysTemplateFound],
+				Virtual: [gcVirtTemplate, gcVirtTemplateFound],
+				Webcam: [gcWebTemplate, gcWebTemplateFound]
+			};
+
+			const isFound = entry => entry.Found_by_me.includes('/');
+			const matchesFoundFilter = entry => isFound(entry) === found;
+
+			const arrayGC = [];
+
+			lst.filter(matchesFoundFilter).forEach(entry => {
+				const foundStatus = isFound(entry) ? 1 : 0;
+
+				const type = Object.keys(iconTemplates).find(t => entry.Cache_type.includes(t));
+				if (!type) return; // Skip unknown types
+
+				const icon_var = template2GcIcon(iconTemplates[type][foundStatus]);
+
+				const foundInfo = isFound(entry) ? `<br><br><i>Found on ${entry.Found_by_me}</i>` : "";
+
+				const popup = `
+					<div style="text-align: center">
+						<b><a href="https://coord.info/${entry.Code}" target="_blank">${entry.Code}</a><br>${entry.Waypoint_Name}</b>
+						<br>by: ${entry.Placed_By}
+						<br><br>Placed: ${entry.Placed}
+						<br>Difficulty: ${entry.Diff}, Terrain: ${entry.Tern}
+						<br>Size: ${entry.Container}
+						${foundInfo}
+					</div>
+				`;
+
+				const marker = L.marker([entry.Latitude, entry.Longitude], { icon: icon_var }).bindPopup(popup);
+				if (addToMap) marker.addTo(map);
+				arrayGC.push(marker);
+			});
+
+			return [L.layerGroup(arrayGC), arrayGC.length];
+		}
+
 
 		map.on('plugins_loaded', function(e) {
 
@@ -360,6 +322,27 @@
 				flyToBounds: false,        // On start, do not fly to bound all routes
 			});
 
+			/*
+			routes2 = L.gpxGroup(['lanzarote-litoral-del-parc-nacional-de-timanfaya-tram-de-pla.gpx'], {
+				// These settings can be found in libs/leaflet-gpxgroup.js
+				highlight: {
+					color: '#fff100'
+				},
+				points: points,
+				points_options: opts.points,
+				elevation: true,
+				elevation_options: opts.elevation,
+				legend: false,
+				legend_options: {
+				  position: "topright",
+				  collapsed: true,
+				},
+				// distanceMarkers: true,
+				flyToBounds: false,        // On start, do not fly to bound all routes
+			});
+
+			 */
+
 			const total_100cims_assolits = len1 + len3;
 			const total_100cims = len1 + len2 + len3 + len4;
 			const total_sostres_assolits = len7;
@@ -385,7 +368,6 @@
 				position: 'topright'
 			}).addTo(map);
 
-
 			var filestyle = {
 				color: 'blue',
 				opacity: 1.0,
@@ -394,29 +376,37 @@
 				clickable: false,
 			};
 
-			// L.Control.FileLayerLoad.LABEL = '<img class="iconstyle" src="http://gsak.net/stats/maps/cacheicons/folder.svg" alt="file icon"/>';
+			// Create and hide the layer control initially
 			var mapLayerControl = L.control.layers({}, {}, {
 				position: 'topleft'
-			})
+			});
+			mapLayerControl.addTo(map);
+
+			// Hide the layer control's DOM element initially
+			var controlContainer = mapLayerControl.getContainer();
+			controlContainer.style.display = 'none';
+
 			var control = L.Control.fileLayerLoad({
 				layerOptions: {
-                style: filestyle,
-                pointToLayer: function (data, latlng) {
-                    return null
-                }
-            }
+					style: filestyle,
+					pointToLayer: function (data, latlng) {
+						return null;
+					}
+				}
 			}, {
 				position: 'topright'
 			}).addTo(map);
 
 			control.loader.on('data:loaded', function (e) {
-            	var layer = e.layer;
-            	console.log(layer);
-            	// Add to map layer switcher
-        		mapLayerControl.addOverlay(layer, e.filename);
-        	});
+				var layer = e.layer;
+				console.log(layer);
 
-			mapLayerControl.addTo(map);
+				// Add to layer control
+				mapLayerControl.addOverlay(layer, e.filename);
+
+				// Show the control if it was hidden
+				controlContainer.style.display = '';
+			});
 
 			var click_elements = document.getElementsByClassName('leaflet-top leaflet-right')[0].getElementsByClassName("leaflet-control-layers-selector");
 			for (let i = 1;i < click_elements.length;i++) {
@@ -428,40 +418,97 @@
 			click_elements[10].click();
 
 			routes.addTo(map);
+			routes2.addTo(map);
 			// var layerControl = L.control.layers(peaks, peaks).addTo(map)
 			map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
 
 			document.querySelectorAll('.leaflet-control-layers-overlays label').forEach(label => {
-        if (label.textContent.includes('-HEADER')) {
-            const headerText = label.textContent;
-            const match = headerText.match(/^(.*)-HEADER\s*\((\d+\s*\/\s*\d+)\)$/);
+			if (label.textContent.includes('-HEADER')) {
+				const headerText = label.textContent;
+				const match = headerText.match(/^(.*)-HEADER\s*\((\d+\s*\/\s*\d+)\)$/);
 
-            if (match) {
-                const title = match[1];
-                const count = match[2];
+				if (match) {
+					const title = match[1];
+					const count = match[2];
 
-                label.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
-                        <b>${title}</b>
-                        <span style="font-weight: normal; font-size: 11px; line-height: 1;">${count}</span>
-                    </div>
-                `;
-            } else {
-                label.innerHTML = `<b>${headerText.replace('-HEADER', '')}</b>`;
-            }
+					label.innerHTML = `
+						<div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
+							<b>${title}</b>
+							<span style="font-weight: normal; font-size: 11px; line-height: 1;">${count}</span>
+						</div>
+					`;
+				} else {
+					label.innerHTML = `<b>${headerText.replace('-HEADER', '')}</b>`;
+				}
 
-            label.style.pointerEvents = 'none';
-            label.style.cursor = 'default';
-            label.style.fontSize = '15px';
-            label.style.marginTop = '8px';
-            label.style.borderBottom = '1px solid #ccc';
-            label.style.paddingBottom = '2px';
+				label.style.pointerEvents = 'none';
+				label.style.cursor = 'default';
+				label.style.fontSize = '15px';
+				label.style.marginTop = '8px';
+				label.style.borderBottom = '1px solid #ccc';
+				label.style.paddingBottom = '2px';
 
-            const input = label.querySelector('input');
-            if (input) input.style.display = 'none';
-        }
-    });
+				const input = label.querySelector('input');
+				if (input) input.style.display = 'none';
+			}
 		});
+
+		/*
+		let layer;
+		let controlElevation = L.control.elevation(opts.elevation);
+
+		// FileLayer
+		L.Control.FileLayerLoad.TITLE = 'Load local GPX file';
+		L.Control.FileLayerLoad.LABEL =
+			'<svg title="upload a gpx file" style="width: 20px;height: 100%;" version="1.1" id="folder" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 450.583 450.584" style="enable-background:new 0 0 450.583 450.584;" xml:space="preserve"><g fill="#000000"><path d="M448.21,188.658c-1.897-2.242-4.688-3.535-7.629-3.535H9.999c-2.938,0-5.729,1.293-7.629,3.535c-1.898,2.242-2.717,5.207-2.234,8.106l29.547,177.704c1.838,11.158,11.379,19.256,22.688,19.256h345.842c11.31,0,20.851-8.098,22.687-19.24l29.549-177.72C450.929,193.864,450.111,190.899,448.21,188.658z"/><path d="M413.984,104.678c0-7.661-6.211-13.874-13.875-13.874H194.212V70.735c0-7.664-6.211-13.875-13.873-13.875H50.472c-7.662,0-13.873,6.211-13.873,13.875v82.418h377.386L413.984,104.678L413.984,104.678z"/></g></svg>'
+			+ '<p class="help"></p>';
+
+		let fileLayer = L.Control.fileLayerLoad({
+			formats: ['.gpx'],
+			position: "topleft",
+			fitBounds: true,
+			fileSizeLimit: 1024 *10,
+			layerOptions: {
+				style: function (geoJsonFeature) {
+					return {
+						color: '#3366cc',
+						opacity: 0.85,
+						weight: 4,
+						clickable: false
+					};
+				},
+				onEachFeature: function(d, layer) {
+					controlElevation.addData(d, layer);
+				},
+				// pointToLayer: function(data, latlng) {
+				// 	return L.circleMarker(latlng, {});
+				// }
+			},
+		});
+
+		fileLayer.addTo(map);
+
+		fileLayer.loader.on('data:error', function(e) {
+			console.error(e);
+		});
+
+		fileLayer.loader.on('data:loading', function(e) {
+			document.querySelector('.help').style.display = 'none';
+			console.info(e);
+			// controlElevation.clear();
+		});
+
+		fileLayer.loader.on('data:loaded', function(e) {
+			console.info(e);
+			// layersControl.addOverlay(e.layer, e.filename);
+			if (layer) layer.remove()
+			layer = e.layer;
+			if (!controlElevation._map) controlElevation.addTo(map);
+			else controlElevation.redraw();
+		});
+
+		*/
+	});
 	</script>
 </body>
 
