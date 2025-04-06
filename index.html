@@ -117,17 +117,17 @@
 		const sostreTemplatefound = getCimTemplate("rgb(97,147,33)");
 
 		// GCs
-		const gcTradTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/tr1.png"">`;
-		const gcMulTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/mu1.png"">`;
-		const gcMysTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/un1.png"">`;
-		const gcVirtTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/vi1.png"">`;
-		const gcWebTemplate = `<img src="https://gsak.net/stats/maps/cacheicons/we1.png"">`;
+		const gcTradTemplate = `<img src="images/tr1.png"">`;
+		const gcMulTemplate = `<img src="images/mu1.png"">`;
+		const gcMysTemplate = `<img src="images/un1.png"">`;
+		const gcVirtTemplate = `<img src="images/vi1.png"">`;
+		const gcWebTemplate = `<img src="images/we1.png"">`;
 
-		const gcTradTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/tr1_f.png"">`;
-		const gcMulTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/mu1_f.png"">`;
-		const gcMysTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/un1_f.png"">`;
-		const gcVirtTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/vi1_f.png"">`;
-		const gcWebTemplateFound = `<img src="https://gsak.net/stats/maps/cacheicons/we1_f.png"">`;
+		const gcTradTemplateFound = `<img src="images/tr1_f.png"">`;
+		const gcMulTemplateFound = `<img src="images/mu1_f.png"">`;
+		const gcMysTemplateFound = `<img src="images/un1_f.png"">`;
+		const gcVirtTemplateFound = `<img src="images/vi1_f.png"">`;
+		const gcWebTemplateFound = `<img src="images/we1_f.png"">`;
 
 		function template2CimIcon(template){
 			return L.divIcon({
@@ -304,7 +304,7 @@
 			var [gc_olds_found, len5] = createMarkersGcs(json_gc_olds, found=true, addToMap=false);
 			var [gc_olds_miss, len6] = createMarkersGcs(json_gc_olds, found=false, addToMap=false);
 
-			routes = L.gpxGroup(tracks, {
+			routes = L.gpxGroup(tracks.map(t => t.file), {
 				// These settings can be found in libs/leaflet-gpxgroup.js
 				highlight: {
 					color: '#fff100'
@@ -320,6 +320,40 @@
 				},
 				// distanceMarkers: true,
 				flyToBounds: false,        // On start, do not fly to bound all routes
+			});
+
+			// a set of unique tags
+			const uniqueTags = new Set();
+
+			routes.on('route_loaded', function(e) {
+			  const route = e.route;
+
+			  // Get matching track (assuming order matches routes._loadedCount)
+			  const matchingTrack = tracks[routes._loadedCount];
+
+			  if (!matchingTrack) {
+				console.error('No matching track for route:', route);
+				return;
+			  }
+
+			  route.tags = matchingTrack.tags;
+			  //console.log(`Assigned tags to route: ${route.options.name}`, route.tags);
+
+			  console.log(route.options.name, matchingTrack.file)
+			  // Safely loop through layers to find the SVG paths
+			  Object.values(route._layers).forEach(layer => {
+				if (layer._path) {
+				  layer._path.setAttribute('data-tags', matchingTrack.tags.join(','));
+				  layer._path.setAttribute('title', e.route.options.name);
+				  layer._path.dataset.gpx = matchingTrack.file;
+
+				  //add each tag to the set
+					for (let i = 0; i <matchingTrack.tags.length; i++) {
+						uniqueTags.add(matchingTrack.tags[i]);
+					}
+				  //console.log('Tags for path:', matchingTrack.tags);
+				}
+			  });
 			});
 
 			/*
@@ -362,8 +396,8 @@
 				[`<span>${sostreTemplate}</span> No Assolits (${len8})`]: sostres_restants,
 
 				[`GCs-HEADER (${total_gcs_assolits} / ${total_gcs})`]: L.layerGroup(), // Placeholder
-				[`<img src="https://gsak.net/stats/maps/cacheicons/tr1_f.png" height="16"> GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
-				[`<img src="https://gsak.net/stats/maps/cacheicons/tr1.png" height="16"> GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
+				[`<img src="images/tr1_f.png" height="16"> GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
+				[`<img src="images/tr1.png" height="16"> GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
 			}, {
 				position: 'topright'
 			}).addTo(map);
@@ -452,6 +486,57 @@
 				if (input) input.style.display = 'none';
 			}
 		});
+
+
+		function filterPathsByTags(selectedTags) {
+		  console.log('Selected tags:', selectedTags);
+		  const allPaths = document.querySelectorAll('path.leaflet-interactive');
+
+		  allPaths.forEach(path => {
+			const tags = path.getAttribute('data-tags')?.split(',') || [];
+			const matches = selectedTags.length === 0 || selectedTags.every(tag => tags.includes(tag));
+			path.style.display = matches ? 'inline' : 'none';
+			console.log(path, matches);
+		  });
+		}
+
+		function updateTagFilterFromMap(tagLayers) {
+		  const selectedTags = [];
+
+		  if (typeof tagLayers === 'object' && tagLayers !== null) {
+			for (const [tag, layer] of Object.entries(tagLayers)) {
+			  if (map.hasLayer(layer)) {
+				selectedTags.push(tag);
+			  }
+			}
+		  }
+
+		  filterPathsByTags(selectedTags);
+		}
+
+		routes.on('loaded', function(e) {
+			console.log(uniqueTags);
+			// create a layer per tag
+			const tagLayers = {};
+			uniqueTags.forEach(tag => {
+				tagLayers[tag] = L.layerGroup();
+				mapLayerControl._addLayer(tagLayers[tag], tag, true);
+			});
+
+			//on tag layer changed, hide all paths
+			map.on('overlayadd', function (e) {
+			  updateTagFilterFromMap(tagLayers);
+			});
+
+			map.on('overlayremove', function (e) {
+			  updateTagFilterFromMap(tagLayers);
+			});
+
+		mapLayerControl.addTo(map);
+		});
+
+
+
 
 		/*
 		let layer;
