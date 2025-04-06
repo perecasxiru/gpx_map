@@ -1,224 +1,647 @@
-let tracks = [
-        'tracks/avia-barri-de-la-creu-avia.gpx',
-        'tracks/els-esquitx-refuge-des-buoillouses-la-bolloseta-estany-del-r.gpx',
-        'tracks/crespia-roca-caputxa-sant-bartomeu-sant-miquel-de-la-roca-fo.gpx',
-        'tracks/cavallsdelventtotal.gpx',
-        'tracks/alzina-del-sallari-la-pola-font-del-lladre-foradada-cova-del.gpx',
-        'tracks/can-capita-cova-de-laram-salt-daigua-hortsavinya-mare-de-deu.gpx',
-        'tracks/meteora-day-1.gpx',
-        'tracks/collsuspina-bauma-del-teixidor-cova-dels-ossos-els-tres-rour.gpx',
-        'tracks/estany-de-querol.gpx',
-        'tracks/aigues-termals-i-pont-gisclard-des-de-saint-pierre-dels-forc.gpx',
-        'tracks/iglesia-de-santa-maria-de-los-angeles-iglesia-de-monte-sion-.gpx',
-        'tracks/parking-son-amer-refugi-son-amer-moli-de-lluc-santuari-de-ll.gpx',
-        'tracks/congres-parc-del-carmel-parc-guell-congres.gpx',
-        'tracks/granera-santa-cecilia-el-pedro-roca-de-laliga-codol-del-cast.gpx',
-        'tracks/serra-dels-tossals.gpx',
-        'tracks/la-masieta-congost-de-mont-rebei-cova-colomera-refugi-montfa.gpx',
-        'tracks/gallifa-la-mola-sant-sadurni-de-gallifa-gallifa.gpx',
-        'tracks/coll-de-peguera-creu-de-ferro-rasos-densija-coll-de-peguera.gpx',
-        'tracks/finestres-san-vicente-san-marcos-finestres.gpx',
-        'tracks/escola-puigsoler-puigsoler-petit-puigsoler-escola-puigsoler.gpx',
-        'tracks/meteora-day-2.gpx',
-        'tracks/rupit-salt-de-sallent-sant-joan-de-les-fabregues-rupit.gpx',
-        'tracks/castellcir-castell-de-la-popa-la-sauva-negra-castellcir.gpx',
-        'tracks/carros-de-foc-i-montardo-6-dies.gpx',
-        'tracks/sant-pere-de-serraima-pou-de-lalzinar-sant-marti-de-serraima.gpx',
-        'tracks/can-llaurador-els-carcaixells-montclar-puig-de-les-cols-cova.gpx',
-        'tracks/les-ferreres-castellets-les-agudes-puig-sacarbassa-les-ferre.gpx',
-        'tracks/la-vall-de-marfa.gpx',
-        'tracks/ruta-de-les-colonies.gpx',
-        'tracks/santuari-de-corbera-cogullo-destela.gpx',
-        'tracks/coll-de-faja-coll-sabassa-ermita-de-sant-grau-dentreperes-er.gpx',
-        'tracks/moia-mirador-de-la-creu-moia.gpx',
-        'tracks/cal-traginer-serrat-de-la-madrona-bauma-de-les-7-portes-cal-.gpx',
-        'tracks/vallcebre-el-turo-cami-aeri-de-lartic-lartic-cingles-de-vall.gpx',
-        'tracks/la-puda-puig-cendros-sant-salvador-de-les-espases-la-puda.gpx',
-        'tracks/lestany-puig-rodo-dolmen-de-puig-rodo-puig-espeltos-lestany.gpx',
-        'tracks/siurana-i-toll-de-la-palla.gpx',
-        'tracks/la-figuera-cova-des-migdia-puig-de-balitx-la-figuera.gpx',
-        'tracks/castellnou-de-bages-turo-de-la-torre-perello-el-putxot-caste.gpx',
-        'tracks/esglesia-de-sant-marti-castell-de-centelles-turo-de-lantiga-.gpx',
-        'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx',
-        'tracks/parking-estacion-de-esqui-cambre-daze.gpx',
-        'tracks/deltebre-illa-de-buda-la-tancada-deltebre.gpx',
-        'tracks/vallter-pic-de-bastiments-pic-de-freser-pic-de-linfern-estan.gpx',
-        'tracks/poblat-iberic-i-puig-castellar.gpx',
-        'tracks/serra-del-picancel-serrat-del-migdia-cingles-de-la-por-sant-.gpx',
-        'tracks/sant-grau-de-lardenya-menir-llach-cadiretes-paradolmen-garci.gpx',
-        'tracks/mirador-del-silenci-pla-boixer-puig-de-la-creu-rocallarga-ba.gpx',
-        'tracks/lampolla-lametlla-de-mar.gpx',
-        'tracks/estany-del-mig-estany-de-mes-amunt-i-estany-primer-des-de-or.gpx',
-        'tracks/presa-de-cavallers-refugi-ventosa-i-calvell-punta-alta-comal.gpx',
-        'tracks/collada-del-roset-castell-del-roset-cap-oest-de-la-gotzera-t.gpx',
-        'tracks/les-preses-volca-raco-ermites-rocalladre-cova-xenacs-les-pre.gpx',
-        'tracks/lametlla-de-merola-cal-riera-lametlla-de-merola.gpx',
-        'tracks/passejadaperalcudia.gpx',
-        'tracks/pedret-cova-den-massana-cingles-de-la-por-sant-miquel-de-les.gpx',
-        'tracks/llac-de-grauges-sant-vicenc-dobiols-salt-del-moli-de-bellus-.gpx',
-        'tracks/lescala-bunquers-lescala.gpx',
-        'tracks/sant-joan-de-montdarn-sant-marti-de-balaguer-sant-joan-de-mo.gpx',
-        'tracks/la-quar-serrat-de-la-pilosa-roca-del-capella-sant-isidre-la-.gpx',
-        'tracks/pratdip-cavall-bernat-montredon-pratdip.gpx',
-        'tracks/pla-de-can-tura-santa-maria-de-finestres-castell-de-finestre.gpx',
-        'tracks/monestir-de-montserrat-creu-de-sant-miquel-sant-joan-santa-m.gpx',
-        'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx',
-        'tracks/cal-pallot-bauma-guillotera-cal-pallot.gpx',
-        'tracks/cal-traginer-serrat-de-la-madrona-cal-traginer.gpx',
-        'tracks/collserola.gpx',
-        'tracks/vinya-nova-montgros-vinya-nova.gpx',
-        'tracks/mura-pujol-del-llobet-la-mata-foradada-del-balco-balma-serra.gpx',
-        'tracks/salkantay-trek-macchu-picchu-5-dies.gpx',
-        'tracks/castell-de-lareny-puig-lluent-sant-julia-de-cosp-castell-de-.gpx',
-        'tracks/pirin-lakes.gpx',
-        'tracks/cal-sagal-ermita-de-sant-sadurni-el-castellot-cal-sagal.gpx',
-        'tracks/balma-de-les-set-portes-embassament-de-cal-pebras-i-font-de-.gpx',
-        'tracks/collado-pandebano-bulnes-refugio-de-urriellu-collado-pandeba.gpx',
-        'tracks/sant-julia-de-cabrera-collsacabra-sant-julia-de-cabrera.gpx',
-        'tracks/pedraforca.gpx',
-        'tracks/adou-del-bastareny-sant-roma-doreis-pont-de-lafrau-dels-cort.gpx',
-        'tracks/gurb-creu-de-gurb-font-del-puig-bosc-encantat-sant-andreu-de.gpx',
-        'tracks/santa-maria-de-besora-castell-de-besora-bufadors-de-bevi-san.gpx',
-        'tracks/costa-brava-14a-cales-castell-crit-estreta-corbs-barraca-den.gpx',
-        'tracks/cal-traginer-sant-pau-de-casserres-panta-de-casserres-cal-tr.gpx',
-        'tracks/pirin-vihren.gpx',
-        'tracks/hoyo-del-portillo-refugio-poqueira-mulhacen-hoyo-del-portill.gpx',
-        'tracks/santa-cecilia-canal-font-del-llum-portell-migdia-sant-jeroni.gpx',
-        'tracks/moia-moli-de-la-crespiera-creu-vermella-ferrerons-moia.gpx',
-        'tracks/pont-de-pedret-sant-quirze-de-pedret-montsent-pont-de-pedret.gpx',
-        'tracks/font-dels-enamorats-cova-de-queredes-cova-del-moro-font-dels.gpx',
-        'tracks/campllong-lescletxa-campllong.gpx',
-        'tracks/santuari-de-puiggracios-grau-mercader-cingles-de-berti-la-tr.gpx',
-        'tracks/sant-vicenc-de-torello-castell-de-torello-serrat-alt-sant-vi.gpx',
-        'tracks/senda-del-cares.gpx',
-        'tracks/montserrat-coll-de-la-macana-refugi-vicenc-barbe-coll-del-po.gpx',
-        'tracks/lestany-collet-de-sant-pere-coll-del-torn-ermita-de-sant-miq.gpx',
-        'tracks/gualter-mirador-de-rialb-riu-segre-monestir-de-santa-maria-d.gpx',
-        'tracks/aiguafreda-tagamanent-aiguafreda.gpx',
-        'tracks/pedret-sant-quirze-de-pedret-la-terma-alta-el-castellot-pedr.gpx',
-        'tracks/camping-lagos-de-somiedo-el-valle-lago-del-valle-lago-cerver.gpx',
-        'tracks/gr-92-roses-cadaques.gpx',
-        'tracks/font-de-tarrades-puig-de-casadevall-puig-del-far-cingles-del.gpx',
-        'tracks/camping-saiol-gorgs-sant-jaume-de-frontanya-camping-saiol.gpx',
-        'tracks/lametlla-de-casserres-sant-vicenc-dobiols-lametlla-de-casser.gpx',
-        'tracks/fontalba-puigmal-nuria-fontalba.gpx',
-        'tracks/moia-castell-de-clara-moia.gpx',
-        'tracks/taradell-cuines-den-rocaguinarda-lenclusa-bauma-grossa-caste.gpx',
-        'tracks/rentador-de-llana-la-serradora-fonts-calents-vinyota.gpx',
-        'tracks/greixer-canal-de-la-serp-geocaching-penyes-altes-de-moixero-.gpx',
-        'tracks/everest-trail.gpx',
-        'tracks/matadepera-torrent-del-rajant-cova-den-manel-la-mola-matadep.gpx',
-        'tracks/p-n-cap-de-creus-etapa-3-el-port-de-la-selva-llanca-.gpx',
-        'tracks/malanyeu-griell-de-cal-pigot-la-foradada-cap-de-la-baga-de-c.gpx',
-        'tracks/rasos-de-peguera-torreta-dels-enginyers-rasos-de-baix-el-ped.gpx',
-        'tracks/font-freda-gallina-pelada-rasos-densija-creu-de-ferro-serrat.gpx',
-        'tracks/camping-canon-do-sil-monasterio-sta-cristina-canon-de-sil-ca.gpx',
-        'tracks/el-catllaras-monestir-de-lillet-pr-c-52-roca-del-castell-xal.gpx',
-        'tracks/moia-sant-pere-de-ferrarons-serrat-de-ferrarons-moia.gpx',
-        'tracks/toirigo-estanys-de-gemena-besiberri-sud-pic-de-comaloforno-p.gpx',
-        'tracks/font-negra-sant-pere-de-la-madrona-santuari-de-queralt-salt-.gpx',
-        'tracks/puigsacalm-puisacalm-xic.gpx',
-        'tracks/coll-de-nualard-serrat-de-sant-joan-coll-de-nualard.gpx',
-        'tracks/el-farell-mirador-serra-llisa-pic-del-vent-el-farell.gpx',
-        'tracks/lestany-puig-de-la-caritat-lestany.gpx',
-        'tracks/sant-onofre-santa-helena-sant-pere-de-rodes-castell-verdera-.gpx',
-        'tracks/cal-rosal-casa-del-salt-serra-de-can-ponc-cal-rosal.gpx',
-        'tracks/ripoll-sant-joan-de-les-abadeses-ogassa-ruta-del-ferro-i-el-.gpx',
-        'tracks/coll-de-pal-taga-puig-de-coma-dolla-puig-estela-coll-de-pal.gpx',
-        'tracks/cadaques.gpx',
-        'tracks/can-coll-geocaching-can-coll.gpx',
-        'tracks/lestany-serrat-de-lhorabona-dolmen-del-puig-rodo.gpx',
-        'tracks/avia-esglesia-de-sant-marti-parc-del-tossal-font-de-la-rovir.gpx',
-        'tracks/cap-de-creus.gpx',
-        'tracks/carretera-seva-turo-del-pou-den-sala-font-pomereta-matagalls.gpx',
-        'tracks/besalu-ermita-de-loreto-esglesia-de-sant-vicenc-de-sallent-s.gpx',
-        'tracks/monistrol-de-calders-gorgs-blaus-estacio-de-la-coma-salt-de-.gpx',
-        'tracks/baga-roca-tirabal-turbians-font-de-la-vinya-vella-baga.gpx',
-        'tracks/estivella-pedro-dels-quatre-batlles-puig-de-les-morreres-la-.gpx',
-        'tracks/argentona-castell-de-burriac-argentona.gpx',
-        'tracks/la-fageda-den-jorda.gpx',
-        'tracks/aparcament-rasos-de-peguera-peguera-refugi-densija-gallina-p.gpx',
-        'tracks/salga-aguda-des-del-pont-del-climent.gpx',
-        'tracks/moia-font-del-moli-del-vent-cova-del-drac-de-vilarjoan-dolme.gpx',
-        'tracks/pi-den-xandri-geocaching-pi-den-xandri.gpx',
-        'tracks/100-cims-e-pica-destats-3144m-aparcament-de-la-molinassa-pic.gpx',
-        'tracks/cal-traginer-alzina-dels-colls-serrat-de-la-madrona-sant-sad.gpx',
-        'tracks/santa-fe-les-agudes-turo-de-lhome-santa-fe.gpx',
-        'tracks/espigantosa-refugi-angel-orus-ibon-de-llardaneta-forqueta-no.gpx',
-        'tracks/santa-eugenia-de-berga.gpx',
-        'tracks/estels-del-sud-5-dies.gpx',
-        'tracks/parquing-de-la-quar-la-quar-de-bergueda-les-tallades-salga-p.gpx',
-        'tracks/zurich-uetliberg-zurich.gpx',
-        'tracks/sants-metges-sant-salvador-la-bofia-panta-de-lespunyola-sant.gpx',
-        'tracks/via-verda-del-llobregat.gpx',
-        'tracks/coll-de-falgars-roca-del-catllaras-coll-de-falgars.gpx',
-        'tracks/cova-del-guiu.gpx',
-        'tracks/ruta_fonts_gironella.gpx',
-        'tracks/la-barata-bunquer-azana-roca-corb-balma-de-larca-turo-de-la-.gpx',
-        'tracks/bugarach-lac-de-la-vene-la-fenetre-de-bugarach-pech-de-bugar.gpx',
-        'tracks/castelltercol-font-de-la-blada-dolmen-del-mas-clami-castellt.gpx',
-        'tracks/balandrau.gpx',
-        'tracks/rila-lakes-day-7-lakes-ivan-vazov-hut.gpx',
-        'tracks/can-bosch-pou-de-glac-dolmen-de-ca-larenes-pi-cargolat-santu.gpx',
-        'tracks/castellcir-castell-de-la-popa-castellcir-2.gpx',
-        'tracks/la-pobla-de-lillet-castell-de-lillet-mines-del-catllaras-san.gpx',
-        'tracks/olympos-oros-prionia-refuge-a-skala-skolio.gpx',
-        'tracks/monistrol-de-calders-gorg-de-saladic-mirador-del-pla-de-trul.gpx',
-        'tracks/7-egg-trail-hoch-ybrig-brunni.gpx',
-        'tracks/la-pollosa-creu-de-castellar-puig-castellar-cau-de-la-guilla.gpx',
-        'tracks/alpens-puig-cornador-santa-margarida-de-vinyoles-sant-marti-.gpx',
-        'tracks/moia-grony-de-la-torre-moia.gpx',
-        'tracks/albio-tossal-de-suro-albio.gpx',
-        'tracks/lestartit-cala-calella-cala-pedrosa-lestartit.gpx',
-        'tracks/cuber-puig-de-sa-rateta-puig-de-na-franquesa-puig-de-lofre-c.gpx',
-        'tracks/port-vendres-phare-du-cap-bear-cap-bear-port-vendres.gpx',
-        'tracks/vallcebre-santa-magdalena-les-cambrotes-tossal-llisol-sant-r.gpx',
-        'tracks/avia-morral-de-sobrestrada-el-grau-sant-andreu-de-la-serreta.gpx',
-        'tracks/el-piteu-turo-de-comellats-turo-de-lermita-avenc-de-la-dona-.gpx',
-        'tracks/de-la-guardia-al-soler-pel-canal-daigua.gpx',
-        'tracks/refugi-de-malniu-puigpedros-estany-de-malniu-refugi-de-malni.gpx',
-        'tracks/pla-de-busa-el-cogul-preso-de-busa-font-de-busa-sant-cristof.gpx',
-        'tracks/cementiri-de-sarraco-puig-den-farineta-cementiri-de-sarraco.gpx',
-        'tracks/montserrat-agulles-i-frares.gpx',
-        'tracks/pla-de-la-barraca-cami-aeri-de-lartic-lartic-pla-de-la-barra.gpx',
-        'tracks/soler-de-ferrerons-bosc-de-blades.gpx',
-        'tracks/viladomiu-vell-font-freda-viladomiu-vell.gpx',
-        'tracks/suria-puig-alter-puig-gater-santa-maria-de-viladelleva-suria.gpx',
-        'tracks/tavertet-turo-del-castell-puig-de-la-forca-tavertet.gpx',
-        'tracks/molins-de-rei-sant-pere-romani-puig-dolorda-santa-creu-dolor.gpx',
-        'tracks/coll-de-bracons-fageda-de-la-grevolosa-ermita-de-sant-nazari.gpx',
-        'tracks/matagalls-100-cims-circular-collformic-sant-segimon-sant-miq.gpx',
-        'tracks/torre-norfeu-mirador-de-norfeu-y-cova-de-les-ermites-desde-c.gpx',
-        'tracks/moia-mare-de-deu-de-la-tosca-moli-den-brotons-moia.gpx',
-        'tracks/pas-de-gegant-3-dies.gpx',
-        'tracks/coll-de-pallers-canal-del-cristall-pic-de-costa-cabriolera-v.gpx',
-        'tracks/castellcir-castell-de-la-popa-castellcir.gpx',
-        'tracks/mercadal.gpx',
-        'tracks/port-vendres-fort-saint-elme-collioure-saint-vincent-fort-ro.gpx',
-        'tracks/tramvia-de-sang.gpx',
-        'tracks/llaes-balmes-del-teixidor-castell-de-milany-llaes.gpx',
-        'tracks/berga-cova-de-can-mauri-mirador-de-la-figuerassa-coll-de-lor.gpx',
-        'tracks/serra-de-queralt.gpx',
-        'tracks/collsuspina-sant-cugat-de-gavadons-muntanya-de-pol-collsuspi.gpx',
-        'tracks/cami-de-la-serra-sant-marti-xic-castell-de-voltrega-mirador-.gpx',
-        'tracks/duilhac-castell-de-perapertusa-rofiac-de-las-corbieras-duilh.gpx',
-        'tracks/avia-llac-de-grauges-avia.gpx',
-        'tracks/ermita-de-la-victoria-mirador-de-les-tres-creus-penya-roja-p.gpx',
-        'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
-        'tracks/moli-de-la-madella-mirador-de-sant-miquel-del-fai-y-salt-dai.gpx',
-        'tracks/7-gorgs-destiula.gpx',
-        'tracks/castellar-del-valles-puig-de-la-creu-font-del-gurri-can-padr.gpx',
-        'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
-        'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx',
-        'tracks/saint-jacques-des-allemands-lago-blu-rifugio-mezzalama-refug.gpx',
-        'tracks/coll-destenalles-els-cortins-roques-de-la-coca-montcau-coll-.gpx',
-        'tracks/montornes-del-valles-castell-de-montornes-montornes-del-vall.gpx',
-        'tracks/pi-de-les-tres-branques-gegant-de-campllong-serra-dels-lladr.gpx',
-        'tracks/adri-rocacorba-adri.gpx',
-        'tracks/lac-des-bouillouses-carlit-lac-des-bouillouses.gpx',
-        'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
-        'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
-        'tracks/moia-cingles-de-montbru-moia.gpx',
-        'tracks/castell-de-clara-des-de-moia.gpx',
-        'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx'
+let tracks = [{
+    'file': 'tracks/avia-barri-de-la-creu-avia.gpx',
+    'tags': ['Berguedà','Caminada']
+}, {
+    'file': 'tracks/els-esquitx-refuge-des-buoillouses-la-bolloseta-estany-del-r.gpx',
+    'tags': ['França', 'Caminada']
+}, {
+    'file': 'tracks/crespia-roca-caputxa-sant-bartomeu-sant-miquel-de-la-roca-fo.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cavallsdelventtotal.gpx',
+    'tags': ['Travessa']
+}, {
+    'file': 'tracks/alzina-del-sallari-la-pola-font-del-lladre-foradada-cova-del.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/can-capita-cova-de-laram-salt-daigua-hortsavinya-mare-de-deu.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/meteora-day-1.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/collsuspina-bauma-del-teixidor-cova-dels-ossos-els-tres-rour.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/estany-de-querol.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/aigues-termals-i-pont-gisclard-des-de-saint-pierre-dels-forc.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/iglesia-de-santa-maria-de-los-angeles-iglesia-de-monte-sion-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/parking-son-amer-refugi-son-amer-moli-de-lluc-santuari-de-ll.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/congres-parc-del-carmel-parc-guell-congres.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/granera-santa-cecilia-el-pedro-roca-de-laliga-codol-del-cast.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/serra-dels-tossals.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-masieta-congost-de-mont-rebei-cova-colomera-refugi-montfa.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/gallifa-la-mola-sant-sadurni-de-gallifa-gallifa.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-peguera-creu-de-ferro-rasos-densija-coll-de-peguera.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/finestres-san-vicente-san-marcos-finestres.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/escola-puigsoler-puigsoler-petit-puigsoler-escola-puigsoler.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/meteora-day-2.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/rupit-salt-de-sallent-sant-joan-de-les-fabregues-rupit.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castellcir-castell-de-la-popa-la-sauva-negra-castellcir.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/carros-de-foc-i-montardo-6-dies.gpx',
+    'tags': ['Travessa']
+}, {
+    'file': 'tracks/sant-pere-de-serraima-pou-de-lalzinar-sant-marti-de-serraima.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/can-llaurador-els-carcaixells-montclar-puig-de-les-cols-cova.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/les-ferreres-castellets-les-agudes-puig-sacarbassa-les-ferre.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/la-vall-de-marfa.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/ruta-de-les-colonies.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/santuari-de-corbera-cogullo-destela.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-faja-coll-sabassa-ermita-de-sant-grau-dentreperes-er.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-mirador-de-la-creu-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-traginer-serrat-de-la-madrona-bauma-de-les-7-portes-cal-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/vallcebre-el-turo-cami-aeri-de-lartic-lartic-cingles-de-vall.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-puda-puig-cendros-sant-salvador-de-les-espases-la-puda.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lestany-puig-rodo-dolmen-de-puig-rodo-puig-espeltos-lestany.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/siurana-i-toll-de-la-palla.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-figuera-cova-des-migdia-puig-de-balitx-la-figuera.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castellnou-de-bages-turo-de-la-torre-perello-el-putxot-caste.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/esglesia-de-sant-marti-castell-de-centelles-turo-de-lantiga-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/volca-del-croscat-monument-a-joan-maragall-i-fageda-den-jord.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/parking-estacion-de-esqui-cambre-daze.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/deltebre-illa-de-buda-la-tancada-deltebre.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/vallter-pic-de-bastiments-pic-de-freser-pic-de-linfern-estan.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/poblat-iberic-i-puig-castellar.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/serra-del-picancel-serrat-del-migdia-cingles-de-la-por-sant-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-grau-de-lardenya-menir-llach-cadiretes-paradolmen-garci.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/mirador-del-silenci-pla-boixer-puig-de-la-creu-rocallarga-ba.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lampolla-lametlla-de-mar.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/estany-del-mig-estany-de-mes-amunt-i-estany-primer-des-de-or.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/presa-de-cavallers-refugi-ventosa-i-calvell-punta-alta-comal.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/collada-del-roset-castell-del-roset-cap-oest-de-la-gotzera-t.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/les-preses-volca-raco-ermites-rocalladre-cova-xenacs-les-pre.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lametlla-de-merola-cal-riera-lametlla-de-merola.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/passejadaperalcudia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pedret-cova-den-massana-cingles-de-la-por-sant-miquel-de-les.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/llac-de-grauges-sant-vicenc-dobiols-salt-del-moli-de-bellus-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lescala-bunquers-lescala.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-joan-de-montdarn-sant-marti-de-balaguer-sant-joan-de-mo.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-quar-serrat-de-la-pilosa-roca-del-capella-sant-isidre-la-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pratdip-cavall-bernat-montredon-pratdip.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pla-de-can-tura-santa-maria-de-finestres-castell-de-finestre.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/monestir-de-montserrat-creu-de-sant-miquel-sant-joan-santa-m.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-pallot-bauma-guillotera-cal-pallot.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-traginer-serrat-de-la-madrona-cal-traginer.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/collserola.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/vinya-nova-montgros-vinya-nova.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/mura-pujol-del-llobet-la-mata-foradada-del-balco-balma-serra.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/salkantay-trek-macchu-picchu-5-dies.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castell-de-lareny-puig-lluent-sant-julia-de-cosp-castell-de-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pirin-lakes.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-sagal-ermita-de-sant-sadurni-el-castellot-cal-sagal.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/balma-de-les-set-portes-embassament-de-cal-pebras-i-font-de-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/collado-pandebano-bulnes-refugio-de-urriellu-collado-pandeba.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-julia-de-cabrera-collsacabra-sant-julia-de-cabrera.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pedraforca.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/adou-del-bastareny-sant-roma-doreis-pont-de-lafrau-dels-cort.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/gurb-creu-de-gurb-font-del-puig-bosc-encantat-sant-andreu-de.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/santa-maria-de-besora-castell-de-besora-bufadors-de-bevi-san.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/costa-brava-14a-cales-castell-crit-estreta-corbs-barraca-den.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-traginer-sant-pau-de-casserres-panta-de-casserres-cal-tr.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pirin-vihren.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/hoyo-del-portillo-refugio-poqueira-mulhacen-hoyo-del-portill.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/santa-cecilia-canal-font-del-llum-portell-migdia-sant-jeroni.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-moli-de-la-crespiera-creu-vermella-ferrerons-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pont-de-pedret-sant-quirze-de-pedret-montsent-pont-de-pedret.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/font-dels-enamorats-cova-de-queredes-cova-del-moro-font-dels.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/campllong-lescletxa-campllong.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/santuari-de-puiggracios-grau-mercader-cingles-de-berti-la-tr.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-vicenc-de-torello-castell-de-torello-serrat-alt-sant-vi.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/senda-del-cares.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/montserrat-coll-de-la-macana-refugi-vicenc-barbe-coll-del-po.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lestany-collet-de-sant-pere-coll-del-torn-ermita-de-sant-miq.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/gualter-mirador-de-rialb-riu-segre-monestir-de-santa-maria-d.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/aiguafreda-tagamanent-aiguafreda.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pedret-sant-quirze-de-pedret-la-terma-alta-el-castellot-pedr.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/camping-lagos-de-somiedo-el-valle-lago-del-valle-lago-cerver.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/gr-92-roses-cadaques.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/font-de-tarrades-puig-de-casadevall-puig-del-far-cingles-del.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/camping-saiol-gorgs-sant-jaume-de-frontanya-camping-saiol.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lametlla-de-casserres-sant-vicenc-dobiols-lametlla-de-casser.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/fontalba-puigmal-nuria-fontalba.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-castell-de-clara-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/taradell-cuines-den-rocaguinarda-lenclusa-bauma-grossa-caste.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/rentador-de-llana-la-serradora-fonts-calents-vinyota.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/greixer-canal-de-la-serp-geocaching-penyes-altes-de-moixero-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/everest-trail.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/matadepera-torrent-del-rajant-cova-den-manel-la-mola-matadep.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/p-n-cap-de-creus-etapa-3-el-port-de-la-selva-llanca-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/malanyeu-griell-de-cal-pigot-la-foradada-cap-de-la-baga-de-c.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/rasos-de-peguera-torreta-dels-enginyers-rasos-de-baix-el-ped.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/font-freda-gallina-pelada-rasos-densija-creu-de-ferro-serrat.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/camping-canon-do-sil-monasterio-sta-cristina-canon-de-sil-ca.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/el-catllaras-monestir-de-lillet-pr-c-52-roca-del-castell-xal.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-sant-pere-de-ferrarons-serrat-de-ferrarons-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/toirigo-estanys-de-gemena-besiberri-sud-pic-de-comaloforno-p.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/font-negra-sant-pere-de-la-madrona-santuari-de-queralt-salt-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/puigsacalm-puisacalm-xic.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-nualard-serrat-de-sant-joan-coll-de-nualard.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/el-farell-mirador-serra-llisa-pic-del-vent-el-farell.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lestany-puig-de-la-caritat-lestany.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-onofre-santa-helena-sant-pere-de-rodes-castell-verdera-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-rosal-casa-del-salt-serra-de-can-ponc-cal-rosal.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/ripoll-sant-joan-de-les-abadeses-ogassa-ruta-del-ferro-i-el-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-pal-taga-puig-de-coma-dolla-puig-estela-coll-de-pal.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/cadaques.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/can-coll-geocaching-can-coll.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lestany-serrat-de-lhorabona-dolmen-del-puig-rodo.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/avia-esglesia-de-sant-marti-parc-del-tossal-font-de-la-rovir.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cap-de-creus.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/carretera-seva-turo-del-pou-den-sala-font-pomereta-matagalls.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/besalu-ermita-de-loreto-esglesia-de-sant-vicenc-de-sallent-s.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/monistrol-de-calders-gorgs-blaus-estacio-de-la-coma-salt-de-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/baga-roca-tirabal-turbians-font-de-la-vinya-vella-baga.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/estivella-pedro-dels-quatre-batlles-puig-de-les-morreres-la-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/argentona-castell-de-burriac-argentona.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-fageda-den-jorda.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/aparcament-rasos-de-peguera-peguera-refugi-densija-gallina-p.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/salga-aguda-des-del-pont-del-climent.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-font-del-moli-del-vent-cova-del-drac-de-vilarjoan-dolme.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pi-den-xandri-geocaching-pi-den-xandri.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/100-cims-e-pica-destats-3144m-aparcament-de-la-molinassa-pic.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cal-traginer-alzina-dels-colls-serrat-de-la-madrona-sant-sad.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/santa-fe-les-agudes-turo-de-lhome-santa-fe.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/espigantosa-refugi-angel-orus-ibon-de-llardaneta-forqueta-no.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/santa-eugenia-de-berga.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/estels-del-sud-5-dies.gpx',
+    'tags': ['Travessa']
+}, {
+    'file': 'tracks/parquing-de-la-quar-la-quar-de-bergueda-les-tallades-salga-p.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/zurich-uetliberg-zurich.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sants-metges-sant-salvador-la-bofia-panta-de-lespunyola-sant.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/via-verda-del-llobregat.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-falgars-roca-del-catllaras-coll-de-falgars.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/cova-del-guiu.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/ruta_fonts_gironella.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-barata-bunquer-azana-roca-corb-balma-de-larca-turo-de-la-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/bugarach-lac-de-la-vene-la-fenetre-de-bugarach-pech-de-bugar.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castelltercol-font-de-la-blada-dolmen-del-mas-clami-castellt.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/balandrau.gpx', 'tags': ['Caminada']}, {
+    'file': 'tracks/rila-lakes-day-7-lakes-ivan-vazov-hut.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/can-bosch-pou-de-glac-dolmen-de-ca-larenes-pi-cargolat-santu.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castellcir-castell-de-la-popa-castellcir-segon.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-pobla-de-lillet-castell-de-lillet-mines-del-catllaras-san.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/olympos-oros-prionia-refuge-a-skala-skolio.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/monistrol-de-calders-gorg-de-saladic-mirador-del-pla-de-trul.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/7-egg-trail-hoch-ybrig-brunni.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-pollosa-creu-de-castellar-puig-castellar-cau-de-la-guilla.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/alpens-puig-cornador-santa-margarida-de-vinyoles-sant-marti-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-grony-de-la-torre-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/albio-tossal-de-suro-albio.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lestartit-cala-calella-cala-pedrosa-lestartit.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cuber-puig-de-sa-rateta-puig-de-na-franquesa-puig-de-lofre-c.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/port-vendres-phare-du-cap-bear-cap-bear-port-vendres.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/vallcebre-santa-magdalena-les-cambrotes-tossal-llisol-sant-r.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/avia-morral-de-sobrestrada-el-grau-sant-andreu-de-la-serreta.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/el-piteu-turo-de-comellats-turo-de-lermita-avenc-de-la-dona-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/de-la-guardia-al-soler-pel-canal-daigua.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/refugi-de-malniu-puigpedros-estany-de-malniu-refugi-de-malni.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pla-de-busa-el-cogul-preso-de-busa-font-de-busa-sant-cristof.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cementiri-de-sarraco-puig-den-farineta-cementiri-de-sarraco.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/montserrat-agulles-i-frares.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pla-de-la-barraca-cami-aeri-de-lartic-lartic-pla-de-la-barra.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/soler-de-ferrerons-bosc-de-blades.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/viladomiu-vell-font-freda-viladomiu-vell.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/suria-puig-alter-puig-gater-santa-maria-de-viladelleva-suria.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/tavertet-turo-del-castell-puig-de-la-forca-tavertet.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/molins-de-rei-sant-pere-romani-puig-dolorda-santa-creu-dolor.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-de-bracons-fageda-de-la-grevolosa-ermita-de-sant-nazari.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/matagalls-100-cims-circular-collformic-sant-segimon-sant-miq.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/torre-norfeu-mirador-de-norfeu-y-cova-de-les-ermites-desde-c.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-mare-de-deu-de-la-tosca-moli-den-brotons-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pas-de-gegant-3-dies.gpx',
+    'tags': ['Travessa']
+}, {
+    'file': 'tracks/coll-de-pallers-canal-del-cristall-pic-de-costa-cabriolera-v.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castellcir-castell-de-la-popa-castellcir.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/mercadal.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/port-vendres-fort-saint-elme-collioure-saint-vincent-fort-ro.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/tramvia-de-sang.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/llaes-balmes-del-teixidor-castell-de-milany-llaes.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/berga-cova-de-can-mauri-mirador-de-la-figuerassa-coll-de-lor.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/serra-de-queralt.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/collsuspina-sant-cugat-de-gavadons-muntanya-de-pol-collsuspi.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/cami-de-la-serra-sant-marti-xic-castell-de-voltrega-mirador-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/duilhac-castell-de-perapertusa-rofiac-de-las-corbieras-duilh.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/avia-llac-de-grauges-avia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/ermita-de-la-victoria-mirador-de-les-tres-creus-penya-roja-p.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/club-nautic-del-panta-de-sau-morro-de-labella-tavertet.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moli-de-la-madella-mirador-de-sant-miquel-del-fai-y-salt-dai.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/7-gorgs-destiula.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castellar-del-valles-puig-de-la-creu-font-del-gurri-can-padr.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/saint-jacques-des-allemands-lago-blu-rifugio-mezzalama-refug.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/coll-destenalles-els-cortins-roques-de-la-coca-montcau-coll-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/montornes-del-valles-castell-de-montornes-montornes-del-vall.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/pi-de-les-tres-branques-gegant-de-campllong-serra-dels-lladr.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/adri-rocacorba-adri.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/lac-des-bouillouses-carlit-lac-des-bouillouses.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/la-nou-de-bergueda-sobrepuny-de-baix-sobrepuny-mines-i-agull.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/sant-julia-de-cerdanyola-coll-de-jou-cap-dels-banyadors-pas-.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/moia-cingles-de-montbru-moia.gpx',
+    'tags': ['Caminada']
+}, {
+    'file': 'tracks/castell-de-clara-des-de-moia.gpx',
+    'tags': ['Caminada']
+}, {'file': 'tracks/pi-de-les-tres-branques-castell-de-terca-sant-vicenc-de-cast.gpx', 'tags': ['Caminada']}
 ];

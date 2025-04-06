@@ -19,7 +19,7 @@
 	<script src="https://unpkg.com/togeojson@0.16.0"></script>
 	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 	<script src="peaks_info.js"></script>
-	<script src="tracks_info.js"></script>
+	<script src="tracks_info3.js"></script>
 	<script src="gc_olds_info.js"></script>
 	<script src="sostres_info.js"></script>
 
