@@ -149,6 +149,7 @@ let tracks = [
         'tracks/estels-del-sud-5-dies.gpx',
         'tracks/parquing-de-la-quar-la-quar-de-bergueda-les-tallades-salga-p.gpx',
         'tracks/zurich-uetliberg-zurich.gpx',
+        'tracks/sants-metges-sant-salvador-la-bofia-panta-de-lespunyola-sant.gpx',
         'tracks/via-verda-del-llobregat.gpx',
         'tracks/coll-de-falgars-roca-del-catllaras-coll-de-falgars.gpx',
         'tracks/cova-del-guiu.gpx',
