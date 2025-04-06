@@ -9,7 +9,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/cavallsdelventtotal.gpx',
-    'tags': ['Tipus-Travessa']
+    'tags': ['Tipus-Travessa', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/alzina-del-sallari-la-pola-font-del-lladre-foradada-cova-del.gpx',
     'tags': ['Tipus-Caminada']
@@ -69,7 +69,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/carros-de-foc-i-montardo-6-dies.gpx',
-    'tags': ['Tipus-Travessa']
+    'tags': ['Tipus-Travessa', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/sant-pere-de-serraima-pou-de-lalzinar-sant-marti-de-serraima.gpx',
     'tags': ['Tipus-Caminada']
@@ -99,7 +99,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/la-puda-puig-cendros-sant-salvador-de-les-espases-la-puda.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/lestany-puig-rodo-dolmen-de-puig-rodo-puig-espeltos-lestany.gpx',
     'tags': ['Tipus-Caminada']
@@ -138,7 +138,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/mirador-del-silenci-pla-boixer-puig-de-la-creu-rocallarga-ba.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/lampolla-lametlla-de-mar.gpx',
     'tags': ['Tipus-Caminada']
@@ -147,7 +147,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/presa-de-cavallers-refugi-ventosa-i-calvell-punta-alta-comal.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/collada-del-roset-castell-del-roset-cap-oest-de-la-gotzera-t.gpx',
     'tags': ['Tipus-Caminada']
@@ -177,7 +177,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/pratdip-cavall-bernat-montredon-pratdip.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/pla-de-can-tura-santa-maria-de-finestres-castell-de-finestre.gpx',
     'tags': ['Tipus-Caminada']
@@ -186,7 +186,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/parquing-de-collbaix-collbaix-tina-de-cal-jepot-parquing-de-.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/cal-pallot-bauma-guillotera-cal-pallot.gpx',
     'tags': ['Tipus-Caminada']
@@ -195,7 +195,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {'file': 'tracks/collserola.gpx', 'tags': ['Tipus-Caminada']}, {
     'file': 'tracks/vinya-nova-montgros-vinya-nova.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/mura-pujol-del-llobet-la-mata-foradada-del-balco-balma-serra.gpx',
     'tags': ['Tipus-Caminada']
@@ -210,7 +210,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/cal-sagal-ermita-de-sant-sadurni-el-castellot-cal-sagal.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/balma-de-les-set-portes-embassament-de-cal-pebras-i-font-de-.gpx',
     'tags': ['Tipus-Caminada']
@@ -219,16 +219,16 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/sant-julia-de-cabrera-collsacabra-sant-julia-de-cabrera.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/pedraforca.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/adou-del-bastareny-sant-roma-doreis-pont-de-lafrau-dels-cort.gpx',
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/gurb-creu-de-gurb-font-del-puig-bosc-encantat-sant-andreu-de.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/santa-maria-de-besora-castell-de-besora-bufadors-de-bevi-san.gpx',
     'tags': ['Tipus-Caminada']
@@ -300,7 +300,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/fontalba-puigmal-nuria-fontalba.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/moia-castell-de-clara-moia.gpx',
     'tags': ['Tipus-Caminada']
@@ -330,7 +330,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/font-freda-gallina-pelada-rasos-densija-creu-de-ferro-serrat.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials', '100Cims-No Essencials']
 }, {
     'file': 'tracks/camping-canon-do-sil-monasterio-sta-cristina-canon-de-sil-ca.gpx',
     'tags': ['Tipus-Caminada']
@@ -342,13 +342,13 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/toirigo-estanys-de-gemena-besiberri-sud-pic-de-comaloforno-p.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/font-negra-sant-pere-de-la-madrona-santuari-de-queralt-salt-.gpx',
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/puigsacalm-puisacalm-xic.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/coll-de-nualard-serrat-de-sant-joan-coll-de-nualard.gpx',
     'tags': ['Tipus-Caminada']
@@ -357,10 +357,10 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/lestany-puig-de-la-caritat-lestany.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/sant-onofre-santa-helena-sant-pere-de-rodes-castell-verdera-.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/cal-rosal-casa-del-salt-serra-de-can-ponc-cal-rosal.gpx',
     'tags': ['Tipus-Caminada']
@@ -369,7 +369,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/coll-de-pal-taga-puig-de-coma-dolla-puig-estela-coll-de-pal.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {'file': 'tracks/cadaques.gpx', 'tags': ['Tipus-Caminada']}, {
     'file': 'tracks/can-coll-geocaching-can-coll.gpx',
     'tags': ['Tipus-Caminada']
@@ -396,16 +396,16 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/estivella-pedro-dels-quatre-batlles-puig-de-les-morreres-la-.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials', '100Cims-No Essencials']
 }, {
     'file': 'tracks/argentona-castell-de-burriac-argentona.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/la-fageda-den-jorda.gpx',
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/aparcament-rasos-de-peguera-peguera-refugi-densija-gallina-p.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/salga-aguda-des-del-pont-del-climent.gpx',
     'tags': ['Tipus-Caminada']
@@ -417,7 +417,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/100-cims-e-pica-destats-3144m-aparcament-de-la-molinassa-pic.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/cal-traginer-alzina-dels-colls-serrat-de-la-madrona-sant-sad.gpx',
     'tags': ['Tipus-Caminada']
@@ -457,7 +457,7 @@ let tracks = [{
 }, {
     'file': 'tracks/castelltercol-font-de-la-blada-dolmen-del-mas-clami-castellt.gpx',
     'tags': ['Tipus-Caminada']
-}, {'file': 'tracks/balandrau.gpx', 'tags': ['Tipus-Caminada']}, {
+}, {'file': 'tracks/balandrau.gpx', 'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']}, {
     'file': 'tracks/rila-lakes-day-7-lakes-ivan-vazov-hut.gpx',
     'tags': ['Tipus-Caminada']
 }, {
@@ -513,10 +513,10 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/refugi-de-malniu-puigpedros-estany-de-malniu-refugi-de-malni.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/pla-de-busa-el-cogul-preso-de-busa-font-de-busa-sant-cristof.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/cementiri-de-sarraco-puig-den-farineta-cementiri-de-sarraco.gpx',
     'tags': ['Tipus-Caminada']
@@ -555,10 +555,10 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/pas-de-gegant-3-dies.gpx',
-    'tags': ['Tipus-Travessa']
+    'tags': ['Tipus-Travessa', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/coll-de-pallers-canal-del-cristall-pic-de-costa-cabriolera-v.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials', '100Cims-No Essencials']
 }, {
     'file': 'tracks/castellcir-castell-de-la-popa-castellcir.gpx',
     'tags': ['Tipus-Caminada']
@@ -573,7 +573,7 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/llaes-balmes-del-teixidor-castell-de-milany-llaes.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/berga-cova-de-can-mauri-mirador-de-la-figuerassa-coll-de-lor.gpx',
     'tags': ['Tipus-Caminada']
@@ -609,10 +609,10 @@ let tracks = [{
     'tags': ['Tipus-Caminada']
 }, {
     'file': 'tracks/puigventos-cogullo-destela-roca-dauro-torreta-dels-enginyers.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/can-ginebreda-sant-patllari-mirador-de-sant-patllari-can-gin.gpx',
-    'tags': ['Tipus-Caminada']
+    'tags': ['Tipus-Caminada', '100Cims-Tots', '100Cims-Essencials']
 }, {
     'file': 'tracks/saint-jacques-des-allemands-lago-blu-rifugio-mezzalama-refug.gpx',
     'tags': ['Tipus-Caminada']

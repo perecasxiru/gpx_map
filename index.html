@@ -365,7 +365,8 @@
 			});
 
 			// a set of unique tags
-			const uniqueTags = new Set();
+			// const uniqueTags = new Set();
+			const uniqueTags = {};
 
 			routes.on('route_loaded', function(e) {
 			  const route = e.route;
@@ -383,17 +384,18 @@
 
 			  route.tags = matchingTrack.tags;
 
-			  // Safely loop through layers to find the SVG paths
 			  Object.values(route._layers).forEach(layer => {
 				if (layer._path) {
 				  layer._path.setAttribute('data-tags', matchingTrack.tags.join(','));
-				  layer._path.setAttribute('title', e.route.options.name);
+				  layer._path.setAttribute('title', route.options.name);
 				  layer._path.dataset.gpx = matchingTrack.file;
 
-				  //add each tag to the set
-					for (let i = 0; i <matchingTrack.tags.length; i++) {
-						uniqueTags.add(matchingTrack.tags[i]);
-					}
+				  // ✅ Group tags by their prefix (supertype)
+				  for (let tag of matchingTrack.tags) {
+					const [type, value] = tag.split('-');
+					if (!uniqueTags[type]) uniqueTags[type] = new Set();
+					uniqueTags[type].add(value);
+				  }
 				}
 			  });
 			});
@@ -489,9 +491,9 @@
      			click.checked = false;
 			}
 
-			//click_elements[2].click();
-			//click_elements[4].click();
-			//click_elements[10].click();
+			click_elements[2].click();
+			click_elements[4].click();
+			click_elements[10].click();
 
 			routes.addTo(map);
 			// routes2.addTo(map);
@@ -556,23 +558,63 @@
 		}
 
 		routes.on('loaded', function(e) {
-			// create a layer per tag
-			const tagLayers = {};
-			uniqueTags.forEach(tag => {
-				tagLayers[tag] = L.layerGroup();
-				mapLayerControl._addLayer(tagLayers[tag], tag, true);
-			});
+		  const tagLayers = {};  // { [fullTag]: LayerGroup }
+		  const groupedLayerControl = {}; // { [type]: { [value]: LayerGroup } }
 
-			//on tag layer changed, hide all paths
-			map.on('overlayadd', function (e) {
-			  updateTagFilterFromMap(tagLayers);
+		  // 1. Create one layer per tag, grouped by type
+		  for (const [type, values] of Object.entries(uniqueTags)) {
+			groupedLayerControl[type] = {};
+			values.forEach(value => {
+			  const fullTag = `${type}-${value}`;
+			  const layer = L.layerGroup();
+			  tagLayers[fullTag] = layer;
+			  groupedLayerControl[type][value] = layer;
 			});
+		  }
 
-			map.on('overlayremove', function (e) {
-			  updateTagFilterFromMap(tagLayers);
-			});
+		  // 2. Add to layer control, grouped by supertype
+		  for (const [type, group] of Object.entries(groupedLayerControl)) {
+			  mapLayerControl._addLayer(L.layerGroup(), `${type}-HEADER`, true);  // or change label format
+			for (const [value, layer] of Object.entries(group)) {
+			  mapLayerControl._addLayer(layer, `${value}`, true);  // or change label format
+			}
+		  }
 
-		mapLayerControl.addTo(map);
+		  // 3. Attach layer control
+		  mapLayerControl.addTo(map);
+
+		  // 4. Watch for layer toggling
+		  map.on('overlayadd', () => updateTagFilterFromMap(tagLayers));
+		  map.on('overlayremove', () => updateTagFilterFromMap(tagLayers));
+
+		  document.querySelectorAll('.leaflet-control-layers-overlays label').forEach(label => {
+			if (label.textContent.includes('-HEADER')) {
+				const headerText = label.textContent;
+				const match = headerText.match(/^(.*)-HEADER\s*\((\d+\s*\/\s*\d+)\)$/);
+
+				if (match) {
+					const title = match[1];
+
+					label.innerHTML = `
+						<div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
+							<b>${title}</b>
+						</div>
+					`;
+				} else {
+					label.innerHTML = `<b>${headerText.replace('-HEADER', '')}</b>`;
+				}
+
+				label.style.pointerEvents = 'none';
+				label.style.cursor = 'default';
+				label.style.fontSize = '15px';
+				label.style.marginTop = '8px';
+				label.style.borderBottom = '1px solid #ccc';
+				label.style.paddingBottom = '2px';
+
+				const input = label.querySelector('input');
+				if (input) input.style.display = 'none';
+			}
+		});
 		});
 
 
