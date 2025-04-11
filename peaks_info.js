@@ -1221,7 +1221,7 @@ var json_peaks = [
         "lat": 41.5884059331,
         "lon": 1.82647684649,
         "url": "https://www.feec.cat/activitats/100-cims/cim/miranda-de-santa-magdalena/",
-        "completat": true
+        "completat": false
     },
     {
         "nom": "Miranda del Príncep",
@@ -3903,7 +3903,7 @@ var json_peaks = [
         "lat": 42.2870741235,
         "lon": 1.58419812657,
         "url": "https://www.feec.cat/activitats/100-cims/cim/torreta-del-cadi/",
-        "completat": true
+        "completat": false
     },
     {
         "nom": "Torreta del Montsià",

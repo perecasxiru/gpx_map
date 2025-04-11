@@ -19,7 +19,7 @@
 	<script src="https://unpkg.com/togeojson@0.16.0"></script>
 	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 	<script src="peaks_info.js"></script>
-	<script src="tracks_info2.js"></script>
+	<script src="tracks_info.js"></script>
 	<script src="gc_olds_info.js"></script>
 	<script src="sostres_info.js"></script>
 
@@ -33,6 +33,8 @@
 			height: 16px;
 			vertical-align: middle;
 		}
+
+
 
 	</style>
 
@@ -90,6 +92,7 @@
 				legend: false,
 				marker: "position-marker",
 				autofitBounds: false,
+				slope: "summary",
 			},
 		};
 
@@ -150,7 +153,7 @@
 		}
 
 		function generateWikilocURL(lat, lon, offset_view_box = 0.04) {
-		  const radius = 100;
+		  const radius = 200;
 
 		  // Calculate bounding box
 		  const swLat = lat - offset_view_box;
@@ -167,7 +170,7 @@
 		  const zdp = `(${format(lon)}%2C${format(lat)}%2C${radius})`;
 
 		  // Construct the URL
-		  return `https://www.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&act=1&loop=1&sort=trailrank&zdp=${zdp}&page=1`;
+		  return `https://www.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&loop=1&sort=trailrank&zdp=${zdp}&page=1`;
 		}
 
 		function createMarkersCims(lst, essencials, assolits, addToMap = false) {
@@ -446,44 +449,44 @@
 				position: 'topright'
 			}).addTo(map);
 
-			var filestyle = {
-				color: 'blue',
-				opacity: 1.0,
-				fillOpacity: 0.5,
-				weight: 4,
-				clickable: false,
-			};
-
-			// Create and hide the layer control initially
-			var mapLayerControl = L.control.layers({}, {}, {
-				position: 'topleft'
-			});
-			mapLayerControl.addTo(map);
-
-			// Hide the layer control's DOM element initially
-			var controlContainer = mapLayerControl.getContainer();
-			controlContainer.style.display = 'none';
-
-			var control = L.Control.fileLayerLoad({
-				layerOptions: {
-					style: filestyle,
-					pointToLayer: function (data, latlng) {
-						return null;
-					}
-				}
-			}, {
-				position: 'topright'
-			}).addTo(map);
-
-			control.loader.on('data:loaded', function (e) {
-				var layer = e.layer;
-
-				// Add to layer control
-				mapLayerControl.addOverlay(layer, e.filename);
-
-				// Show the control if it was hidden
-				controlContainer.style.display = '';
-			});
+			// var filestyle = {
+			// 	color: 'blue',
+			// 	opacity: 1.0,
+			// 	fillOpacity: 0.5,
+			// 	weight: 4,
+			// 	clickable: false,
+			// };
+			//
+			// // Create and hide the layer control initially
+			// var mapLayerControl = L.control.layers({}, {}, {
+			// 	position: 'topleft'
+			// });
+			// mapLayerControl.addTo(map);
+			//
+			// // Hide the layer control's DOM element initially
+			// var controlContainer = mapLayerControl.getContainer();
+			// controlContainer.style.display = 'none';
+			//
+			// var control = L.Control.fileLayerLoad({
+			// 	layerOptions: {
+			// 		style: filestyle,
+			// 		pointToLayer: function (data, latlng) {
+			// 			return null;
+			// 		}
+			// 	}
+			// }, {
+			// 	position: 'topright'
+			// }).addTo(map);
+			//
+			// control.loader.on('data:loaded', function (e) {
+			// 	var layer = e.layer;
+			//
+			// 	// Add to layer control
+			// 	mapLayerControl.addOverlay(layer, e.filename);
+			//
+			// 	// Show the control if it was hidden
+			// 	controlContainer.style.display = '';
+			// });
 
 			var click_elements = document.getElementsByClassName('leaflet-top leaflet-right')[0].getElementsByClassName("leaflet-control-layers-selector");
 			for (let i = 1;i < click_elements.length;i++) {
@@ -572,6 +575,11 @@
 			});
 		  }
 
+			var mapLayerControl = L.control.layers({}, {}, {
+				position: 'topleft'
+			});
+			mapLayerControl.addTo(map);
+
 		  // 2. Add to layer control, grouped by supertype
 		  for (const [type, group] of Object.entries(groupedLayerControl)) {
 			  mapLayerControl._addLayer(L.layerGroup(), `${type}-HEADER`, true);  // or change label format
@@ -615,6 +623,27 @@
 				if (input) input.style.display = 'none';
 			}
 		});
+
+		  let toggleButtons = document.querySelectorAll('.leaflet-left .leaflet-control-layers-toggle');
+		  let secondToggle;
+		  console.log(toggleButtons);
+			if (toggleButtons.length >= 2) {
+			  secondToggle = toggleButtons[1]; // index 1 = second element
+			  secondToggle.style.backgroundImage = "url('images/search.png')";
+			  secondToggle.style.backgroundSize = '80% 80%';
+			  secondToggle.style.backgroundRepeat = 'no-repeat';
+			  secondToggle.style.backgroundPosition = 'center';
+			  secondToggle.style.width = '30px';
+			  secondToggle.style.height = '30px';
+			}
+			toggleButtons = document.querySelectorAll('.leaflet-right .leaflet-control-layers-toggle');
+			secondToggle = toggleButtons[0]; // index 1 = second element
+			  //secondToggle.style.backgroundImage = "url('images/search.png')";
+			  secondToggle.style.backgroundSize = '80% 80%';
+			  secondToggle.style.backgroundRepeat = 'no-repeat';
+			  secondToggle.style.backgroundPosition = 'center';
+			  secondToggle.style.width = '30px';
+			  secondToggle.style.height = '30px';
 		});
 
 
