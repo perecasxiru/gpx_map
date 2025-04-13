@@ -1507,7 +1507,9 @@ let tracks = [
     {
         "file": "tracks/cementiri-de-castellbell-i-el-vilar-lescletxa-turo-de-lescle.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-No Essencials"
         ]
     }
 ];
