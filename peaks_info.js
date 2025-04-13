@@ -4551,7 +4551,7 @@ var json_peaks = [
         "lat": 41.6287105203,
         "lon": 1.88694712824,
         "url": "https://www.feec.cat/activitats/100-cims/cim/turo-de-lescletxa/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Turó de l'Home",
