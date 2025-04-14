@@ -1,4 +1,4 @@
-function saveWithExpiry(key, value, ttlMs= 100) { // 1 minute = 60000 ms
+function saveWithExpiry(key, value, ttlMs= 60*60000) { // 1 minute = 60000 ms
     const now = Date.now();
     const item = {
         value,
