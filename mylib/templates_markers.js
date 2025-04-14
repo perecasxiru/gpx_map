@@ -16,17 +16,17 @@ const sostreTemplate = getCimTemplate("rgb(201,125,167)");
 const sostreTemplatefound = getCimTemplate("rgb(97,147,33)");
 
 // GCs
-const gcTradTemplate = `<img src="../images/tr1.png"">`;
-const gcMulTemplate = `<img src="../images/mu1.png"">`;
-const gcMysTemplate = `<img src="../images/un1.png"">`;
-const gcVirtTemplate = `<img src="../images/vi1.png"">`;
-const gcWebTemplate = `<img src="../images/we1.png"">`;
+const gcTradTemplate = `<img src="images/tr1.png"">`;
+const gcMulTemplate = `<img src="images/mu1.png"">`;
+const gcMysTemplate = `<img src="images/un1.png"">`;
+const gcVirtTemplate = `<img src="images/vi1.png"">`;
+const gcWebTemplate = `<img src="images/we1.png"">`;
 
-const gcTradTemplateFound = `<img src="../images/tr1_f.png"">`;
-const gcMulTemplateFound = `<img src="../images/mu1_f.png"">`;
-const gcMysTemplateFound = `<img src="../images/un1_f.png"">`;
-const gcVirtTemplateFound = `<img src="../images/vi1_f.png"">`;
-const gcWebTemplateFound = `<img src="../images/we1_f.png"">`;
+const gcTradTemplateFound = `<img src="images/tr1_f.png"">`;
+const gcMulTemplateFound = `<img src="images/mu1_f.png"">`;
+const gcMysTemplateFound = `<img src="images/un1_f.png"">`;
+const gcVirtTemplateFound = `<img src="images/vi1_f.png"">`;
+const gcWebTemplateFound = `<img src="images/we1_f.png"">`;
 
 function template2CimIcon(template){
     return L.divIcon({
@@ -211,8 +211,8 @@ function createMarkers(json_peaks, json_sostres, json_gc_olds, showGC=true) {
     if (showGC) {
         Object.assign(layers, {
             [`GCs-HEADER (${total_gcs_assolits} / ${total_gcs})`]: L.layerGroup(), // Placeholder
-            [`<img src="../images/tr1_f.png" height="16"> GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
-            [`<img src="../images/tr1.png" height="16"> GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
+            [`<img src="images/tr1_f.png" height="16"> GCs 103 Antics Trobats (${len5})`]: gc_olds_found,
+            [`<img src="images/tr1.png" height="16"> GCs 103 Antics No Trobats (${len6})`]: gc_olds_miss,
         });
     }
     return layers;
