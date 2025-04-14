@@ -8,7 +8,7 @@ function handleRouteLoaded(e, uniqueTagsRef, tracks){
     );
 
     if (!matchingTrack) {
-        console.warn('No matching track for route:', routeName);
+        console.warn('No matching track for route:', routeName, tracks);
         return;
     }
 
@@ -63,7 +63,7 @@ function customCheckoxes(checkboxes, label, defaultValue='[]') {
     const savedLabels = loadWithExpiry(label, defaultValue);
     for (let i = 0; i < checkboxes.length; i++) {
         const label = getLabelText(checkboxes[i]);
-        console.log(label, savedLabels);
+        // console.log(label, savedLabels);
         if (!savedLabels.includes(label)) {
             checkboxes[i].checked = false;
         } else {
@@ -80,7 +80,7 @@ function customCheckoxes(checkboxes, label, defaultValue='[]') {
                 }
             }
             saveWithExpiry(label, selectedLabels);
-            console.log(selectedLabels)
+            // console.log(selectedLabels)
         });
     }
 }

@@ -19,7 +19,7 @@ function loadWithExpiry(key, defaultValue=null) {
         }
         return item.value;
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         localStorage.removeItem(key);
         return defaultValue;
     }
