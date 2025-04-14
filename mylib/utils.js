@@ -191,7 +191,7 @@ function uploadGPX(map, routes){
 
     fileLayer.loader.on('data:loading', function(e) {
         document.querySelector('.help').style.display = 'none';
-        console.info(e);
+        // console.info(e);
         routes._elevation.clear();
     });
 
