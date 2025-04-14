@@ -12,5 +12,6 @@ e2e/reports/
 newtrack.py
 *.swp
 .idea/
-tracks/*
+*.gpx
 !tracks/*.gpx
+
