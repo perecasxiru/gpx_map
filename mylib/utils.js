@@ -178,7 +178,7 @@ function uploadGPX(map, routes){
                 routes._elevation.addData(d, layer);
             },
             pointToLayer: function(data, latlng) {
-             	return L.circleMarker(latlng, {});
+             	// return L.circleMarker(latlng, {});
              }
         },
     });
@@ -198,7 +198,7 @@ function uploadGPX(map, routes){
     fileLayer.loader.on('data:loaded', function(e) {
         console.info(e);
         // layersControl.addOverlay(e.layer, e.filename);
-        if (layer) layer.remove()
+        if (layer) layer.remove();
         layer = e.layer;
         if (!routes._elevation._map)
             routes._elevation.addTo(map);
