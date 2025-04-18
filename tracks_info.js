@@ -1511,5 +1511,17 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/parking-baumes-corcades-via-ferrada-baumes-corcades-puigsago.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/mura-cova-del-bosc-magic-pujol-de-la-mata-roure-del-parrac-f.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
