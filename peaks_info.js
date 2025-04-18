@@ -3021,7 +3021,7 @@ var json_peaks = [
         "lat": 41.6821512175,
         "lon": 1.98442838996,
         "url": "https://www.feec.cat/activitats/100-cims/cim/pujol-de-la-mata/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Punta Alta",
