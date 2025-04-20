@@ -9,7 +9,7 @@ e2e/results/
 e2e/reports/
 /playwright/.cache/
 *.DS_Store
-newtrack.py
+# newtrack.py
 *.swp
 .idea/
 *.gpx
