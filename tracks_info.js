@@ -1525,5 +1525,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/Collet_de_Comajoan_-_Grau_de_l-Escaleta_-_Pla_d-Ai.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
