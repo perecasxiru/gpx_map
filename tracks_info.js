@@ -1531,11 +1531,5 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
-    },
-    {
-        "file": "tracks/Serraladas_Marina_y_Litoral_-_Castell_de_Montornes.gpx",
-        "tags": [
-            "Tipus-Caminada"
-        ]
     }
 ];
