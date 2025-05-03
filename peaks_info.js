@@ -3381,7 +3381,7 @@ var json_peaks = [
         "lat": 41.6945024649,
         "lon": 2.01789428863,
         "url": "https://www.feec.cat/activitats/100-cims/cim/roca-sereny/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Rocallarga",
