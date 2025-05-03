@@ -1531,5 +1531,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Coll_de_la_Creueta_-_Roca_Sereny_-_Castell_de_Pera.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
