@@ -1539,5 +1539,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/Sant_Tom\u00e0s_-_Platja_de_Binigaus_-_Cova_Polida_-_Co.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
