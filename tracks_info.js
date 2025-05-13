@@ -1551,5 +1551,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Es_Grau_-_Cala_en_Vidrier_-_Torre_de_Rambla_-_Cala.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
