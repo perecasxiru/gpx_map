@@ -1545,5 +1545,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Cala_Galdana_-_Mirador_Rac\u00f3_d-en_Rost_-_Cala_Macar.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
