@@ -1557,5 +1557,17 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/La_Santa.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Mancha_Blanca_-_Monta\u00f1a_Caldereta_-_Caldera_Blanca.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
