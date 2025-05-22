@@ -1569,5 +1569,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Guinate_-_Mirador_la_Caldera_-_Volc\u00e1n_de_los_Helec.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
