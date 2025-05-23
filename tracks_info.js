@@ -1575,5 +1575,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/El_Golfo_-_Charco_Verde_-_Chimenea_Volc\u00e1nica_-_Pla.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
