@@ -1581,5 +1581,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Mirador_de_los_Helechos_-_Cueva_de_las_Cabras_-_El.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
