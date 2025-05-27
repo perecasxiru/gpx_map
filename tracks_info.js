@@ -1587,5 +1587,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Lajares_-_Calder\u00f3n_Hondo_-_Lajares.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
