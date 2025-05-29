@@ -1593,5 +1593,17 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Lobos_-_Las_Lagunitas_-_Faro_de_Marti\u00f1o_-_Monta\u00f1a_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Ajuy_-_Cuevas_de_Ajuy_-_Arco_del_Jurado_-_Playa_de.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
