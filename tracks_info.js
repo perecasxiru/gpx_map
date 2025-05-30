@@ -1605,5 +1605,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Barranco_Encantado.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
