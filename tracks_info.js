@@ -1611,5 +1611,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Tetir_-_Morro_de_la_Atalaya_-_Ermita_de_San_Andr\u00e9s.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
