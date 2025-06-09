@@ -1617,5 +1617,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Orist\u00e0_-_Mas_Rocaguinarda_-_La_Rierola_-_Mol\u00ed_de_l.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
