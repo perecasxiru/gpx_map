@@ -2958,7 +2958,7 @@ var json_peaks = [
         "lat": 42.300483377,
         "lon": 1.93553484457,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puigllancada/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Puigmal",
