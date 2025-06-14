@@ -1627,7 +1627,9 @@ let tracks = [
     {
         "file": "tracks/Coll_de_Pal_-_Puigllan\u00e7ada_-_Coll_de_Pal.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-No Essencials" 
         ]
     }
 ];
