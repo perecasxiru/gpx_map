@@ -1629,7 +1629,13 @@ let tracks = [
         "tags": [
             "Tipus-Caminada",
             "100Cims-Tots",
-            "100Cims-No Essencials" 
+            "100Cims-No Essencials"
+        ]
+    },
+    {
+        "file": "tracks/Avi\u00e0_-_Santa_Maria_d-Avi\u00e0_-_Estanyol_de_les_Escole.gpx",
+        "tags": [
+            "Tipus-Caminada"
         ]
     }
 ];
