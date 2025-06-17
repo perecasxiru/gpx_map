@@ -1625,7 +1625,7 @@ let tracks = [
         ]
     },
     {
-        "file": "tracks/Coll_de_Pal_-_Puigllan\u00e7ada_-_Coll_de_Pal.gpx",
+        "file": "tracks/coll-de-pal-puigllancada-coll-de-pal.gpx",
         "tags": [
             "Tipus-Caminada",
             "100Cims-Tots",
@@ -1634,12 +1634,6 @@ let tracks = [
     },
     {
         "file": "tracks/Avi\u00e0_-_Santa_Maria_d-Avi\u00e0_-_Estanyol_de_les_Escole.gpx",
-        "tags": [
-            "Tipus-Caminada"
-        ]
-    },
-    {
-        "file": "tracks/coll-de-pal-puigllancada-coll-de-pal.gpx",
         "tags": [
             "Tipus-Caminada"
         ]
