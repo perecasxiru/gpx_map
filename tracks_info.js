@@ -1637,5 +1637,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/coll-de-pal-puigllancada-coll-de-pal.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
