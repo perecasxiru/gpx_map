@@ -1637,5 +1637,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Calders_-_Ermita_Mare_de_Deu_de_F\u00e0tima_-_Calders.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
