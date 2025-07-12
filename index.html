@@ -25,6 +25,7 @@
 	<script src="tracks_info.js"></script>
 	<script src="gc_olds_info.js"></script>
 	<script src="sostres_info.js"></script>
+	<script src="tresmils_info.js"></script>
 
 	<script src="mylib/local_storage.js"></script>
 	<script src="mylib/templates_markers.js"></script>
@@ -148,7 +149,7 @@
 		routes.on('route_loaded', (e) => handleRouteLoaded(e, uniqueTags, tracks));
 
 		// Add the marker's layers
-		const markersControl = L.control.layers({}, createMarkers(json_peaks, json_sostres, json_gc_olds, showGC), {
+		const markersControl = L.control.layers({}, createMarkers(json_peaks, json_sostres, json_tresmils, json_gc_olds, showGC), {
 			position: 'topright'
 		}).addTo(map);
 

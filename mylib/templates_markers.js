@@ -12,8 +12,12 @@ const optionalTemplate = getCimTemplate("rgb(225,141,146)");
 const optionalTemplatefound = getCimTemplate("rgb(137,213,162)");
 
 // Sostres
-const sostreTemplate = getCimTemplate("rgb(201,125,167)");
-const sostreTemplatefound = getCimTemplate("rgb(97,147,33)");
+const sostreTemplate = getCimTemplate("rgb(203,150,112)");
+const sostreTemplatefound = getCimTemplate("rgb(227,87,40)");
+
+// 3000s
+const tresmilTemplate = getCimTemplate("rgb(156,197,227)");
+const tresmilTemplatefound = getCimTemplate("rgb(16,78,199)");
 
 // GCs
 const gcTradTemplate = `<img src="images/tr1.png"">`;
@@ -135,6 +139,38 @@ function createMarkersSostres(lst, assolits, addToMap = false) {
     return [L.layerGroup(arrayPeaks), arrayPeaks.length];
 }
 
+function createMarkers3000s(lst, assolits, addToMap = false) {
+    const icon_var = template2CimIcon(assolits ? tresmilTemplatefound : tresmilTemplate);
+    const arrayPeaks = [];
+
+    const filtered = lst.filter(entry => entry.completat === assolits);
+
+    filtered.forEach(entry => {
+        const wikiURL = `https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=${entry.nom}&fitMapToTrails=1&page=1`;
+
+        const popup = `
+            <div style="text-align: center">
+                <b>${entry.nom}</b><br>
+                ${entry.alt}m<br>
+                <i>${entry.region}</i><br>
+                <i>${entry.serra}</i>
+            </div>
+            <br>
+            <center>
+                <a href="${wikiURL}" target="_blank">
+                    <img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+                </a>
+            </center>
+        `;
+
+        const marker = L.marker([entry.lat, entry.lon], { icon: icon_var }).bindPopup(popup);
+        if (addToMap) marker.addTo(map);
+        arrayPeaks.push(marker);
+    });
+
+    return [L.layerGroup(arrayPeaks), arrayPeaks.length];
+}
+
 function createMarkersGcs(lst, found, addToMap = false) {
     const iconTemplates = {
         Traditional: [gcTradTemplate, gcTradTemplateFound],
@@ -178,7 +214,7 @@ function createMarkersGcs(lst, found, addToMap = false) {
     return [L.layerGroup(arrayGC), arrayGC.length];
 }
 
-function createMarkers(json_peaks, json_sostres, json_gc_olds, showGC=true) {
+function createMarkers(json_peaks, json_sostres, json_tresmils, json_gc_olds, showGC=true) {
     var [peaks_essencials_assolits, len1] = createMarkersCims(json_peaks, essencials=true, assolits=true, addToMap=false);
     var [peaks_essencials_restants, len2] = createMarkersCims(json_peaks, essencials=true, assolits=false, addToMap=false);
     var [peaks_opcionals_assolits, len3] = createMarkersCims(json_peaks, essencials=false, assolits=true, addToMap=false);
@@ -187,13 +223,21 @@ function createMarkers(json_peaks, json_sostres, json_gc_olds, showGC=true) {
     var [sostres_assolits, len7] = createMarkersSostres(json_sostres, assolits=true, addToMap=false);
     var [sostres_restants, len8] = createMarkersSostres(json_sostres, assolits=false, addToMap=false);
 
+    var [tresmils_assolits, len9] = createMarkers3000s(json_tresmils, assolits=true, addToMap=false);
+    var [tresmils_restants, len10] = createMarkers3000s(json_tresmils, assolits=false, addToMap=false);
+
     var [gc_olds_found, len5] = createMarkersGcs(json_gc_olds, found=true, addToMap=false);
     var [gc_olds_miss, len6] = createMarkersGcs(json_gc_olds, found=false, addToMap=false);
 
     const total_100cims_assolits = len1 + len3;
     const total_100cims = len1 + len2 + len3 + len4;
+
     const total_sostres_assolits = len7;
     const total_sostres = len7 + len8;
+
+    const total_tresmils_assolits = len9;
+    const total_tresmils = len9 + len10;
+
     const total_gcs_assolits = len5;
     const total_gcs = len5 + len6;
 
@@ -207,6 +251,10 @@ function createMarkers(json_peaks, json_sostres, json_gc_olds, showGC=true) {
         [`Sostres-HEADER (${total_sostres_assolits} / ${total_sostres})`]: L.layerGroup(), // Placeholder
         [`<span>${sostreTemplatefound}</span> Sostres Assolits (${len7})`]: sostres_assolits,
         [`<span>${sostreTemplate}</span> Sostres No Assolits (${len8})`]: sostres_restants,
+
+        [`3000s-HEADER (${total_tresmils_assolits} / ${total_tresmils})`]: L.layerGroup(), // Placeholder
+        [`<span>${tresmilTemplatefound}</span> 3000s Assolits (${len9})`]: tresmils_assolits,
+        [`<span>${tresmilTemplate}</span> 3000s No Assolits (${len10})`]: tresmils_restants,
     };
     if (showGC) {
         Object.assign(layers, {
