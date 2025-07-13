@@ -1643,5 +1643,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Castellter\u00e7ol_-_Font_del_Prat_del_Pou_-_Ermita_de_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
