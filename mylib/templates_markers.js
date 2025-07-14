@@ -152,8 +152,8 @@ function createMarkers3000s(lst, assolits, addToMap = false) {
             <div style="text-align: center">
                 <b>${entry.nom}</b><br>
                 ${entry.alt}m<br>
-                <i>${entry.region}</i><br>
-                <i>${entry.serra}</i>
+                <!-- <i>${entry.region}</i><br> -->
+                <!-- <i>${entry.serra}</i> -->
             </div>
             <br>
             <center>
