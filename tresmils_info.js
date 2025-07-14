@@ -1525,4 +1525,4 @@ var json_tresmils = [
     "lon": "0.4711878",
     "completat": false
   }
-]
+];
