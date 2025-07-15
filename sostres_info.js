@@ -117,7 +117,7 @@ var json_sostres = [
         "lat": 42.4227911919,
         "lon": 2.72729098521,
         "completat": false,
-        "comarca": "Gironès"
+        "comarca": "Alt Empordà"
     },
     {
         "nom": "Caro",
@@ -301,7 +301,7 @@ var json_sostres = [
         "lat": 41.4225,
         "lon": 2.118611,
         "completat": true,
-        "comarca": "Baix Empordà"
+        "comarca": "Barcelonès"
     },
     {
         "nom": "Puntal dels Escambrons",
