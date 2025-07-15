@@ -37,7 +37,7 @@ var json_sostres = [
         "lat": 42.4875750896,
         "lon": 1.76193328898,
         "completat": true,
-        "comarca": "Baixa Cerdanya",
+        "comarca": "Cerdanya",
     },
     {
         "nom": "Puigmal",
