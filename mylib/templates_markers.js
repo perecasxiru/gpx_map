@@ -115,7 +115,7 @@ function createMarkersSostres(lst, assolits, addToMap = false) {
     const filtered = lst.filter(entry => entry.completat === assolits);
 
     filtered.forEach(entry => {
-        const wikiURL = `https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=${entry.nom}&fitMapToTrails=1&page=1`;
+        const wikiURL = generateWikilocURL(entry.lat, entry.lon);
 
         const popup = `
             <div style="text-align: center">
@@ -146,7 +146,7 @@ function createMarkers3000s(lst, assolits, addToMap = false) {
     const filtered = lst.filter(entry => entry.completat === assolits);
 
     filtered.forEach(entry => {
-        const wikiURL = `https://www.wikiloc.com/wikiloc/map.do?sw=-89.9992887%2C-179.999&ne=89.999%2C179.999&act=1&sort=trailrank&q=${entry.nom}&fitMapToTrails=1&page=1`;
+        const wikiURL = generateWikilocURL(parseFloat(entry.lat), parseFloat(entry.lon));
 
         const popup = `
             <div style="text-align: center">
