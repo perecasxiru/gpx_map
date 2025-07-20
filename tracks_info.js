@@ -1649,5 +1649,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Malanyeu_-_El_Reu_-_Malanyeu.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
