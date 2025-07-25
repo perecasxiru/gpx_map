@@ -1655,5 +1655,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Escarrilla_-_El_Saldo_-_Escarrilla.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
