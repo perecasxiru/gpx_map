@@ -1661,5 +1661,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Ba\u00f1os_de_Panticosa_-_Cascada_de_Argualas_-_Ib\u00f3n_de.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
