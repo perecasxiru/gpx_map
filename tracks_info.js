@@ -1669,12 +1669,6 @@ let tracks = [
         ]
     },
     {
-        "file": "tracks/Collado_Batallero-_Collado_Anayet_i_Peque\u00f1o_Ib\u00f3n_d.gpx",
-        "tags": [
-            "Tipus-Caminada"
-        ]
-    },
-    {
         "file": "tracks/Portalet_-_Peque\u00f1o_Ib\u00f3n_-_Ib\u00f3n_de_Anayet_-_Portale.gpx",
         "tags": [
             "Tipus-Caminada"
