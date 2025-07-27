@@ -1667,5 +1667,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Collado_Batallero-_Collado_Anayet_i_Peque\u00f1o_Ib\u00f3n_d.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
