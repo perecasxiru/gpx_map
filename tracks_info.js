@@ -1673,5 +1673,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Portalet_-_Peque\u00f1o_Ib\u00f3n_-_Ib\u00f3n_de_Anayet_-_Portale.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
