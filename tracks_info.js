@@ -1673,5 +1673,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Piedrafita_de_Jaca_-_Ib\u00f3n_de_Piedrafita_-_Arco_de_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
