@@ -1679,5 +1679,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Aneou_-_Refuge_de_Pombie_-_Lac_de_Pombie_-_Soum_de.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
