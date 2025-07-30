@@ -1685,5 +1685,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Sallent_de_G\u00e1llego_-_Embalse_de_Lanuza_-_Presa_de_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
