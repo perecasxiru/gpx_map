@@ -1691,5 +1691,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Panticosa_-_Mandilar_-_Ib\u00f3n_de_Asnos_-_Panticosa.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
