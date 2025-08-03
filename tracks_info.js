@@ -1697,5 +1697,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Pla_de_la_Creu_de_Fumanya_-_Cap_de_Conf\u00f3s_-_Pi_del.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
