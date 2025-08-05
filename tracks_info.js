@@ -1703,5 +1703,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Avi\u00e0_-_Ermita_de_Sant_Serni_de_Clar\u00e0_-_Salt_del_Mo.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
