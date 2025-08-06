@@ -205,3 +205,62 @@ function uploadGPX(map, routes){
         // else routes._elevation.redraw();
     });
 }
+
+function downloadGPX(map, routes) {
+    let currentGpxLayer = null;
+
+    // Function to create and insert button
+    function insertButton() {
+        const summaryDiv = document.querySelector('.elevation-control .elevation-summary');
+        if (!summaryDiv) return;
+
+        // Avoid duplicates if elevation-summary already has our button
+        if (summaryDiv.querySelector('.download-gpx-btn')) return;
+
+        const btn = document.createElement('button');
+        btn.className = 'download-gpx-btn';
+        btn.innerHTML = '⬇️';
+        btn.title = 'Download current GPX';
+        btn.style.background = 'white';
+        btn.style.border = '1px solid #ccc';
+        btn.style.cursor = 'pointer';
+        btn.style.marginRight = '6px';
+        btn.style.padding = '2px 6px';
+        btn.style.borderRadius = '4px';
+        btn.style.fontSize = '14px';
+
+        btn.addEventListener('click', function () {
+            if (!currentGpxLayer) {
+                alert('No track selected!');
+                return;
+            }
+
+            const geojson = currentGpxLayer.toGeoJSON();
+            const gpxData = togpx(geojson, { creator: "MyLeafletApp" });
+            const blob = new Blob([gpxData], { type: 'application/gpx+xml' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = (
+                currentGpxLayer.options.filename ||
+                geojson?.features?.[0]?.properties?.name ||
+                'track'
+            ) + '.gpx';
+            a.click();
+
+            URL.revokeObjectURL(url);
+        });
+
+        summaryDiv.insertBefore(btn, summaryDiv.firstChild);
+    }
+
+    // On selection change: update GPX layer & insert button
+    routes.on('selection_changed', function () {
+        currentGpxLayer = routes._selected || null;
+        setTimeout(insertButton, 50); // small delay to allow DOM update
+    });
+}
+
+
+

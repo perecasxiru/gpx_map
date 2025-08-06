@@ -20,6 +20,8 @@
 	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 
 	<script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
+	<script src="https://unpkg.com/togpx@0.5.4/togpx.js"></script>
+
 
 	<script src="peaks_info.js"></script>
 	<script src="tracks_info.js"></script>
@@ -31,6 +33,7 @@
 	<script src="mylib/templates_markers.js"></script>
 	<script src="mylib/gpxgroup_overrides.js"></script>
 	<script src="mylib/utils.js"></script>
+
 
 	<style>
 		.leaflet-tooltip {
@@ -160,10 +163,59 @@
 		// Create json from defaultMarkerFilter list
 		customCheckoxes(checkboxes, 'selectedLayerLabels', JSON.stringify(defaultMarkerFilter));
 
-
 		// Headers in markers that contain the word "-HEADER" should be styled to titles
 		const labels = document.querySelectorAll('.leaflet-control-layers-overlays label');
 		styleOverlayLabels(labels);
+
+		/*
+		let currentGpxLayer = null;
+
+		// Create a download button in the map controls
+
+		const DownloadControl = L.Control.extend({
+			options: { position: 'topleft' },
+			onAdd: function(map) {
+				const btn = L.DomUtil.create('button', 'leaflet-bar');
+				btn.innerHTML = '⬇️'; // simple icon
+				btn.title = 'Download current GPX';
+				btn.style.background = 'white';
+				btn.style.width = '34px';
+				btn.style.height = '34px';
+
+				L.DomEvent.disableClickPropagation(btn);
+				L.DomEvent.on(btn, 'click', function() {
+					if (!currentGpxLayer) {
+						alert('No track selected!');
+						return;
+					}
+					const geojson = currentGpxLayer.toGeoJSON();
+					const gpxData = togpx(geojson, { creator: "MyLeafletApp" });
+					const blob = new Blob([gpxData], { type: 'application/gpx+xml' });
+					const url = URL.createObjectURL(blob);
+
+					const a = document.createElement('a');
+					a.href = url;
+					a.download = (currentGpxLayer.options.filename || 'track') + '.gpx';
+					a.click();
+
+					URL.revokeObjectURL(url);
+				});
+
+				return btn;
+			}
+		});
+
+		// Add the control to the map
+		map.addControl(new DownloadControl());
+
+		// Listen for selection change
+		routes.on('selection_changed', function(e) {
+			// Assuming event passes the selected layer in e.layer
+			console.log('changed', routes._selected);
+			currentGpxLayer =  routes._selected || null;
+		});
+		*/
+
 
 		// EVENT: All routes loaded
 		routes.on('loaded', function(e) {
@@ -200,6 +252,7 @@
 			customCheckoxes(checkboxes, 'selectedLayerLabels2');
 
 			uploadGPX(map, routes);
+			downloadGPX(map, routes);
 		});
 
 		map.attributionControl.addAttribution('Map Data: &copy; <a href="https://github.com/adoroszlai">Attila Doroszlai</a> (<a href="https://github.com/adoroszlai/joebed/blob/gh-pages/LICENSE.md">MIT License</a>)');
