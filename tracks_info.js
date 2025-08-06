@@ -1649,5 +1649,65 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Malanyeu_-_El_Reu_-_Malanyeu.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Escarrilla_-_El_Saldo_-_Escarrilla.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Ba\u00f1os_de_Panticosa_-_Cascada_de_Argualas_-_Ib\u00f3n_de.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Portalet_-_Peque\u00f1o_Ib\u00f3n_-_Ib\u00f3n_de_Anayet_-_Portale.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Piedrafita_de_Jaca_-_Ib\u00f3n_de_Piedrafita_-_Arco_de_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Aneou_-_Refuge_de_Pombie_-_Lac_de_Pombie_-_Soum_de.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Sallent_de_G\u00e1llego_-_Embalse_de_Lanuza_-_Presa_de_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Panticosa_-_Mandilar_-_Ib\u00f3n_de_Asnos_-_Panticosa.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Pla_de_la_Creu_de_Fumanya_-_Cap_de_Conf\u00f3s_-_Pi_del.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Avi\u00e0_-_Ermita_de_Sant_Serni_de_Clar\u00e0_-_Salt_del_Mo.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
