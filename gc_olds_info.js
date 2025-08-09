@@ -799,7 +799,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "El Montgrí",
-    "Found_by_me": "",
+    "Found_by_me": "9/8/2025",
     "Placed_By": "Landyman & family",
     "Elevation": 0,
     "Container": "Regular",
