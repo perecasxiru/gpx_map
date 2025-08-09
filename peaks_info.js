@@ -294,7 +294,7 @@ var json_peaks = [
         "lat": 42.0521068681,
         "lon": 3.13164949925,
         "url": "https://www.feec.cat/activitats/100-cims/cim/castell-de-montgri/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Castell de Sant Miquel",
