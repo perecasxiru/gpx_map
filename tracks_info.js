@@ -1709,5 +1709,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Torroella_de_Montgr\u00ed_-_Castell_de_Montgr\u00ed_-_Torroe.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
