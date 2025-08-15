@@ -1717,5 +1717,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-Essencials"
         ]
+    },
+    {
+        "file": "tracks/Moi\u00e0_-_Ermita_de_Sant_Feliu_de_Rodors_-_Moi\u00e0.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
