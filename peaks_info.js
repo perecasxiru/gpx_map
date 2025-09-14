@@ -3543,7 +3543,7 @@ var json_peaks = [
         "lat": 41.923121729,
         "lon": 2.53302886771,
         "url": "https://www.feec.cat/activitats/100-cims/cim/sant-miquel-de-solterra/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Sant Miquel del Mont",
