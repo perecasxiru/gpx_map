@@ -1727,7 +1727,9 @@ let tracks = [
     {
         "file": "tracks/Font_dels_Abeuradors_-_Sant_Miquel_de_les_Formigue.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-Essencials"
         ]
     }
 ];
