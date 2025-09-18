@@ -262,5 +262,29 @@ function downloadGPX(map, routes) {
     });
 }
 
+function addRightClickPopup(map) {
+    map.on('contextmenu', function (e) {
+        const lat = e.latlng.lat.toFixed(6);
+        const lng = e.latlng.lng.toFixed(6);
+
+        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+        const streetViewUrl = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
+
+        const popupContent = `
+            <div style="font-size:14px;">
+                <b>Coordinates:</b><br>
+                ${lat}, ${lng}<br><br>
+                <a href="${googleMapsUrl}" target="_blank">🌍 Open in Google Maps</a><br>
+                <a href="${streetViewUrl}" target="_blank">🚶 Open in Street View</a>
+            </div>
+        `;
+
+        L.popup()
+            .setLatLng(e.latlng)
+            .setContent(popupContent)
+            .openOn(map);
+    });
+}
+
 
 

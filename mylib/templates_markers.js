@@ -194,6 +194,7 @@ function createMarkersGcs(lst, found, addToMap = false) {
         const icon_var = template2GcIcon(iconTemplates[type][foundStatus]);
 
         const foundInfo = isFound(entry) ? `<br><br><i>Found on ${entry.Found_by_me}</i>` : "";
+        const wikiURL = generateWikilocURL(entry.Latitude, entry.Longitude);
 
         const popup = `
             <div style="text-align: center">
@@ -203,6 +204,12 @@ function createMarkersGcs(lst, found, addToMap = false) {
                 <br>Difficulty: ${entry.Diff}, Terrain: ${entry.Tern}
                 <br>Size: ${entry.Container}
                 ${foundInfo}
+                <br><br>
+                <center>
+                    <a href="${wikiURL}" target="_blank">
+                        <img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
+                    </a>
+                </center>
             </div>
         `;
 
