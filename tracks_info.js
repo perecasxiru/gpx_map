@@ -1731,5 +1731,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-Essencials"
         ]
+    },
+    {
+        "file": "tracks/Cursa_del_Sot_2025-_Monistrol_de_Calders_-_Ermita_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
