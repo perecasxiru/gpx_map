@@ -870,7 +870,7 @@ var json_peaks = [
         "lat": 42.3750354872,
         "lon": 0.77512806113,
         "url": "https://www.feec.cat/activitats/100-cims/cim/la-faiada/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "La Fita Alta",
