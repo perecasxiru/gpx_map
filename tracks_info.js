@@ -1751,5 +1751,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Durro_-_Sant_Quirc_-_Durro.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
