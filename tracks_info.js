@@ -1741,9 +1741,9 @@ let tracks = [
     {
         "file": "tracks/Viu_de_Llevata_-_La_Faiada_de_Malp\u00e0s_-_Viu_de_Llev.gpx",
         "tags": [
-            "Tipus-Caminada", 
+            "Tipus-Caminada",
             "100Cims-Tots",
-            "100Cims-No Essencials" 
+            "100Cims-No Essencials"
         ]
     }
 ];
