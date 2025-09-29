@@ -1745,5 +1745,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/Pla_de_l-Ermita_-_Roca_de_la_Feixa_-_Pla_de_l-Ermi.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
