@@ -645,7 +645,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FNFF",
     "Waypoint_Name": "Durro",
-    "Found_by_me": "",
+    "Found_by_me": "28/09/2025",
     "Placed_By": "vicam",
     "Elevation": 0,
     "Container": "Regular",
