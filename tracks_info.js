@@ -1757,5 +1757,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Viladecavalls_-_Tur\u00f3_de_les_Bassotes_-_Tur\u00f3_dels_Q.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
