@@ -4650,7 +4650,7 @@ var json_peaks = [
         "lat": 41.5763385712,
         "lon": 1.93396849589,
         "url": "https://www.feec.cat/activitats/100-cims/cim/turo-del-ros/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Turó del Samon",
