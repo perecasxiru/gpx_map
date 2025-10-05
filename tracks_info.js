@@ -1769,7 +1769,9 @@ let tracks = [
     {
         "file": "tracks/Capolat_-_Roc_de_les_Monges_-_Capolat.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-No Essencials"
         ]
     }
 ];
