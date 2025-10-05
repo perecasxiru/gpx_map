@@ -3174,7 +3174,7 @@ var json_peaks = [
         "lat": 42.096656,
         "lon": 1.717248,
         "url": "https://www.feec.cat/activitats/100-cims/cim/roc-de-les-monges-serrat-de-la-questio/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Roc de les Tres Creus",
