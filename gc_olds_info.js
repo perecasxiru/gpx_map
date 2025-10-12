@@ -2251,7 +2251,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "La Garrotxa desconeguda",
-    "Found_by_me": "",
+    "Found_by_me": "12/10/2025",
     "Placed_By": "karles",
     "Elevation": 0,
     "Container": "Regular",
