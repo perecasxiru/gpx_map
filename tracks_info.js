@@ -1779,5 +1779,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/vall-del-bac-montmajor-gorgues-del-moli-vall-del-bac.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
