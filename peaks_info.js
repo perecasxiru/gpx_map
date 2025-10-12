@@ -1518,7 +1518,7 @@ var json_peaks = [
         "lat": 42.2687834061,
         "lon": 2.48304982626,
         "url": "https://www.feec.cat/activitats/100-cims/cim/montmajor/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Montmalús",
@@ -2859,7 +2859,7 @@ var json_peaks = [
         "lat": 42.2841286008,
         "lon": 2.42776271465,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puig-ou/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Puig Pedrós de Lanós",
