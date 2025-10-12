@@ -1777,13 +1777,17 @@ let tracks = [
     {
         "file": "tracks/collada-del-sitjar-puig-ou-collada-del-sitjar.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-Essencials"
         ]
     },
     {
         "file": "tracks/vall-del-bac-montmajor-gorgues-del-moli-vall-del-bac.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-No Essencials"
         ]
     }
 ];
