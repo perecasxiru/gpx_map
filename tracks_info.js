@@ -1773,5 +1773,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/collada-del-sitjar-puig-ou-collada-del-sitjar.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
