@@ -70,7 +70,8 @@ function generateWikilocURL(lat, lon, offset_view_box = 0.04) {
     const zdp = `(${format(lon)}%2C${format(lat)}%2C${radius})`;
 
     // Construct the URL
-    return `https://ca.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&loop=1&sort=trailrank&zdp=${zdp}&page=1`;
+    const filter_km = 10;
+    return `https://ca.wikiloc.com/wikiloc/map.do?sw=${sw}&ne=${ne}&lto=${filter_km}&loop=1&sort=trailrank&zdp=${zdp}&page=1`;
 }
 
 function createMarkersCims(lst, essencials, assolits, addToMap = false) {
