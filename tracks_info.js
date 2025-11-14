@@ -1789,5 +1789,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/Collsuspina_-_Mirador_del_Roc_Gros_-_Puigsagordi_-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
