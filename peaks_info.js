@@ -2391,7 +2391,7 @@ var json_peaks = [
         "lat": 42.137669,
         "lon": 2.350877,
         "url": "https://www.feec.cat/activitats/100-cims/cim/puig-cubell/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Puig d'Aguilera",
@@ -3696,7 +3696,7 @@ var json_peaks = [
         "lat": 42.1689910199,
         "lon": 2.34026503464,
         "url": "https://www.feec.cat/activitats/100-cims/cim/santa-magdalena-de-cambrils/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Serra de Pinós",
