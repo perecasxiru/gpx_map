@@ -1801,5 +1801,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Ciuret_-_Puig_Cubell_-_Ciuret.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
