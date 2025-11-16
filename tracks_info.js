@@ -1799,13 +1799,17 @@ let tracks = [
     {
         "file": "tracks/Collada_de_Collfred_-_Santa_Magdalena_de_Cambrils_.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-No Essencials" 
         ]
     },
     {
         "file": "tracks/Ciuret_-_Puig_Cubell_-_Ciuret.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada", 
+            "100Cims-Tots",
+            "100Cims-No Essencials"
         ]
     }
 ];
