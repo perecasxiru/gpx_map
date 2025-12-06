@@ -1815,7 +1815,9 @@ let tracks = [
     {
         "file": "tracks/Biure_de_Gai\u00e0_-_Montclar_-_Ermita_de_Sant_Miquel_d.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada", 
+            "100Cims-Tots",
+            "100Cims-Essencials" 
         ]
     }
 ];
