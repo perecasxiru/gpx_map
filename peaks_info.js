@@ -3534,7 +3534,7 @@ var json_peaks = [
         "lat": 41.465725492,
         "lon": 1.34564773737,
         "url": "https://www.feec.cat/activitats/100-cims/cim/sant-miquel-de-montclar/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Sant Miquel de Solterra",
