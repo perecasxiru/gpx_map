@@ -271,7 +271,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFFF",
     "Waypoint_Name": "Castle Unknown",
-    "Found_by_me": "",
+    "Found_by_me": "7/12/2025",
     "Placed_By": "Amagat per jimmonty i adoptat per crtn i nastrud",
     "Elevation": 0,
     "Container": "Virtual",
