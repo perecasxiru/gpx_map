@@ -1815,9 +1815,15 @@ let tracks = [
     {
         "file": "tracks/Biure_de_Gai\u00e0_-_Montclar_-_Ermita_de_Sant_Miquel_d.gpx",
         "tags": [
-            "Tipus-Caminada", 
+            "Tipus-Caminada",
             "100Cims-Tots",
-            "100Cims-Essencials" 
+            "100Cims-Essencials"
+        ]
+    },
+    {
+        "file": "tracks/Bellprat_-_Sant_Jaume_de_Queralt_-_Castell_de_Quer.gpx",
+        "tags": [
+            "Tipus-Caminada"
         ]
     }
 ];
