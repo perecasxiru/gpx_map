@@ -1825,5 +1825,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Malanyeu_-_La_Creueta_-_Font_de_les_Travesses_-_Ma.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
