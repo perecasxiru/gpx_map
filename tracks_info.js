@@ -1831,5 +1831,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Sant_Quirze_Safaja_-_Balma_de_l-Espluga_-_Puig_d-O.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
