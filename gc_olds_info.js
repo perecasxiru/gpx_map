@@ -1165,6 +1165,7 @@ var json_gc_olds = [
     "Latitude": 42.004717,
     "Longitude": 2.862133
   },
+  /*
   {
     "Code": "GCHPWT",
     "Placed": "8/2/2004",
@@ -1187,6 +1188,7 @@ var json_gc_olds = [
     "Latitude": 42.319,
     "Longitude": 2.8806666666666665
   },
+  */
   {
     "Code": "GCHQAN",
     "Placed": "20/2/2004",
@@ -1275,6 +1277,7 @@ var json_gc_olds = [
     "Latitude": 41.717967,
     "Longitude": 2.2318
   },
+/*
   {
     "Code": "GCHVXZ",
     "Placed": "7/3/2004",
@@ -1297,6 +1300,7 @@ var json_gc_olds = [
     "Latitude": 42.443183,
     "Longitude": 1.90625
   },
+*/
   {
     "Code": "GCHYG4",
     "Placed": "7/3/2004",
@@ -2264,5 +2268,49 @@ var json_gc_olds = [
     ".": 0,
     "Latitude": 42.2667,
     "Longitude": 2.461983
+  },
+  {
+    "Code": "GCN14Q",
+    "Placed": "6/3/2005",
+    "Corrected Coordinates Indicator": "",
+    "Cache_type": "Traditional Cache",
+    "User flag": "",
+    "lg": "FFF",
+    "Waypoint_Name": "Mont Caro",
+    "Found_by_me": "",
+    "Placed_By": "kpt",
+    "Elevation": 0,
+    "Container": "Regular",
+    "Diff": 2,
+    "Tern": 2,
+    "Favorite points": 26,
+    "Kms": 298.55,
+    "Country": "Spain",
+    "User Data 4": "",
+    ".": 0,
+    "Latitude": 40.802833,
+    "Longitude": 0.344283
+  },
+  {
+    "Code": "GCN19G",
+    "Placed": "7/3/2005",
+    "Corrected Coordinates Indicator": "",
+    "Cache_type": "Traditional Cache",
+    "User flag": "",
+    "lg": "FFF",
+    "Waypoint_Name": "El Castell de Coaner",
+    "Found_by_me": "",
+    "Placed_By": "pelaroques",
+    "Elevation": 0,
+    "Container": "Regular",
+    "Diff": 2.5,
+    "Tern": 3.5,
+    "Favorite points": 4,
+    "Kms": 138.37,
+    "Country": "Spain",
+    "User Data 4": "",
+    ".": 0,
+    "Latitude": 41.83495,
+    "Longitude": 1.707533
   }
 ]
