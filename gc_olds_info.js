@@ -2299,7 +2299,7 @@ var json_gc_olds = [
     "User flag": "",
     "lg": "FFF",
     "Waypoint_Name": "El Castell de Coaner",
-    "Found_by_me": "",
+    "Found_by_me": "01/01/2026",
     "Placed_By": "pelaroques",
     "Elevation": 0,
     "Container": "Regular",
