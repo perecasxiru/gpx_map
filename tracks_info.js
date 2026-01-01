@@ -1841,7 +1841,9 @@ let tracks = [
     {
         "file": "tracks/Refugi_Caro_-_Coll_de_Pallers_-_Mont_Caro_-_Coll_d.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-Essencials" 
         ]
     }
 ];
