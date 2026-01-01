@@ -213,7 +213,7 @@ var json_peaks = [
         "lat": 40.8031301137,
         "lon": 0.343121075505,
         "url": "https://www.feec.cat/activitats/100-cims/cim/caro/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Casamanya Nord",
