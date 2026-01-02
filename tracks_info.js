@@ -1843,7 +1843,7 @@ let tracks = [
         "tags": [
             "Tipus-Caminada",
             "100Cims-Tots",
-            "100Cims-Essencials" 
+            "100Cims-Essencials"
         ]
     }
 ];
