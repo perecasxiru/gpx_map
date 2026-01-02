@@ -1845,5 +1845,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-Essencials"
         ]
+    },
+    {
+        "file": "tracks/Ulldecona_-_La_Torreta_de_Montsi\u00e0_-_Ulldecona.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
