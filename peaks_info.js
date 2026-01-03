@@ -3912,7 +3912,7 @@ var json_peaks = [
         "lat": 40.6136410446,
         "lon": 0.530331521271,
         "url": "https://www.feec.cat/activitats/100-cims/cim/torreta-del-montsia/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Tossa d'Espinau",
