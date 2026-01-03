@@ -124,7 +124,7 @@ var json_sostres = [
         "alt": 1441,
         "lat": 40.8031301137,
         "lon": 0.343121075505,
-        "completat": false,
+        "completat": true,
         "comarca": "Baix Ebre"
     },
     {
