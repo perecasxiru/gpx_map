@@ -1590,7 +1590,7 @@ var json_peaks = [
         "lat": 40.898583,
         "lon": 0.625025,
         "url": "https://www.feec.cat/activitats/100-cims/cim/morral-del-cabrafeixet/",
-        "completat": false
+        "completat": true
     },
     {
         "nom": "Munt de Montsonís",
