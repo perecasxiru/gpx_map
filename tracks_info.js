@@ -1853,5 +1853,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-Essencials"
         ]
+    },
+    {
+        "file": "tracks/El_Perell\u00f3_-_Pintures_Rupestres_de_Cabrafeixet_-_M.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
