@@ -292,7 +292,10 @@ let tracks = [
     {
         "file": "tracks/vallter-pic-de-bastiments-pic-de-freser-pic-de-linfern-estan.gpx",
         "tags": [
-            "Tipus-Caminada"
+            "Tipus-Caminada",
+            "100Cims-Tots",
+            "100Cims-Essencials",
+            "100Cims-No Essencials"
         ]
     },
     {
