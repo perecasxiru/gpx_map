@@ -1864,5 +1864,11 @@ let tracks = [
             "100Cims-Tots",
             "100Cims-No Essencials"
         ]
+    },
+    {
+        "file": "tracks/Bronson_Canyon_-_Hollywood_Sign_-_Mount_Lee_-_Grif.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
