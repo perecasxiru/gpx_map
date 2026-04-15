@@ -1870,5 +1870,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Channel_Islands_National_Park-_Scorpion_Harbor_-_H.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
