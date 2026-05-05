@@ -1876,5 +1876,125 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-Island_in_the_Sky--_Gra.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-The_Needles--_Pothole_P.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Horseshoe_Bend.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Zion_National_Park-_The_Narrows.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Arches_National_Park-_Delicate_Arch.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Arches_National_Park-_Double_Arch_-_The_Windows.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-Island_in_the_Sky--_Mes.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-The_Needles--_Elephant_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Taggart_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Zion_National_Park-_Zion_Lodge_-_Scout_Lookout_-_W.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-Island_in_the_Sky--_Wha.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Capitol_Reef_National_Park-_Fruita_Campground_-_Co.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Capitol_Reef_National_Park-_Grand_Wash_Road_-_Cass.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Grand_Canyon_National_Park-_South_Rim_Trail.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Joshua_Tree_National_Park-_Indian_Cove.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Arches_National_Park-_Primitive_Trail_-_Dark_Angel.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Arches_National_Park-_Sand_Dune_Arch_-_Tapestry_Ar.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Bryce_National_Park-_Bryce_Point_-_Peek-a-Boo_Trai.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Bryce_National_Park-_Sunset_Point_-_Navajo_Loop_-_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Canyonlands_National_Park_-Island_in_the_Sky--_Uph.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
