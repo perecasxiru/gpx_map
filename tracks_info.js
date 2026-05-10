@@ -1996,5 +1996,29 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Laurence_S_Rockerfeller.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Jenny_Lake_-_Hidden_Fal.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_String_Lake_-_Leigh_Lak.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Signal_Mountain_Campgro.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
