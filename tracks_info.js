@@ -2020,5 +2020,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Grand_View_Point_-_Two_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
