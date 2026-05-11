@@ -2026,5 +2026,11 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Grand_Teton_National_Park-_Colter_Bay_-_Heron_Pond.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
