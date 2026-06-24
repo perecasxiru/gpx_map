@@ -2038,5 +2038,89 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Beaver_Ponds.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Cascade_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Lone_Star_Geiser.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Mount_Washburn.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Norris_Basin.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Old_Faithful_-_Observat.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Upper_Falls_-_Lower_Fal.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_West_Thumb.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Artists-_Paintpots.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Mud_Volcano.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Grand_Prismatic_Overloo.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Trout_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Mammoth_Hot_Springs.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yellowstone_National_Park-_Old_Faithful_-_Riversid.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
