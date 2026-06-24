@@ -2122,5 +2122,149 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Kananaskis_Country-_Baldy_Pass_GC_-_Porcupine_Cree.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kananaskis_Country-_King_Creek_Ridge.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kootenay_National_Park-_Cobb_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kootenay_National_Park-_Paint_Pots_-_Marble_Canyon.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Waterton_Lakes_National_Park-_Townsite_Campground_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yoho_National_Park-_Emerald_Lake_-_Emerald_Basin_-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Moraine_Lake_-_Eiffel_Lake_-_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_Sun_Point_-_Baring_Falls_-_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kananaskis_Country-_Hogarth_Lakes.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kananaskis_Country-_Rawson_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Waterton_Lakes_National_Park-_Lineham_Falls.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Lake_Louise_-_Plain_of_the_Si.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_Hermit_Trail.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_Many_Glacier_Hotel_-_Hidden.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_McDonald_Falls_-_Johns_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_St_Mary_Falls_-_Virginia_Fa.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kananaskis_Country-_Grotto_Canyon.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kootenay_National_Park-_Stanley_Glacier.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Mount_Revelstoke_National_Park-_Soren_Sorensen_-_I.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Waterton_Lakes_National_Park-_Crandell_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yoho_National_Park-_Takakkaw_Falls_-_Iceline_Trail.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_Avalanche_-_Trail_of_the_Ce.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_National_Park-_Two_Medicine_-_Rockwell_Fal.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Waterton_Lakes_National_Park-_Red_Rock_Canyon.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
