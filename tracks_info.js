@@ -2266,5 +2266,53 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Johnston_Canyon_-_Lower_Falls.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Lake_Minnewanka_-_Steward_Can.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Jasper_National_Park-_Maligne_Lake_-_Bald_Hills_-_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Jasper_National_Park-_Miette_Hotsprings_-_Sulphur_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Jasper_National_Park-_Wilcox_Pass_-_Wilcox_Ridge_V.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Peyto_Lake_Viewpoint_-_Peyto_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Banff_National_Park-_Sulpher_Mountain.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Jasper_National_Park-_Valley_of_the_Five_Lakes.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
