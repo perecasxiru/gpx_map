@@ -2314,5 +2314,269 @@ let tracks = [
         "tags": [
             "Tipus-Caminada"
         ]
+    },
+    {
+        "file": "tracks/Annette_Lake_Trailhead_-_Iron_Horse_Tunnel_-_Annet.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Denali_National_Park-_Horseshoe_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Denali_National_Park-_Savage_Alpine_Trail.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kapa-a_-_Ho-opi-i_Falls_-_Kapa-a.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Pinnacles_National_Park-_Bear_Gulch_-_Lower_Cave_-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Redwood_National_Park-_Fern_Canyon.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Redwood_National_Park-_Fern_Falls_-_Boy_Scout_Tree.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Redwood_National_Park-_Grove_of_Titans.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Seattle_-_Seward_Park_-_Seattle.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Virgin_Falls.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Alder_Creek_-GC12-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Anchorage_-_Flattop_Mountain_-_Anchorage.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Anchorage_-_Kincaid_Park_-_Anchorage.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Crater_Lake_National_Park-_Mount_Scott.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Hatcher_Pass_-_Reed_Lakes_-_Hatcher_Pass.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Lassen_Volcanic_National_Park-_Lassen_Peak.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Mount_Hood_View_-GC17-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Wailua_-_Sleeping_Giant_-_Wailua.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Whittier_-_Portage_Pass_-_Portage_Lake_-_Whittier.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Wrangel-St-_Elias_National_Park-_Kennicott_-_Root_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yosemite_National_Park-_Mariposa_Grove_-_Grizzly_G.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Barlow_Pass_-_Monte_Cristo_-_Barlow_Pass.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Denali_National_Park-_Mount_Healy_Overlook.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Drakes_Beach.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Glacier_View_-_Nature_Trail_Matanuska_Glacier_-_Gl.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Haines_Chilkat_State_Park_-_Ayiklutu_Trail_-_Haine.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Horseshoe_Lake_-GCD6-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kenai_Fjords_National_Park-_Harding_Icefield.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kluane_National_Park-_Saint_Elias_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Olympic_National_Park-_Hoh_Rainforest.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Olympic_National_Park-_Hurricane_Hill.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Olympic_National_Park-_Second_Beach.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Redwood_National_Park-_Hope_Creek.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Saguaro_National_Park-_Desert_Discovery_Nature_Tra.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yosemite_National_Park-_Glacier_Point_-_Four_Mile_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Haines_-_Mount_Riley_-_Haines.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Kluane_National_Park-_Kathleen_Lake_-_King-s_Thron.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Molalla_River_Recreation_Area_-GC16-.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Olympic_National_Park-_Hall_of_Mosses.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Olympic_National_Park-_Mount_Storm_King_-_Marymere.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Skilak_Lake.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Wrangell-St-_Elias_National_Park-_West_Glacier_Tra.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yosemite_National_Park-_Lower_Yosemite_Fall.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
+    },
+    {
+        "file": "tracks/Yosemite_National_Park-_Happy_Isles_-_Vernal_Fall_.gpx",
+        "tags": [
+            "Tipus-Caminada"
+        ]
     }
 ];
