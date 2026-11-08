@@ -40,15 +40,9 @@ function trackTooltip(name, meta) {
 }
 
 function filterPathsByTags(selectedTags) {
-    // console.log('Selected tags:', selectedTags);
-    const allPaths = document.querySelectorAll('path.leaflet-interactive');
-
-    allPaths.forEach(path => {
-        const tagsAttr = path.getAttribute('data-tags');
-        const tags = tagsAttr ? tagsAttr.split(',') : [];
-        const matches = selectedTags.length === 0 || selectedTags.every(tag => tags.includes(tag));
-        path.style.display = matches ? 'inline' : 'none';
-    });
+    // Matching rules live in track_list.js (OR inside a tag group, AND across groups).
+    trackFilterState.tags = selectedTags;
+    applyTrackFilters();
 }
 
 function updateTagFilterFromMap(tagLayers) {

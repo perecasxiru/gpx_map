@@ -1,0 +1,132 @@
+/* Track list panel (mylib/track_list.js) */
+.track-list {
+    background: #fff;
+}
+
+.track-list .track-list-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.track-list-panel {
+    display: none;
+    width: min(360px, calc(100vw - 70px));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.track-list.open .track-list-toggle {
+    display: none;
+}
+
+.track-list.open .track-list-panel {
+    display: flex;
+    flex-direction: column;
+    max-height: min(70vh, calc(100vh - 200px));
+}
+
+.track-list-head {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.track-list-search {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.track-list-sort {
+    max-width: 120px;
+    padding: 5px 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+}
+
+.track-list-close {
+    border: none;
+    background: none;
+    color: #666;
+    font-size: 22px;
+    line-height: 1;
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.track-list-summary {
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+    color: #555;
+    font-size: 12px;
+}
+
+.track-list-items {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.track-list-items li {
+    display: flex;
+    gap: 8px;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f2f2f2;
+    cursor: pointer;
+}
+
+.track-list-items li:hover {
+    background: #f4f7ff;
+}
+
+.track-list-items li.active {
+    background: #fff8c2;
+}
+
+.track-list-swatch {
+    flex: none;
+    width: 5px;
+    border-radius: 3px;
+}
+
+.track-list-name {
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.track-list-meta {
+    margin-top: 2px;
+    color: #666;
+    font-size: 12px;
+}
+
+.track-list-items li.track-list-empty {
+    justify-content: center;
+    padding: 16px;
+    color: #888;
+    font-size: 13px;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    /* 16px stops mobile browsers from zooming into the field */
+    .track-list-search {
+        font-size: 16px;
+    }
+}

@@ -30,6 +30,8 @@
 	<script src="mylib/templates_markers.js"></script>
 	<script src="mylib/gpxgroup_overrides.js"></script>
 	<script src="mylib/utils.js"></script>
+	<script src="mylib/track_list.js"></script>
+	<link rel="stylesheet" href="mylib/track_list.css">
 
 
 	<style>
@@ -136,7 +138,9 @@
 		routes = L.gpxGroup(tracksData.map(trackToGeoJSON), {
 			// These settings can be found in libs/leaflet-gpxgroup.js
 			highlight: {
-				color: '#fff100'
+				color: '#fff100',
+				weight: 8,
+				opacity: 1,
 			},
 			points_options: opts.points,
 			elevation: true,
@@ -186,8 +190,11 @@
 			// Style toggle buttons
 			const leftToggles = document.querySelectorAll('.leaflet-left .leaflet-control-layers-toggle');
 			if (leftToggles[1]) {
-				leftToggles[1].style.backgroundImage = "url('images/search.png')";
+				// Funnel icon: this control filters by tag (the track list has the text search)
+				leftToggles[1].style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M3 4h18l-7 8.5V19l-4 2v-8.5z'/%3E%3C/svg%3E\")";
+				leftToggles[1].title = 'Filtra per etiqueta';
 				styleToggleButton(leftToggles[1]);
+				leftToggles[1].style.backgroundSize = '60% 60%';
 			}
 
 			const rightToggles = document.querySelectorAll('.leaflet-right .leaflet-control-layers-toggle');
@@ -203,6 +210,8 @@
 			const checkboxes = group.getElementsByClassName("leaflet-control-layers-selector");
 
 			customCheckoxes(checkboxes, 'selectedLayerLabels2');
+
+			addTrackList(map);
 
 			uploadGPX(map, routes);
 			downloadGPX(map, routes);
