@@ -211,59 +211,39 @@ function uploadGPX(map, routes){
 }
 
 function downloadGPX(map, routes) {
-    let currentGpxLayer = null;
-
-    // Function to create and insert button
-    function insertButton() {
-        const summaryDiv = document.querySelector('.elevation-control .elevation-summary');
-        if (!summaryDiv) return;
-
-        // The plugin hard-codes 2 decimals for elevations ("2538.00 m")
-        summaryDiv.querySelectorAll('.summaryvalue').forEach(v => {
-            v.innerHTML = v.innerHTML.replace(/\.00(?=&nbsp;|\s)/, '');
-        });
-
-        // Avoid duplicates if elevation-summary already has our button
-        if (summaryDiv.querySelector('.download-gpx-btn')) return;
-
-        const btn = document.createElement('button');
-        btn.className = 'download-gpx-btn';
-        btn.innerHTML = '⬇️';
-        btn.title = 'Download current GPX';
-        btn.style.background = 'white';
-        btn.style.border = '1px solid #ccc';
-        btn.style.cursor = 'pointer';
-        btn.style.marginRight = '6px';
-        btn.style.padding = '2px 6px';
-        btn.style.borderRadius = '4px';
-        btn.style.fontSize = '14px';
-
-        btn.addEventListener('click', function () {
-            if (!currentGpxLayer) {
-                alert('No track selected!');
-                return;
-            }
-
-            // The map shows a simplified line; download the original, full-resolution GPX.
-            const file = currentGpxLayer.options.file;
-            if (!file) {
-                alert('Original GPX not available for this track.');
-                return;
-            }
-            const a = document.createElement('a');
-            a.href = encodeURI(file);
-            a.download = file.split('/').pop();
-            a.click();
-        });
-
-        summaryDiv.insertBefore(btn, summaryDiv.firstChild);
-    }
-
-    // On selection change: update GPX layer & insert button
-    routes.on('selection_changed', function () {
-        currentGpxLayer = routes._selected || null;
-        setTimeout(insertButton, 50); // small delay to allow DOM update
+    // Delegated listener: the plugin rebuilds the summary with innerHTML, which drops
+    // listeners attached to elements inside it.
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.download-gpx-btn')) return;
+        const route = routes.getSelection();
+        // The map shows a simplified line; download the original, full-resolution GPX.
+        const file = route && route.isSelected() && route.options.file;
+        if (!file) {
+            alert('Selecciona una ruta primer.');
+            return;
+        }
+        const a = document.createElement('a');
+        a.href = encodeURI(file);
+        a.download = file.split('/').pop();
+        a.click();
     });
+
+    // The plugin (re)renders the summary asynchronously, whenever a track is shown.
+    // Watch it instead of guessing a delay, and decorate it every time.
+    const decorate = summary => {
+        // The plugin hard-codes 2 decimals for elevations ("2538.00 m")
+        summary.querySelectorAll('.summaryvalue').forEach(v => {
+            const trimmed = v.innerHTML.replace(/\.00(?=&nbsp;|\s)/, '');
+            if (trimmed !== v.innerHTML) v.innerHTML = trimmed;
+        });
+        if (summary.children.length && !summary.querySelector('.download-gpx-btn')) {
+            summary.insertAdjacentHTML('afterbegin',
+                '<button type="button" class="download-gpx-btn" title="Descarrega el GPX original">⬇️</button>');
+        }
+    };
+    const root = document.getElementById('elevation-div') || document.body;
+    new MutationObserver(() => root.querySelectorAll('.elevation-summary').forEach(decorate))
+        .observe(root, { childList: true, subtree: true });
 }
 
 function addRightClickPopup(map) {
