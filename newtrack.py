@@ -8,7 +8,13 @@ Then rebuilds tracks_data.json (scripts/build_tracks.py), the compact file the m
 
 Safe to run repeatedly; it only rewrites files when something changed.
 Runs locally, in Termux, or in the GitHub Action (.github/workflows/register-tracks.yml).
+
+Options (used by scripts/termux/upload_gpx.sh):
+  --tags NAME.gpx=Tipus-Travessa[,Other-Tag]   tags for a newly added file (repeatable)
+  --types                                      print the known "Tipus" values, one per line, and exit
+Peak tags (100Cims, Sostres, 3000s) are added automatically by the build; no need to pass them.
 """
+import argparse
 import json
 import os
 import re
@@ -34,8 +40,38 @@ def save_tracks(tracks):
         f.write("let tracks = " + json.dumps(tracks, indent=4) + ";")
 
 
+def known_types(tracks):
+    """Tipus values already used, most common first (Caminada, Travessa, ...)."""
+    counts = {}
+    for t in tracks:
+        for tag in t["tags"]:
+            if tag.startswith("Tipus-"):
+                counts[tag[len("Tipus-"):]] = counts.get(tag[len("Tipus-"):], 0) + 1
+    return sorted(counts, key=lambda v: -counts[v])
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Register new GPX files and rebuild tracks_data.json.")
+    parser.add_argument("--tags", action="append", default=[], metavar="NAME.gpx=TAG[,TAG]",
+                        help="tags for a newly added GPX file (repeatable)")
+    parser.add_argument("--types", action="store_true", help="print known Tipus values and exit")
+    args = parser.parse_args()
+    tags_for = {}
+    for item in args.tags:
+        name, _, tags = item.partition("=")
+        tags = [t.strip() for t in tags.split(",") if t.strip()]
+        if name and tags:
+            tags_for[os.path.basename(name)] = tags
+    return args, tags_for
+
+
 def main():
+    args, tags_for = parse_args()
     tracks = load_tracks()
+    if args.types:
+        print("\n".join(known_types(tracks)))
+        return
+
     on_disk = sorted(
         f"{TRACKS_DIR}/{name}"
         for name in os.listdir(os.path.join(ROOT, TRACKS_DIR))
@@ -47,10 +83,10 @@ def main():
     removed = [t["file"] for t in tracks if t["file"] not in on_disk_set]
     listed = {t["file"] for t in kept}
     added = [f for f in on_disk if f not in listed]
-    kept.extend({"file": f, "tags": list(DEFAULT_TAGS)} for f in added)
+    kept.extend({"file": f, "tags": tags_for.get(os.path.basename(f), list(DEFAULT_TAGS))} for f in added)
 
     for f in added:
-        print(f"+ {f}")
+        print(f"+ {f}  {', '.join(tags_for.get(os.path.basename(f), DEFAULT_TAGS))}")
     for f in removed:
         print(f"- {f}")
 

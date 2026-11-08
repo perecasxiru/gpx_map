@@ -36,7 +36,17 @@ function trackTooltip(name, meta) {
     if (meta.km != null) parts.push(`${meta.km.toFixed(1)} km`);
     if (meta.gain != null) parts.push(`+${meta.gain} m`);
     if (meta.date) parts.push(meta.date.split('-').reverse().join('/'));
-    return `${name}<br><span style="font-weight: normal">${parts.join(' · ')}</span>`;
+    let html = `${name}<br><span style="font-weight: normal">${parts.join(' · ')}</span>`;
+    const peaks = peakNames(meta);
+    if (peaks.length) {
+        const shown = peaks.slice(0, 4).join(', ') + (peaks.length > 4 ? ` +${peaks.length - 4}` : '');
+        html += `<br><span style="font-weight: normal">▲ ${shown}</span>`;
+    }
+    return html;
+}
+
+function peakNames(meta) {
+    return [...new Set(((meta && meta.peaks) || []).map(p => p[1]))];
 }
 
 function filterPathsByTags(selectedTags) {

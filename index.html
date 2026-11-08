@@ -139,7 +139,10 @@
 		// This function modifies default behaviour settings
 		overrideLeafletGpxGroup();
 
-		const tracksData = (await tracksDataPromise).tracks;
+		const data = await tracksDataPromise;
+		const tracksData = data.tracks;
+		// Peaks reached by a track count as done (on top of "completat" in the *_info.js files)
+		markReachedPeaks(data, { '100cims': json_peaks, 'sostres': json_sostres, '3000s': json_tresmils });
 		const tracks = tracksData.map(t => ({ file: t.file, tags: t.tags }));
 
 		// Create routes

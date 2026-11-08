@@ -36,11 +36,11 @@ function matchesTags(trackTags, selectedTags) {
     return Object.values(byType).every(group => group.some(tag => trackTags.includes(tag)));
 }
 
-// Every word must appear in the name, date (yyyy-mm-dd) or tags. Accents are ignored.
+// Every word must appear in the name, date (yyyy-mm-dd), tags or reached peaks. Accents are ignored.
 function matchesQuery(route, words) {
     if (!words.length) return true;
     const meta = route.options.meta || {};
-    const haystack = normalizeText([route.options.name, meta.date, (route.tags || []).join(' ')].join(' '));
+    const haystack = normalizeText([route.options.name, meta.date, (route.tags || []).join(' '), peakNames(meta).join(' ')].join(' '));
     return words.every(word => haystack.includes(word));
 }
 
@@ -83,7 +83,7 @@ L.Control.TrackList = L.Control.extend({
             <a class="track-list-toggle" href="#" title="Llista de rutes" role="button">${LIST_ICON}</a>
             <div class="track-list-panel">
                 <div class="track-list-head">
-                    <input type="search" class="track-list-search" placeholder="Cerca: nom, any, etiqueta…" autocomplete="off">
+                    <input type="search" class="track-list-search" placeholder="Cerca: nom, any, cim…" autocomplete="off">
                     <select class="track-list-sort" title="Ordena">
                         ${Object.entries(TRACK_SORTS).map(([k, s]) =>
                             `<option value="${k}"${k === sort ? ' selected' : ''}>${s.label}</option>`).join('')}
@@ -188,14 +188,27 @@ L.Control.TrackList = L.Control.extend({
                 meta.gain != null ? `+${meta.gain} m` : '',
                 formatDate(meta.date),
             ].filter(Boolean).join(' · ');
+            const peaks = peakNames(meta);
+            const peaksHtml = peaks.length ? `<div class="track-list-peaks">▲ ${escapeHtml(peaks.join(', '))}</div>` : '';
             return `<li data-id="${L.stamp(route)}">
                 <span class="track-list-swatch" style="background:${route.options.originalStyle.color}"></span>
-                <div><div class="track-list-name">${escapeHtml(name)}</div><div class="track-list-meta">${facts}</div></div>
+                <div><div class="track-list-name">${escapeHtml(name)}</div><div class="track-list-meta">${facts}</div>${peaksHtml}</div>
             </li>`;
         }).join('') : '<li class="track-list-empty">Cap ruta coincideix amb el filtre.</li>';
 
         this._markActive();
     },
+});
+
+// Track links inside peak popups ("Rutes: ...")
+document.addEventListener('click', e => {
+    const link = e.target.closest('.peak-track');
+    if (!link) return;
+    e.preventDefault();
+    const route = allRoutes().find(r => r.options.file === link.dataset.file);
+    if (!route) return;
+    map.closePopup();
+    selectRoute(route);
 });
 
 function addTrackList(map) {

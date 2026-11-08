@@ -116,6 +116,19 @@
     font-size: 12px;
 }
 
+.track-list-peaks {
+    margin-top: 2px;
+    color: #8a5a00;
+    font-size: 12px;
+}
+
+.peak-tracks {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
 .track-list-items li.track-list-empty {
     justify-content: center;
     padding: 16px;

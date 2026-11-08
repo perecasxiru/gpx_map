@@ -1,3 +1,26 @@
+// Peaks reached by a track (computed by scripts/build_tracks.py into tracks_data.json)
+let trackNamesByFile = {};
+
+function markReachedPeaks(data, lists) {
+    trackNamesByFile = Object.fromEntries(data.tracks.map(t => [t.file, t.name]));
+    for (const [kind, list] of Object.entries(lists)) {
+        const reached = (data.reached || {})[kind] || {};
+        for (const entry of list) {
+            const files = reached[entry.nom];
+            if (!files) continue;
+            entry._tracks = files;
+            entry.completat = true;   // manual "completat" in the *_info.js files still counts too
+        }
+    }
+}
+
+function peakTracksHtml(entry) {
+    if (!entry._tracks) return '';
+    const links = entry._tracks.map(f =>
+        `<a href="#" class="peak-track" data-file="${escapeHtml(f)}">${escapeHtml(trackNamesByFile[f] || f)}</a>`);
+    return `<div class="peak-tracks"><b>Rutes:</b><br>${links.join('<br>')}</div>`;
+}
+
 function getCimTemplate(template_var){
     return `<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500" class="marker">
               <path class="st0" d="M256,13c106.8,0,194,87.2,194,194c0,132.4-162.3,268.4-194,294C223.7,476.6,62,346.1,62,207     C62,100.2,148.6,13,256,13z M376.2,275.3L256,81.3l-120.8,194l20.1,12.8l52.5-84.2l25,37.2l25-29.9l25,29.3l23.2-34.2l50.6,81.1     L376.2,275.3z" style="fill: ${template_var};"></path>
@@ -93,7 +116,8 @@ function createMarkersCims(lst, essencials, assolits, addToMap = false) {
             <div style="text-align: center">
                 <b>${entry.nom}</b><br>
                 ${entry.alt}m
-            </div><br>
+            </div>
+            ${peakTracksHtml(entry)}<br>
             <center>
                 <a href="${wikiURL}" target="_blank">
                     <img src="https://sc.wklcdn.com/wikiloc/assets/styles/images/logo/wikiloc_logo.svg?v=3.0" alt="Search on Wikiloc" width="50em">
@@ -124,6 +148,7 @@ function createMarkersSostres(lst, assolits, addToMap = false) {
                 ${entry.alt}m<br>
                 <i>${entry.comarca}</i>
             </div>
+            ${peakTracksHtml(entry)}
             <br>
             <center>
                 <a href="${wikiURL}" target="_blank">
@@ -156,6 +181,7 @@ function createMarkers3000s(lst, assolits, addToMap = false) {
                 <!-- <i>${entry.region}</i><br> -->
                 <!-- <i>${entry.serra}</i> -->
             </div>
+            ${peakTracksHtml(entry)}
             <br>
             <center>
                 <a href="${wikiURL}" target="_blank">
