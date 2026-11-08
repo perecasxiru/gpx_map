@@ -1,0 +1,15 @@
+{
+    "_help": "Peaks that a track passes near but that were NOT reached. They are never marked as done or tagged automatically. Use the exact name (nom) from peaks_info.js / sostres_info.js / tresmils_info.js.",
+    "100cims": [
+        "L'Albarda Castellana",
+        "Miranda de Santa Magdalena",
+        "Miranda dels Ecos",
+        "Pollegó Inferior (Pedraforca)"
+    ],
+    "sostres": [
+        "L'Albarda Castellana"
+    ],
+    "3000s": [
+        "Cap de la Coma de Riufred"
+    ]
+}

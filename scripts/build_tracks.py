@@ -8,7 +8,7 @@ Stats (km, gain...) are computed on the full-resolution track. The geometry is
 simplified with Douglas-Peucker, which looks the same on the map and is plenty
 for the elevation chart. The original GPX stays in tracks/ for download.
 
-Peaks: every 100 Cims / sostre / 3000 within PEAK_RADIUS_M of the full-resolution
+Peaks: every 100 Cims / sostre / 3000 (except those in peaks_ignore.json) within PEAK_RADIUS_M of the full-resolution
 track is stored in the track's "peaks", adds automatic tags (100Cims-*, Sostres-Tots,
 3000s-Tots) on top of the manual ones from tracks_info.js, and is listed in the
 top-level "reached" so the map marks it as done. The *_info.js files are only read.
@@ -27,7 +27,10 @@ import xml.etree.ElementTree as ET
 BUILD_VERSION = 2
 TOLERANCE_M = float(os.environ.get("GPX_TOLERANCE_M", 5))  # simplification tolerance
 GAIN_THRESHOLD_M = 5  # hysteresis to ignore GPS altitude noise when summing gain/loss
-PEAK_RADIUS_M = 100   # a peak counts as reached if the track passes this close (matches all manual 100Cims tags)
+# A peak counts as reached if the track passes this close. Real summits were <= 43 m away
+# (one at 90 m, already marked by hand); passing-by false positives started at 49 m.
+PEAK_RADIUS_M = 45
+IGNORE_FILE = "peaks_ignore.json"   # peaks never to mark as reached, per kind
 
 # kind, file, JS variable, automatic tags (the 100 Cims "essencial" tag is added separately)
 PEAK_SOURCES = [
@@ -55,11 +58,20 @@ def load_js_array(path, var):
 def load_peaks():
     """Return (peaks, sha1 of the peak files). peaks: [(kind, name, lat, lon, tags)]."""
     peaks, digest = [], hashlib.sha1()
+    ignore = {}
+    ignore_path = os.path.join(ROOT, IGNORE_FILE)
+    if os.path.exists(ignore_path):
+        with open(ignore_path, "rb") as f:
+            raw = f.read()
+        digest.update(raw)
+        ignore = {k: set(v) for k, v in json.loads(raw).items() if not k.startswith("_")}
     for kind, filename, var, tags in PEAK_SOURCES:
         path = os.path.join(ROOT, filename)
         with open(path, "rb") as f:
             digest.update(f.read())
         for p in load_js_array(path, var):
+            if p["nom"] in ignore.get(kind, ()):
+                continue
             extra = []
             if kind == "100cims":
                 extra = ["100Cims-Essencials" if p.get("essencial") else "100Cims-No Essencials"]

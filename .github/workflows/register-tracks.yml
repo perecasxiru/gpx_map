@@ -6,7 +6,7 @@ name: Register new tracks
 on:
   push:
     branches: [master]
-    paths: ["tracks/**", "tracks_info.js", "newtrack.py", "scripts/build_tracks.py"]
+    paths: ["tracks/**", "tracks_info.js", "newtrack.py", "scripts/build_tracks.py", "peaks_info.js", "sostres_info.js", "tresmils_info.js", "peaks_ignore.json"]
   workflow_dispatch:
 
 permissions:
