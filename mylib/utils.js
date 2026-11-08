@@ -218,6 +218,11 @@ function downloadGPX(map, routes) {
         const summaryDiv = document.querySelector('.elevation-control .elevation-summary');
         if (!summaryDiv) return;
 
+        // The plugin hard-codes 2 decimals for elevations ("2538.00 m")
+        summaryDiv.querySelectorAll('.summaryvalue').forEach(v => {
+            v.innerHTML = v.innerHTML.replace(/\.00(?=&nbsp;|\s)/, '');
+        });
+
         // Avoid duplicates if elevation-summary already has our button
         if (summaryDiv.querySelector('.download-gpx-btn')) return;
 

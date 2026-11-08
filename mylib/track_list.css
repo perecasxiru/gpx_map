@@ -129,4 +129,48 @@
     .track-list-search {
         font-size: 16px;
     }
+
+    /* Compact elevation summary: one row with the numbers that matter on the trail */
+    .elevation-summary {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4px 14px;
+        padding: 4px 8px 6px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .elevation-summary > span {
+        white-space: nowrap;
+    }
+
+    .elevation-summary > span::after {
+        content: none !important;   /* drop the plugin's " — " separators */
+    }
+
+    .elevation-summary .summarylabel,
+    .elevation-summary .tottime,
+    .elevation-summary .minele,
+    .elevation-summary .avgele,
+    .elevation-summary .minslope,
+    .elevation-summary .maxslope,
+    .elevation-summary .avgslope {
+        display: none;
+    }
+
+    .elevation-summary .totlen::before { content: "↔ "; }
+    .elevation-summary .ascent::before { content: "↗ "; }
+    .elevation-summary .descent::before { content: "↘ "; }
+    .elevation-summary .maxele::before { content: "▲ "; }
+
+    .elevation-summary .ascent { order: 1; }
+    .elevation-summary .descent { order: 2; }
+    .elevation-summary .maxele { order: 3; }
+
+    .download-gpx-btn {
+        order: 4;
+        margin-right: 0 !important;
+    }
 }

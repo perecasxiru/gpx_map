@@ -60,6 +60,8 @@
 	const defaultMarkerFilter = ['Essencials No Assolits', 'No Essencials No Assolits', 'GCs 103 Antics No Trobats'];
 	const showGC = true;
 
+	const isSmallScreen = window.matchMedia('(max-width: 600px)').matches;
+
 	const savedCenter = loadWithExpiry('mapCenter', [41.959020, 2.057627]);
 	const savedZoom = loadWithExpiry('mapZoom', 11);
 
@@ -110,6 +112,12 @@
 			marker: "position-marker",
 			autofitBounds: false,
 			slope: "summary",
+			time: false,                // tracks_data.json has no timestamps; the plugin would invent them at 3.6 km/h
+			...(isSmallScreen && {      // compact chart on phones (default height is 30% of the screen)
+				height: 110,
+				margins: { top: 12, right: 18, bottom: 22, left: 38 },
+				yTicks: 3,
+			}),
 		},
 	};
 

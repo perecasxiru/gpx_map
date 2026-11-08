@@ -180,7 +180,7 @@ L.Control.TrackList = L.Control.extend({
         const km = items.reduce((s, i) => s + (i.meta.km || 0), 0);
         const gain = items.reduce((s, i) => s + (i.meta.gain || 0), 0);
         this._summary.textContent =
-            `${items.length} rutes · ${Math.round(km).toLocaleString('ca')} km · +${gain.toLocaleString('ca')} m`;
+            `${items.length} ${items.length === 1 ? 'ruta' : 'rutes'} ·${Math.round(km).toLocaleString('ca')} km · +${gain.toLocaleString('ca')} m`;
 
         this._list.innerHTML = items.length ? items.map(({ route, name, meta }) => {
             const facts = [
