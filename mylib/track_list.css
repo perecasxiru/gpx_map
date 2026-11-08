@@ -124,53 +124,67 @@
     cursor: default;
 }
 
+/* Elevation summary: length, total ascent, max and min elevation only.
+   (Slope stays enabled in the plugin because it computes the ascent.) */
+.elevation-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 18px;
+    padding: 4px 8px 6px;
+    line-height: 1.3;
+}
+
+.elevation-summary > span {
+    white-space: nowrap;
+}
+
+.elevation-summary > span::after {
+    content: none !important;   /* drop the plugin's " — " separators */
+}
+
+.elevation-summary .tottime,
+.elevation-summary .avgele,
+.elevation-summary .descent,
+.elevation-summary .minslope,
+.elevation-summary .maxslope,
+.elevation-summary .avgslope {
+    display: none;
+}
+
+.elevation-summary .totlen { order: 1; }
+.elevation-summary .ascent { order: 2; }
+.elevation-summary .maxele { order: 3; }
+.elevation-summary .minele { order: 4; }
+
+.download-gpx-btn {
+    order: 0;
+}
+
 @media (max-width: 600px) {
     /* 16px stops mobile browsers from zooming into the field */
     .track-list-search {
         font-size: 16px;
     }
 
-    /* Compact elevation summary: one row with the numbers that matter on the trail */
+    /* Phones: symbols instead of labels, centred */
     .elevation-summary {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
         gap: 4px 14px;
-        padding: 4px 8px 6px;
         font-size: 14px;
-        line-height: 1.3;
     }
 
-    .elevation-summary > span {
-        white-space: nowrap;
-    }
-
-    .elevation-summary > span::after {
-        content: none !important;   /* drop the plugin's " — " separators */
-    }
-
-    .elevation-summary .summarylabel,
-    .elevation-summary .tottime,
-    .elevation-summary .minele,
-    .elevation-summary .avgele,
-    .elevation-summary .minslope,
-    .elevation-summary .maxslope,
-    .elevation-summary .avgslope {
+    .elevation-summary .summarylabel {
         display: none;
     }
 
     .elevation-summary .totlen::before { content: "↔ "; }
     .elevation-summary .ascent::before { content: "↗ "; }
-    .elevation-summary .descent::before { content: "↘ "; }
     .elevation-summary .maxele::before { content: "▲ "; }
-
-    .elevation-summary .ascent { order: 1; }
-    .elevation-summary .descent { order: 2; }
-    .elevation-summary .maxele { order: 3; }
+    .elevation-summary .minele::before { content: "▼ "; }
 
     .download-gpx-btn {
-        order: 4;
+        order: 5;
         margin-right: 0 !important;
     }
 }
