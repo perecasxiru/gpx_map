@@ -6,7 +6,7 @@
 #   chmod +x ~/.shortcuts/upload_gpx.sh
 #
 # Only the GPX files need to reach GitHub: the "Register new tracks" Action
-# updates tracks_info.js if this script couldn't. Running newtrack.py here just
+# updates tracks_info.js and tracks_data.json if this script couldn't. Running newtrack.py here just
 # puts everything in a single commit, so Pages redeploys once.
 
 set -euo pipefail
@@ -45,8 +45,8 @@ done
 # 3. Register them (optional; the GitHub Action does it otherwise).
 python newtrack.py || echo "newtrack.py failed; the GitHub Action will register the tracks."
 
-# 4. Commit only the tracks and the index, then push.
-git add tracks/ tracks_info.js
+# 4. Commit only the tracks and the generated files, then push.
+git add tracks/ tracks_info.js tracks_data.json
 git commit -m "Auto: new GPX upload via Termux (${#files[@]} track(s))"
 if git push; then
     notify "Uploaded ${#files[@]} track(s)"

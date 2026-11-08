@@ -1,11 +1,12 @@
-# Whenever GPX files are pushed to tracks/ (from Termux, the GitHub web UI, or the API),
-# register them in tracks_info.js and commit the result. GitHub Pages then redeploys.
+# Whenever GPX files or tags change (from Termux, the GitHub web UI, or the API),
+# register new tracks in tracks_info.js, rebuild tracks_data.json and commit the result.
+# GitHub Pages then redeploys.
 name: Register new tracks
 
 on:
   push:
     branches: [master]
-    paths: ["tracks/**"]
+    paths: ["tracks/**", "tracks_info.js", "newtrack.py", "scripts/build_tracks.py"]
   workflow_dispatch:
 
 permissions:
@@ -21,17 +22,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sync tracks_info.js with tracks/
+      - name: Sync tracks_info.js and rebuild tracks_data.json
         run: python3 newtrack.py
 
       - name: Commit changes
         run: |
-          if git diff --quiet; then
+          git add tracks_info.js tracks_data.json
+          if git diff --cached --quiet; then
             echo "Nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Auto: register new tracks"
+          git commit -m "Auto: register tracks and rebuild tracks_data.json"
           git pull --rebase
           git push

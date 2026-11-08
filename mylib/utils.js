@@ -13,12 +13,13 @@ function handleRouteLoaded(e, uniqueTagsRef, tracks){
     }
 
     route.tags = matchingTrack.tags;
+    const tooltip = trackTooltip(route.options.name, route.options.meta);
 
     Object.values(route._layers).forEach(layer => {
         if (!layer._path) return;
 
+        layer.setTooltipContent(tooltip);
         layer._path.setAttribute('data-tags', matchingTrack.tags.join(','));
-        layer._path.setAttribute('title', route.options.name);
         layer._path.dataset.gpx = matchingTrack.file;
 
         for (let tag of matchingTrack.tags) {
@@ -27,6 +28,15 @@ function handleRouteLoaded(e, uniqueTagsRef, tracks){
             uniqueTagsRef[type].add(value);
         }
     });
+}
+
+function trackTooltip(name, meta) {
+    if (!meta) return name;
+    const parts = [];
+    if (meta.km != null) parts.push(`${meta.km.toFixed(1)} km`);
+    if (meta.gain != null) parts.push(`+${meta.gain} m`);
+    if (meta.date) parts.push(meta.date.split('-').reverse().join('/'));
+    return `${name}<br><span style="font-weight: normal">${parts.join(' · ')}</span>`;
 }
 
 function filterPathsByTags(selectedTags) {
@@ -235,21 +245,16 @@ function downloadGPX(map, routes) {
                 return;
             }
 
-            const geojson = currentGpxLayer.toGeoJSON();
-            const gpxData = togpx(geojson, { creator: "MyLeafletApp" });
-            const blob = new Blob([gpxData], { type: 'application/gpx+xml' });
-            const url = URL.createObjectURL(blob);
-
+            // The map shows a simplified line; download the original, full-resolution GPX.
+            const file = currentGpxLayer.options.file;
+            if (!file) {
+                alert('Original GPX not available for this track.');
+                return;
+            }
             const a = document.createElement('a');
-            a.href = url;
-            a.download = (
-                currentGpxLayer.options.filename ||
-                geojson?.features?.[0]?.properties?.name ||
-                'track'
-            ) + '.gpx';
+            a.href = encodeURI(file);
+            a.download = file.split('/').pop();
             a.click();
-
-            URL.revokeObjectURL(url);
         });
 
         summaryDiv.insertBefore(btn, summaryDiv.firstChild);

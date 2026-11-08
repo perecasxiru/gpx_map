@@ -4,7 +4,9 @@
 - Removes entries whose GPX file no longer exists.
 - Keeps existing entries (and their tags) untouched and in order.
 
-Safe to run repeatedly; it only rewrites the file when something changed.
+Then rebuilds tracks_data.json (scripts/build_tracks.py), the compact file the map loads.
+
+Safe to run repeatedly; it only rewrites files when something changed.
 Runs locally, in Termux, or in the GitHub Action (.github/workflows/register-tracks.yml).
 """
 import json
@@ -57,6 +59,10 @@ def main():
         print(f"tracks_info.js updated: {len(added)} added, {len(removed)} removed, {len(kept)} total.")
     else:
         print(f"tracks_info.js already up to date ({len(kept)} tracks).")
+
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    from build_tracks import build
+    build(kept)
 
 
 if __name__ == "__main__":

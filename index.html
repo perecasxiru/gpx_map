@@ -19,12 +19,9 @@
 	<script src="https://unpkg.com/togeojson@0.16.0"></script>
 	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 
-	<script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
-	<script src="https://unpkg.com/togpx@0.5.4/togpx.js"></script>
-
+	<link rel="preload" href="tracks_data.json" as="fetch" crossorigin>
 
 	<script src="peaks_info.js"></script>
-	<script src="tracks_info.js"></script>
 	<script src="gc_olds_info.js"></script>
 	<script src="sostres_info.js"></script>
 	<script src="tresmils_info.js"></script>
@@ -124,13 +121,19 @@
 	});
 
 	let routes;
-	map.on('plugins_loaded', function(e) {
+	// tracks_data.json is generated from tracks/*.gpx + tracks_info.js by newtrack.py
+	const tracksDataPromise = fetch('tracks_data.json').then(r => r.json());
+
+	map.on('plugins_loaded', async function(e) {
 
 		// This function modifies default behaviour settings
 		overrideLeafletGpxGroup();
 
+		const tracksData = (await tracksDataPromise).tracks;
+		const tracks = tracksData.map(t => ({ file: t.file, tags: t.tags }));
+
 		// Create routes
-		routes = L.gpxGroup(tracks.map(t => t.file), {
+		routes = L.gpxGroup(tracksData.map(trackToGeoJSON), {
 			// These settings can be found in libs/leaflet-gpxgroup.js
 			highlight: {
 				color: '#fff100'
