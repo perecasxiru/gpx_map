@@ -2,6 +2,7 @@
 // Both the map and the list use the same state, so they always show the same tracks.
 
 const trackFilterState = { tags: [], query: '' };
+const trackRoutes = [];   // every route, including the ones hidden by a filter (filled by handleRouteLoaded)
 let trackListControl = null;
 
 const LIST_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#333" stroke-width="2.2" stroke-linecap="round"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>';
@@ -45,7 +46,18 @@ function matchesQuery(route, words) {
 }
 
 function allRoutes() {
-    return routes ? Object.values(routes._layers._layers) : [];
+    return trackRoutes;
+}
+
+function routeById(id) {
+    return trackRoutes.find(r => L.stamp(r) === id) || null;
+}
+
+// Hidden tracks are taken off the map (the canvas renderer has no per-line display toggle).
+function setRouteVisible(route, visible) {
+    const group = routes._layers;
+    if (visible && !group.hasLayer(route)) group.addLayer(route);
+    else if (!visible && group.hasLayer(route)) group.removeLayer(route);
 }
 
 function applyTrackFilters() {
@@ -54,9 +66,7 @@ function applyTrackFilters() {
         // The selected track stays visible (e.g. opened from a shared link while a filter is active)
         route._visible = route.isSelected()
             || (matchesTags(route.tags || [], trackFilterState.tags) && matchesQuery(route, words));
-        route.eachLayer(layer => {
-            if (layer._path) layer._path.style.display = route._visible ? '' : 'none';
-        });
+        setRouteVisible(route, route._visible);
     }
     refreshTrackPanels();
 }
@@ -154,13 +164,13 @@ L.Control.TrackList = L.Control.extend({
 
     _routeFromEvent: function(e) {
         const li = e.target.closest('li[data-id]');
-        return li ? routes._layers.getLayer(+li.dataset.id) : null;
+        return li ? routeById(+li.dataset.id) : null;
     },
 
     _hover: function(e, entering) {
         const li = e.target.closest('li[data-id]');
         if (!li || li.contains(e.relatedTarget)) return;
-        const route = routes._layers.getLayer(+li.dataset.id);
+        const route = routeById(+li.dataset.id);
         if (!route || route.isSelected()) return;
         route.eachLayer(layer => entering ? routes.highlight(route, layer) : routes.unhighlight(route, layer));
     },

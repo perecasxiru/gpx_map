@@ -15,19 +15,16 @@ function handleRouteLoaded(e, uniqueTagsRef, tracks){
     route.tags = matchingTrack.tags;
     const tooltip = trackTooltip(route.options.name, route.options.meta);
 
-    Object.values(route._layers).forEach(layer => {
-        if (!layer._path) return;
-
-        layer.setTooltipContent(tooltip);
-        layer._path.setAttribute('data-tags', matchingTrack.tags.join(','));
-        layer._path.dataset.gpx = matchingTrack.file;
-
-        for (let tag of matchingTrack.tags) {
-            const [type, value] = tag.split('-');
-            if (!uniqueTagsRef[type]) uniqueTagsRef[type] = new Set();
-            uniqueTagsRef[type].add(value);
-        }
+    trackRoutes.push(route);
+    route.eachLayer(layer => {
+        if (layer.getTooltip()) layer.setTooltipContent(tooltip);
     });
+
+    for (let tag of matchingTrack.tags) {
+        const [type, value] = tag.split('-');
+        if (!uniqueTagsRef[type]) uniqueTagsRef[type] = new Set();
+        uniqueTagsRef[type].add(value);
+    }
 }
 
 function trackTooltip(name, meta) {
