@@ -139,7 +139,8 @@
 
 /* Elevation summary: length, total ascent, max and min elevation only.
    (Slope stays enabled in the plugin because it computes the ascent.) */
-.elevation-summary {
+.elevation-summary,
+.elevation-detached.elevation-collapsed .elevation-summary {   /* the plugin sets display:block when the chart is collapsed */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -172,6 +173,7 @@
 
 .download-gpx-btn {
     order: 0;
+    margin-right: -12px;   /* keep ⬇️ and 🔗 together despite the 18px gap */
     padding: 2px 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -407,6 +409,9 @@
     .download-gpx-btn,
     .share-gpx-btn {
         order: 5;
-        margin-right: 0 !important;
+    }
+
+    .download-gpx-btn {
+        margin-right: -8px !important;
     }
 }
