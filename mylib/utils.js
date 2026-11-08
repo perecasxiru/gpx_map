@@ -248,7 +248,8 @@ function downloadGPX(map, routes) {
         });
         if (summary.children.length && !summary.querySelector('.download-gpx-btn')) {
             summary.insertAdjacentHTML('afterbegin',
-                '<button type="button" class="download-gpx-btn" title="Descarrega el GPX original">⬇️</button>');
+                '<button type="button" class="download-gpx-btn" title="Descarrega el GPX original">⬇️</button>' +
+                '<button type="button" class="share-gpx-btn" title="Comparteix l\'enllaç a aquesta ruta">🔗</button>');
         }
     };
     const root = document.getElementById('elevation-div') || document.body;

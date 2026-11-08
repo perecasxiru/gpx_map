@@ -51,12 +51,19 @@ function allRoutes() {
 function applyTrackFilters() {
     const words = normalizeText(trackFilterState.query).split(/\s+/).filter(Boolean);
     for (const route of allRoutes()) {
-        route._visible = matchesTags(route.tags || [], trackFilterState.tags) && matchesQuery(route, words);
+        // The selected track stays visible (e.g. opened from a shared link while a filter is active)
+        route._visible = route.isSelected()
+            || (matchesTags(route.tags || [], trackFilterState.tags) && matchesQuery(route, words));
         route.eachLayer(layer => {
             if (layer._path) layer._path.style.display = route._visible ? '' : 'none';
         });
     }
-    if (trackListControl) trackListControl.render();
+    refreshTrackPanels();
+}
+
+function refreshTrackPanels() {
+    if (typeof trackListControl !== 'undefined' && trackListControl) trackListControl.render();
+    if (typeof trackStatsControl !== 'undefined' && trackStatsControl) trackStatsControl.render();
 }
 
 function selectRoute(route) {

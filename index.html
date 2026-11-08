@@ -7,15 +7,15 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<link rel="dns-prefetch" href="https://tile.opentopomap.org">
 	<link rel="dns-prefetch preconnect" href="https://unpkg.com" />
-	<link rel="preload" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" as="script">
-	<link rel="preload" href="https://unpkg.com/leaflet-ui@0.6.0/dist/leaflet-ui.js" as="script">
+	<link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" as="script">
+	<link rel="preload" href="https://unpkg.com/leaflet-ui@0.7.2/dist/leaflet-ui.js" as="script">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
 
 	<style>@import 'libs/fullpage.css';</style>
 
 	<!-- leaflet-ui -->
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-	<script src="https://unpkg.com/leaflet-ui@0.6.0/dist/leaflet-ui.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-ui@0.7.2/dist/leaflet-ui.js"></script>
 	<script src="https://unpkg.com/togeojson@0.16.0"></script>
 	<script src="https://unpkg.com/leaflet-filelayer@1.2.0"></script>
 
@@ -31,6 +31,9 @@
 	<script src="mylib/gpxgroup_overrides.js"></script>
 	<script src="mylib/utils.js"></script>
 	<script src="mylib/track_list.js"></script>
+	<script src="mylib/colors.js"></script>
+	<script src="mylib/stats.js"></script>
+	<script src="mylib/share.js"></script>
 	<link rel="stylesheet" href="mylib/track_list.css">
 
 
@@ -74,7 +77,13 @@
 			gestureHandling: false,     // zoom with Cmd + Scroll
 			zoomControl: true,          // plus minus buttons
 			pegmanControl: false,
-			locateControl: false,       // zoom to current position
+			locateControl: {            // show / fly to current position (tap again to stop following)
+				position: 'bottomright',
+				flyTo: true,
+				showPopup: false,
+				strings: { title: 'La meva ubicació' },
+				locateOptions: { enableHighAccuracy: true, maxZoom: 15 },
+			},
 			fullscreenControl: true,
 			layersControl: true,
 			minimapControl: false,
@@ -223,9 +232,12 @@
 			customCheckoxes(checkboxes, 'selectedLayerLabels2');
 
 			addTrackList(map);
+			addTrackStats(map);
+			initColors(map);
 
 			uploadGPX(map, routes);
 			downloadGPX(map, routes);
+			initShareLinks(routes);     // after downloadGPX, so a shared track's summary gets its buttons
 			addRightClickPopup(map);
 
 		});
