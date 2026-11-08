@@ -1,17 +1,6 @@
-node_modules/
-npm-debug.log
-build/**/*.min.js
-spec/**/*.min.js
-src/**/*.min.js
-src/**/*.min.css
-dist/
-e2e/results/
-e2e/reports/
-/playwright/.cache/
 *.DS_Store
-# newtrack.py
 *.swp
 .idea/
+__pycache__/
 *.gpx
 !tracks/*.gpx
-

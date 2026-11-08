@@ -1,6 +1,8 @@
 import json
+import re
+import os
 
-js_file_path = "gc_olds_info.js"
+js_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "gc_olds_info.js")
 
 # Read JS file
 with open(js_file_path, "r", encoding="utf-8") as f:
@@ -32,8 +34,9 @@ else:
 
 json_text = js_content[array_start:array_end]
 
-# Remove trailing commas inside objects or arrays (invalid JSON)
-json_text = json_text.replace(",]", "]").replace(",}", "}")
+# Strip JS block comments and trailing commas (invalid JSON)
+json_text = re.sub(r"/\*.*?\*/", "", json_text, flags=re.DOTALL)
+json_text = re.sub(r",\s*([\]}])", r"\1", json_text)
 
 # Parse JSON
 data = json.loads(json_text)
